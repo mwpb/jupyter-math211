@@ -1,5 +1,10 @@
 import copy
-from elementaryOperations import swapRows, addMultiple, scalarMultiply
+import os
+import sys
+module_path = os.path.abspath(os.path.join('..'))
+if module_path not in sys.path:
+    sys.path.append(module_path)
+from pythonUtils.elementaryOperations import swapRows, addMultiple, scalarMultiply
 
 def eliminationStep(A):
     row = 0
