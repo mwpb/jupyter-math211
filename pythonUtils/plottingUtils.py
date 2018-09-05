@@ -3,18 +3,14 @@ import numpy as np
 import math
 
 def plot2DSystem(A):
+    colours = ['blue', 'orange', 'green', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red'] # Run out of colours...
     x = np.arange(-10, 10, 0.1)
     fig, ax = plt.subplots()
-    if not math.isclose(A[0][1], 0):
-        ax.plot(x, A[0][2]/A[0][1]-(A[0][0]/A[0][1])*x)
-    elif not math.isclose(A[0][0], 0):
-        ax.axvline(x = A[0][2]/A[0][0])        
-        #plt.plot([A[0][2]/A[0][0],A[0][2]/A[0][0]],ax.get_ylim(), 'r-')
-    if A[1][1] != 0:
-        ax.plot(x, A[1][2]/A[1][1]-(A[1][0]/A[1][1])*x, color = 'orange')
-    elif A[1][0] != 0:
-        ax.axvline(x = A[1][2]/A[1][0], color = 'orange')
-#        plt.plot([A[1][2]/A[1][0],A[1][2]/A[1][0]],ax.get_ylim(), 'r-')
+    for i in range(0, len(A)):
+        if not math.isclose(A[i][1], 0):
+            ax.plot(x, A[i][2]/A[i][1]-(A[i][0]/A[i][1])*x, color = colours[i])
+        elif not math.isclose(A[i][0], 0):
+            ax.axvline(x = A[i][2]/A[i][0], color = colours[i])
 
 def printM(A):
     print(np.matrix(A))

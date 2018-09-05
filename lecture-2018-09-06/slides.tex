@@ -263,29 +263,68 @@ Questions?
 \end{frame}
 
 \begin{frame}
-  In short:
   \begin{itemize}
-  \item row echelon form $\leftrightarrow$ ready for back-substitution
-  \item reduced row echelon form $\leftrightarrow$ read off solutions
+  \item Row echelon form $\leftrightarrow$ ready for back-substitution.\vfill
+  \item Reduced row echelon form $\leftrightarrow$ read off solutions.
   \end{itemize}\vfill
-  another advantage of reduced row echelon form is that:\vfill
+  Another advantage of reduced row echelon form is that:\vfill
   \begin{theorem}
     Reduced row echelon form is unique.
   \end{theorem}
 \end{frame}
 
 \begin{frame}{Reading off solutions}
-  The matrix
+  \begin{itemize}
+  \item   The augmented matrix
     \begin{equation*}
-      \left[\begin{array}{rrrrrrrr}
-              0 & 1 & 0 & 5 & 0 & 1  \\
-              0 & 0 & 1 & 1 & 0 & 2  \\
-              0 & 0 & 0 & 0 & 1 & 4  \\
-              0 & 0 & 0 & 0 & 0 & 0 \\
-              0 & 0 & 0 & 0 & 0 & 0 
+      \left[\begin{array}{rrrrr|r}
+               1 & 0 & 5 & 0 & 1 &1 \\
+               0 & 1 & 1 & 0 & 2 &0 \\
+               0 & 0 & 0 & 1 & 4 &0 \\
+               0 & 0 & 0 & 0 & 0 &0\\
+               0 & 0 & 0 & 0 & 0 &0
             \end{array}\right] 
         \end{equation*}
-        is in reduced row echelon form.
+        is in reduced row echelon form.\vfill
+      \item If there are any rows of the form $(0~ 0...0|1)$ then we know immediately that there are no solutions.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Identify leading 1s and parameter blocks}
+  \begin{itemize}
+  \item The leading $1$s are shown in green
+    \begin{equation*}
+      \left[\begin{array}{rrrrr|r}
+               {\color{green}1} & 0 & {\color{blue}5} & 0 & {\color{red}1} &1 \\
+               0 & {\color{green}1} & {\color{blue}1} & 0 & {\color{red}2} &0 \\
+               0 & 0 & 0 & {\color{green}1} & {\color{red}4} &0 \\
+               0 & 0 & 0 & 0 & 0 &0\\
+               0 & 0 & 0 & 0 & 0 &0
+            \end{array}\right] 
+        \end{equation*}
+        and the other non-zero numbers are shown in blue and red.\vfill
+      \item Variables associated to the leading $1$s are the \emph{leading variables}.\vfill
+      \item In this case $x_1$, $x_2$ and $x_4$ are leading and $x_3$ and $x_5$ are not.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  The non-leading variables can take any value so we assign parameters to them.\vfill
+  In this case:
+  \begin{align*}
+    {\color{blue}x_3} &{\color{blue}= s}\\
+    {\color{red}x_5} &{\color{red}= t}
+  \end{align*}
+  and then we solve for the leading variables in terms of these parameters:
+  \begin{align*}
+    {\color{green}x_1} &= 1-{\color{blue}5s}-{\color{red}t}\\
+    {\color{green}x_2} &= -{\color{blue}s}-{\color{red}2t}\\
+    {\color{green}x_4} &= -{\color{blue}4t}
+  \end{align*}
+\end{frame}
+
+\begin{frame}
+  Questions?
 \end{frame}
 
 \end{document}

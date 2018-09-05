@@ -64,3 +64,4 @@ package-lock.json
 *.mtc1
 *.out
 *.synctex.gz
+**/auto
