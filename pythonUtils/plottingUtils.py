@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import math
+from sympy import latex, Matrix
+from IPython.display import display, Markdown, Math, Latex
+from mpmath import mp
 
+mp.dps = 4
 def plot2DSystem(A):
     colours = ['blue', 'orange', 'green', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red'] # Run out of colours...
     x = np.arange(-10, 10, 0.1)
@@ -13,5 +16,5 @@ def plot2DSystem(A):
             ax.axvline(x = A[i][2]/A[i][0], color = colours[i])
 
 def printM(A):
-    print(np.matrix(A))
+    display((Latex(r'${'+latex(Matrix(A))+'}$')))
     print('\n')

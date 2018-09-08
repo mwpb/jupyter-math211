@@ -42,6 +42,14 @@ def backSubstitution(A, pivots, steps):
     steps.append(copy.deepcopy(A))
     return steps
 
+def roundMatrix(A):
+    for i in range(0,len(A)):
+        for j in range (0, len(A[0])):
+            A[i][j] = round(A[i][j], 4)
+
 def rref(A):
     pivots, steps = eliminationStep(A)
-    return backSubstitution(A, pivots, steps)
+    steps = backSubstitution(A, pivots, steps)
+    for step in steps:
+        roundMatrix(step)
+    return steps
