@@ -1,5 +1,6 @@
 import copy
 import os
+import math
 import sys
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
@@ -46,6 +47,8 @@ def roundMatrix(A):
     for i in range(0,len(A)):
         for j in range (0, len(A[0])):
             A[i][j] = round(A[i][j], 4)
+            if math.isclose(A[i][j], int(A[i][j])):
+                A[i][j] = int(A[i][j])
 
 def rref(A):
     pivots, steps = eliminationStep(A)
