@@ -3,6 +3,7 @@ import math
 from sympy import latex, Matrix
 from IPython.display import display, Markdown, Math, Latex
 from mpmath import mp
+import numpy as np
 
 mp.dps = 4
 def plot2DSystem(A):
