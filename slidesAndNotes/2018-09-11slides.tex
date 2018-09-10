@@ -1,0 +1,274 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+%\usepackage{enumitem}
+% \SetLabelAlign{parright}{\parbox[t]{\labelwidth}{\raggedleft#1}}
+
+% \setlist[description]{style=multiline,topsep=10pt,leftmargin=3cm,align=parright}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I\\Lecture 2}
+\author{Matthew Burke}
+\date{\formatdate{11}{09}{2018}}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture 2}
+  \tableofcontents
+\end{frame}
+
+\section{Reduced row echelon form}
+\label{sec:Reduced-row-echelon-form}
+
+\begin{frame}
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+\end{frame}
+\begin{frame}{Row echelon form}
+  A matrix is in \emph{row echelon form} iff:-
+  \begin{itemize}
+  \item All rows consisting entirely of zeros are at the 
+    bottom.
+  \item The first nonzero entry in each nonzero row is a $1$
+    \\(called the {\bf leading 1} for that row).
+  \item Each leading 1 is to the right of all leading $1$'s 
+    in rows above it.
+  \end{itemize}
+  For instance:
+  \begin{equation*}
+    \left[\begin{array}{rrrrrrrr}
+            0 & 1 & * & * & * & * & * & * \\
+            0 & 0 & 0 & 1 & * & * & * & * \\
+            0 & 0 & 0 & 0 & 1 & * & * & * \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 
+          \end{array}\right]
+      \end{equation*}
+      where $*$ can be any number.
+\end{frame}
+
+\begin{frame}{Reduced row echelon form}
+  A matrix is in \emph{reduced row echelon form} iff:-
+  \begin{itemize}
+  \item It is a row-echelon matrix.
+  \item Each leading 1 is the only nonzero entry in its
+    column.
+  \end{itemize}
+  \begin{equation*}
+      \left[\begin{array}{rrrrrrrr}
+              0 & 1 & * & 0 & 0 & * & * & 0 \\
+              0 & 0 & 0 & 1 & 0 & * & * & 0 \\
+              0 & 0 & 0 & 0 & 1 & * & * & 0 \\
+              0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+              0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 
+            \end{array}\right] 
+        \end{equation*}
+        where $*$ can be any number.
+\end{frame}
+
+\begin{frame}{Advantages of reduced row echelon form}
+  \begin{itemize}
+  \item Row echelon form $\leftrightarrow$ ready for back-substitution.\vfill
+  \item Reduced row echelon form $\leftrightarrow$ read off solutions.
+  \end{itemize}\vfill
+  Another advantage of reduced row echelon form is that:\vfill
+  \begin{theorem}
+    Reduced row echelon form is unique.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Reading off solutions}
+  \begin{itemize}
+  \item   The augmented matrix
+    \begin{equation*}
+      \left[\begin{array}{rrrrr|r}
+               1 & 0 & 5 & 0 & 1 &1 \\
+               0 & 1 & 1 & 0 & 2 &0 \\
+               0 & 0 & 0 & 1 & 4 &0 \\
+               0 & 0 & 0 & 0 & 0 &0\\
+               0 & 0 & 0 & 0 & 0 &0
+            \end{array}\right] 
+        \end{equation*}
+        is in reduced row echelon form.\vfill
+      \item If there are any rows of the form $(0~ 0...0|1)$ then we know immediately that there are no solutions.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Identify leading 1s and parameter blocks}
+  \begin{itemize}
+  \item The leading $1$s are shown in green
+    \begin{equation*}
+      \left[\begin{array}{rrrrr|r}
+               {\color{green}1} & 0 & {\color{blue}5} & 0 & {\color{red}1} &1 \\
+               0 & {\color{green}1} & {\color{blue}1} & 0 & {\color{red}2} &0 \\
+               0 & 0 & 0 & {\color{green}1} & {\color{red}4} &0 \\
+               0 & 0 & 0 & 0 & 0 &0\\
+               0 & 0 & 0 & 0 & 0 &0
+            \end{array}\right] 
+        \end{equation*}
+        and the other non-zero numbers are shown in blue and red.\vfill
+      \item Variables associated to the leading $1$s are the \emph{leading variables}.\vfill
+      \item In this case $x_1$, $x_2$ and $x_4$ are leading and $x_3$ and $x_5$ are not.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  The non-leading variables can take any value so we assign parameters to them.\vfill
+  In this case:
+  \begin{align*}
+    {\color{blue}x_3} &{\color{blue}= s}\\
+    {\color{red}x_5} &{\color{red}= t}
+  \end{align*}
+  and then we solve for the leading variables in terms of these parameters:
+  \begin{align*}
+    {\color{green}x_1} &= 1-{\color{blue}5s}-{\color{red}t}\\
+    {\color{green}x_2} &= -{\color{blue}s}-{\color{red}2t}\\
+    {\color{green}x_4} &= -{\color{blue}4t}
+  \end{align*}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+
+\section{Examples}
+\subsection{}
+
+\begin{frame}
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Linear equations in one variable}
+  Find all real numbers $x$ such that
+  \begin{equation*}
+    ax = b
+  \end{equation*}
+  where $a$ and $b$ are real numbers.
+\end{frame}
+
+\begin{frame}{Linear equation in two variables}
+  Find all real numbers $x$ and $y$ such that both
+  \begin{align*}
+    x+2y&=1\\
+    3x+4y&=0
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}{Elementary row operations}
+  But what operations are we allowed to do on the rows?\vfill
+  The following operations will not change the solutions:-\vfill
+  \begin{enumerate}
+  \item Swap two rows.\vfill
+  \item Add a multiple of one row to another row.\vfill
+  \item Multiply a row by a \emph{non-zero} scalar.\vfill
+  \end{enumerate}
+  See pictures on Jupyter notebook.
+\end{frame}
+
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+
+\begin{frame}{Inconsistent equations}
+  Find all real numbers $x$ and $y$ such that both
+  \begin{align*}
+    x+2y&=1\\
+    5x+10y&=42
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}{Infinitely many solutions}
+  Find all real numbers $x$ and $y$ such that both
+  \begin{align*}
+    3x+12y&=18\\
+    4x+16y&=24
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}
+Questions?
+\end{frame}
+
+\section{Rank}
+\subsection{}
+\begin{frame}
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+  Find all $x$, $y$ and $z$ such that
+  \begin{align*}
+    x+2y+3z&=4\\
+    5x+6y+7z&=8\\
+    9x+10y+11z&=12
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}
+  Find all $x$, $y$ and $z$ such that
+  \begin{align*}
+    x+y+2z&=-1\\
+    2x+y+3z&=0\\
+    0x+-2y+1z&=2
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}
+  Find all $x$, $y$ and $z$ such that
+  \begin{align*}
+    x+2y+3z&=4\\
+    5x+6y+7z&=8\\
+    3x+4y+5z&=1
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}
+  Find all $x$, $y$ and $z$ such that
+  \begin{align*}
+    6x+4y+2z&=4\\
+    3x+2y+1z&=2\\
+    9x+6y+3z&=6
+  \end{align*}
+  hold.
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\end{document}

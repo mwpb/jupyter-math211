@@ -24,8 +24,9 @@ def eliminationStep(A):
                 col += 1
         else:
             swapRows(A, largestRow, row)
-            scalarMultiply(A, row, (1/A[row][col]))
-            steps.append(copy.deepcopy(A))
+            if A[row][col] != 1:
+                scalarMultiply(A, row, (1/A[row][col]))
+                steps.append(copy.deepcopy(A))
             for i in range(row+1, len(A)):
                 addMultiple(A, row, -A[i][col], i)
             pivots.append([row, col])
@@ -37,10 +38,11 @@ def eliminationStep(A):
 def backSubstitution(A, pivots, steps):
     for pivot in pivots:
         row = pivot[0]
-        col = pivot[1]
-        for i in range(0, row):
-            addMultiple(A, row, -A[i][col], i)
-    steps.append(copy.deepcopy(A))
+        if row != 0:
+            col = pivot[1]
+            for i in range(0, row):
+                addMultiple(A, row, -A[i][col], i)
+            steps.append(copy.deepcopy(A))
     return steps
 
 def roundMatrix(A):
