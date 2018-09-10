@@ -1,0 +1,39 @@
+\message{ !name(2018-09-11slides.tex)}\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+%\usepackage{enumitem}
+% \SetLabelAlign{parright}{\parbox[t]{\labelwidth}{\raggedleft#1}}
+
+% \setlist[description]{style=multiline,topsep=10pt,leftmargin=3cm,align=parright}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I\\Lecture 2}
+\author{Matthew Burke}
+\date{\formatdate{11}{09}{2018}}
+\begin{document}
+
+\message{ !name(2018-09-11slides.tex) !offset(197) }
+\begin{definition}
+    The \emph{rank} of a matrix is the number of leading $1$s in its reduced row echelon form.
+  \end{definition}
+\message{ !name(2018-09-11slides.tex) !offset(238) }
+
+\end{document}

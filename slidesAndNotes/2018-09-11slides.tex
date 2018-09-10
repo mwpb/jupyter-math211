@@ -227,14 +227,23 @@ Questions?
     \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}
-  Find all $x$, $y$ and $z$ such that
-  \begin{align*}
-    x+2y+3z&=4\\
-    5x+6y+7z&=8\\
-    9x+10y+11z&=12
-  \end{align*}
-  hold.
+\begin{frame}{Definition of rank}
+  \begin{definition}
+    The \emph{rank} of a matrix is the number of leading $1$s in its reduced row echelon form.
+  \end{definition}
+  \begin{example}
+    Therefore the rank of
+    \begin{equation*}
+      \left[\begin{array}{rrrrr|r}
+              {\color{green}1} & 0 & {\color{blue}5} & 0 & {\color{red}1} &1 \\
+              0 & {\color{green}1} & {\color{blue}1} & 0 & {\color{red}2} &0 \\
+              0 & 0 & 0 & {\color{green}1} & {\color{red}4} &0 \\
+              0 & 0 & 0 & 0 & 0 &0\\
+              0 & 0 & 0 & 0 & 0 &0
+            \end{array}\right] 
+        \end{equation*}
+        is $3$.
+      \end{example}
 \end{frame}
 
 \begin{frame}
@@ -269,6 +278,13 @@ Questions?
 
 \begin{frame}
   Questions?
+\end{frame}
+
+\section{Examples}
+\label{sec:Examples-2}
+
+\begin{frame}{Example}
+  test
 \end{frame}
 
 \end{document}

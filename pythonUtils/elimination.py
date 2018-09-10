@@ -12,7 +12,7 @@ def eliminationStep(A):
     col = 0
     steps = [copy.deepcopy(A)]
     pivots = []
-    while row < len(A) and col < len(A[0]):
+    while row < len(A) and col < len(A[0])-1:
         largestRow = row
         if A[row][col] == 0:
             current = 0
