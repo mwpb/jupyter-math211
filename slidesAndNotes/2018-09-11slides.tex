@@ -283,8 +283,11 @@
 \end{frame}
 
 \begin{frame}{Relationship to solution}
-  For a \emph{consistent} system in $n$ variables with corresponding matrix of rank $r$ then there are $n-r$ parameters.\vfill
-  Therefore if $n=r$ there is a unique solution.
+  For a \emph{consistent} system in $n$ variables of rank $r$:
+  \begin{itemize}
+  \item If $n=r$ there is a unique solution.
+  \item If $r<n$ there are infinitely many solutions.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Homogeneous systems}
@@ -397,6 +400,21 @@
   \begin{equation*}
     \left[
       \begin{array}{rrr|r}
+        0 & 1 & 3 & 2  \\
+        0 & 0 & 5 & 6   \\
+        1 & 5 & 1 & -5 
+      \end{array}\right] 
+  \end{equation*}
+  What is the rank of the corresponding matrix?
+  What is the number of parameters?
+  Is the system homogeneous?
+\end{frame}
+
+\begin{frame}{Computer example}
+  Consider the system
+  \begin{equation*}
+    \left[
+      \begin{array}{rrr|r}
         9 & -1 & 0 & -24  \\
         -1 & 7 & -4 & 17   \\
         0 & -4 & 8 & -14 
@@ -405,6 +423,10 @@
   What is the rank of the corresponding matrix?
   What is the number of parameters?
   Is the system homogeneous?
+\end{frame}
+
+\begin{frame}
+  Questions?
 \end{frame}
 
 \end{document}
