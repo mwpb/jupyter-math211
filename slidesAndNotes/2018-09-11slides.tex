@@ -330,27 +330,40 @@
   \begin{example}
     Suppose that we found that the solution to a system of equations was
     \begin{align*}
-   x_1 &= 1-5s-t\\
-    x_2 &= -s-2t\\
-    x_4 &= -4t
+      &x_1 = 1-5s-t, & x_2 = -s-2t\\
+      &x_3 = s & x_4 = -4t\\
+      &x_5 = t
     \end{align*}
     in parameters $s$ and $t$.
-    Then the solutions are all linear combinations of the form
+    Then we can write:
     \begin{equation*}
       \left[\begin{array}{r}
-        1\\
-        0\\
-        0
+              x_1\\
+              x_2\\
+              x_3\\
+              x_4\\
+              x_5
+      \end{array}\right] = 
+      \left[\begin{array}{r}
+              1\\
+              0\\
+              0\\
+              0\\
+              0
       \end{array}\right]+s
       \left[\begin{array}{r}
         -5\\
         -1\\
-        0
+              1\\
+              0\\
+              0
       \end{array}\right]+t
       \left[\begin{array}{r}
         -1\\
-        -2\\
-        -4
+              -2\\
+              0\\
+              -4\\
+              1
       \end{array}\right]
     \end{equation*}
   \end{example}
