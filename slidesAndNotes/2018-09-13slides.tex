@@ -1,0 +1,389 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\newcommand{\lectureDate}{\formatdate{13}{09}{2018}}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\formatdate{13}{09}{2018}}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \formatdate{13}{09}{2018}}
+  \tableofcontents
+\end{frame}
+
+\section{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item Reduced row echelon form\vfill
+  \item Rank\vfill
+  \item Homogeneous systems\vfill
+  \item Linear combinations\vfill
+  \item Examples
+  \end{itemize}
+\end{frame}
+
+\section{Fundamentals of matrices}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Definition}
+  \begin{definition}
+    An \emph{$m\times n$ matrix} is a rectangular array of numbers with $m$ rows and $n$ columns:
+    \begin{equation*}
+      A=\left[
+        \begin{array}{ccccc}
+          a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+          a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+          a_{31} & a_{32} & a_{33} & \ldots & a_{3n} \\
+          \vdots & \vdots & \vdots & & \vdots \\
+          a_{m1} & a_{m2} & a_{m3} & \ldots & a_{mn} \\
+        \end{array}
+      \right] = \left[ a_{ij} \right]
+    \end{equation*}
+    We call the entry in the $i$th row and $j$th column $a_{ij}$.
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Special matrices}
+  \begin{itemize}
+  \item If $n=m$ we say the matrix is \emph{square}. E.g. if $n=m=2$:
+    \begin{equation*}
+      A=\left[
+        \begin{array}{cc}
+          a_{11} & a_{12} \\
+          a_{21} & a_{22}
+        \end{array}
+      \right]
+    \end{equation*}\vfill
+  \item If $m=1$ we have a row vector: $X= \left[\begin{array}{cccc} a_{11} & a_{12} & \cdots & a_{1n}\end{array} \right]$\vfill
+  \item If $n=1$ we have a column vector: $Y= \left[\begin{array}{c} a_{11} \\ a_{21} \\ \vdots \\ a_{m1}\end{array} \right]$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Matrix addition and subtraction}
+  To add two matrices we add the corresponding entries.
+  E.g.
+  \begin{equation*}
+      \left[
+        \begin{array}{cc}
+          1 & 3 \\
+          2 & 3
+        \end{array}
+      \right]+
+      \left[
+        \begin{array}{cc}
+          4 & 4 \\
+          1 & 2
+        \end{array}
+      \right] =
+      \left[
+        \begin{array}{cc}
+          5 & 7 \\
+          3 & 5
+        \end{array}
+      \right]
+    \end{equation*}\vfill
+    In general if $A = A_{ij}$ and $B = B_{ij}$ are matrices then
+    \begin{equation*}
+      (A + B)_{ij} = A_{ij}+B_{ij}
+    \end{equation*}\vfill
+    Similarly for matrix subtraction, we subtract the corresponding entries;
+    \begin{equation*}
+      (A-B)_{ij} = A_{ij}-B_{ij}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Scalar multiplication}
+  If $A = A_{ij}$ is a matrix and $k$ is a number then the matrix $kA$ has entries
+  \begin{equation*}
+    (kA)_{ij} = k\cdot A_{ij}
+  \end{equation*}\vfill
+  I.e. we multiply every entry of the matrix by $k$. E.g.\vfill
+  \begin{equation*}
+    5\cdot \left[
+        \begin{array}{cc}
+          1 & 3 \\
+          2 & 3
+        \end{array}
+      \right]=
+      \left[
+        \begin{array}{cc}
+          5 & 15 \\
+          10 & 15
+        \end{array}
+      \right]
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Systems of equations}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Matrix acting on vector}
+  If
+  \begin{equation*}
+      A=\left[
+        \begin{array}{ccccc}
+          a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+          a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+          a_{31} & a_{32} & a_{33} & \ldots & a_{3n} \\
+          \vdots & \vdots & \vdots & & \vdots \\
+          a_{m1} & a_{m2} & a_{m3} & \ldots & a_{mn} \\
+        \end{array}
+      \right]
+    \end{equation*}
+  Then define the action of $A$ on a vector of length $n$ as:
+  \begin{equation*}
+    A\left[\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n\end{array} \right] = x_1\cdot \left[\begin{array}{c} a_{11} \\ a_{21} \\ \vdots \\a_{m1}\end{array} \right]+x_2\cdot \left[\begin{array}{c} a_{12} \\ a_{22} \\ \vdots \\a_{m2}\end{array} \right]+ x_3\left[\begin{array}{c} a_{13} \\ a_{23} \\ \vdots \\a_{m3}\end{array} \right] + \dots + x_n\left[\begin{array}{c} a_{1n} \\ a_{2n} \\ \vdots \\a_{mn}\end{array} \right]
+  \end{equation*}
+  \bf{This does not make sense if vector does not have length $n$!}
+\end{frame}
+
+
+\begin{frame}{Slogan}
+  The vector
+  \begin{equation*}
+    A \left[\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n\end{array} \right]
+  \end{equation*}
+  is the linear combination of the columns of $A$ weighted by the $x_i$.
+\end{frame}
+
+\begin{frame}{Matrix acting on vector}
+  \begin{example}
+    \begin{equation*}
+      \left[\begin{array}{cc}
+          1 & 2 \\
+          4 & 3
+        \end{array}\right]
+      \left[\begin{array}{c}
+          5 \\
+          6
+        \end{array}\right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    \begin{equation*}
+      \left[\begin{array}{ccc}
+          1 & 2 & 8 \\
+          4 & 3 & -1
+        \end{array}\right]
+      \left[\begin{array}{c}
+          5 \\
+          6 \\
+          2
+        \end{array}\right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Matrix form of system of linear equations}
+  Since
+  \begin{equation*}
+    A\left[\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n\end{array} \right] = x_1\cdot \left[\begin{array}{c} a_{11} \\ a_{21} \\ \vdots \\a_{m1}\end{array} \right]+x_2\cdot \left[\begin{array}{c} a_{12} \\ a_{22} \\ \vdots \\a_{m2}\end{array} \right]+ x_3\left[\begin{array}{c} a_{13} \\ a_{23} \\ \vdots \\a_{m3}\end{array} \right] + \dots + x_n\left[\begin{array}{c} a_{1n} \\ a_{2n} \\ \vdots \\a_{mn}\end{array} \right]
+  \end{equation*}
+  we can write a system of $m$ linear equations in $n$ variables as 
+  \begin{equation*}
+    A \left[\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n\end{array} \right] = \left[\begin{array}{c} b_1 \\ b_2 \\ \vdots \\ b_m\end{array} \right]
+  \end{equation*}
+  where $A$ is an $m\times n$ matrix. Examples follow..
+\end{frame}
+
+\begin{frame}{Example of matrix form}
+  \begin{example}
+    Find the matrix equation for the system
+    \begin{align*}
+      x+3y &= 9\\
+      2x+4y &= 3
+    \end{align*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Example of linear combinations}
+  \begin{example}
+    Express
+    \begin{equation*}
+      b = \left[\begin{array}{c}
+          1 \\
+                  1 \\
+                  1
+        \end{array}\right]
+    \end{equation*}
+    as a linear combination of
+    \begin{equation*}
+      a_1 = \left[
+        \begin{array}{c}
+          1 \\
+          2 \\
+          3
+        \end{array}
+      \right],
+      a_2 = \left[
+        \begin{array}{c}
+          0 \\
+          -1 \\
+          1
+        \end{array}\right],
+      a_3 = \left[
+        \begin{array}{c}
+          2 \\
+          0 \\
+          3
+        \end{array}
+      \right]\text{ and }
+      a_4 = \left[
+        \begin{array}{c}
+          -1 \\
+          1 \\
+          1
+        \end{array}\right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Composition}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Matrix product}
+  Let $A= a_{ij}$ be an $m\times n$ matrix and $B=b_{jk}$ be an $p\times m$ matrix.\vfill
+  \begin{definition}
+    The \emph{matrix product $BA$} is the matrix with columns
+    \begin{equation*}
+      \left[
+      \begin{array}{ccccc}
+        B\left[\begin{array}{c} a_{11} \\ a_{21} \\ \vdots \\a_{m1}\end{array} \right] B\left[\begin{array}{c} a_{12} \\ a_{22} \\ \vdots \\a_{m2}\end{array} \right] \dots B\left[\begin{array}{c} a_{1n} \\ a_{2n} \\ \vdots \\a_{mn}\end{array} \right]
+      \end{array}\right]
+    \end{equation*}
+  \end{definition}\vfill
+  In other words we apply the matrix $B$ to each of the columns of $A$.
+\end{frame}
+
+\begin{frame}{When does this make sense?}
+Recall that
+    \begin{equation*}
+      A \left[\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n\end{array} \right]
+    \end{equation*}
+    doesn't make sense if $A$ doesn't have precisely $n$ columns.\vfill
+   Therefore the matrix product $BA$ only makes sense iff
+    \begin{equation*}
+      \text{Number of rows}(A) = \text{Number of columns}(B)
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find $BA$ where
+    \begin{equation*}
+      B = \left[
+        \begin{array}{ccc}
+          -1 &0 & 3\\
+          2 & -1 & 1
+        \end{array}\right]
+      \text{ and } A = \left[
+        \begin{array}{ccc}
+          -1 &1 & 2\\
+          0 & -2 & 4\\
+          1 & 0 & 0
+        \end{array}\right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    The matrix product $AB$ where
+    \begin{equation*}
+      A = \left[
+        \begin{array}{ccc}
+          -1 &1 & 2\\
+          0 & -2 & 4\\
+          1 & 0 & 0
+        \end{array}\right]
+      \text{ and }B = \left[
+        \begin{array}{ccc}
+          -1 &0 & 3\\
+          2 & -1 & 1
+        \end{array}\right]
+    \end{equation*}
+    does not make sense.
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Non-commutativity}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Warning}
+  In general
+  \begin{equation*}
+    AB \neq BA
+  \end{equation*}\vfill
+  In other words the order matters.\vfill
+  (Explanation in terms of linear transformations.)
+\end{frame}
+
+\begin{frame}{Examples}
+  Four different examples on Jupyter of matrices $A$ and $B$ such that:\vfill
+  \begin{enumerate}
+  \item $AB$ exists but $BA$ does not.\vfill
+  \item Both $AB$ and $BA$ exist but are of different sizes.\vfill
+  \item Both $AB$ and $BA$ exist and are the same size, but they are different.\vfill
+  \item $AB = BA$ (it does happen sometimes!)
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\end{document}
