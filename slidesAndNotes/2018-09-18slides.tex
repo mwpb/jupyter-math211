@@ -1,0 +1,346 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\newcommand{\lectureDate}{\formatdate{13}{09}{2018}}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\formatdate{13}{09}{2018}}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \formatdate{13}{09}{2018}}
+  \tableofcontents
+\end{frame}
+
+\section{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item Matrix addition and scalar multiplication\vfill
+  \item Relationship to systems of equations\vfill
+  \item Matrix composition (product)\vfill
+  \item Non-commutativity of matrix composition\vfill
+  \item (Two sets of notes for 11th September)
+  \end{itemize}
+\end{frame}
+
+\section{Non-commutativity}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Review previous examples}
+  Review previous examples with original matrices printed.
+\end{frame}
+
+\section{(i,j)-entry proofs}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Entries of product matrix}
+  \begin{definition}
+    If $A$ and $B$ are matrices such that
+    \begin{equation*}
+      \text{No. of rows}(A) = m = \text{No. of columns}(B)
+    \end{equation*}
+    then
+    \begin{align*}
+      (BA)_{ij} &= \sum_{k=1}^m b_{ik}a_{kj}\\
+                &= b_{i1}a_{1j} + b_{i2}a_{2j} + b_{i3}a_{3j} + \dots + b_{im}a_{mj}
+    \end{align*}
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Picture}
+  \begin{equation*}
+      (BA)_{ij} = \sum_{k=1}^m {\color{red}b_{ik}}{\color{blue}a_{kj}} = {\color{red}b_{i1}}{\color{blue}a_{1j}} + {\color{red}b_{i2}}{\color{blue}a_{2j}} + {\color{red}b_{i3}}{\color{blue}a_{3j}} + \dots + {\color{red}b_{im}}{\color{blue}a_{mj}}
+    \end{equation*}\vfill
+    is the dot product of the $i$th row of $B$ with the $j$th column of $A$:\vfill
+    \begin{equation*}
+      \left[
+        \begin{array}{cccc}
+          b_{11} & b_{12} & \dots & b_{1m}\\
+          b_{21} & b_{22} & \dots & b_{2m}\\
+          \dots & \dots & \dots & \dots\\
+          {\color{red}b_{i1}} & {\color{red}b_{i2}} & {\color{red}\dots} & {\color{red}b_{im}}\\
+          \dots & \dots & \dots & \dots\\
+          b_{p1} & b_{p2} & \dots & b_{pm}
+        \end{array}
+      \right]
+      \left[
+        \begin{array}{cccccc}
+          a_{11} & a_{12} & \dots & {\color{blue}a_{1j}} & \dots & a_{1m}\\
+          a_{21} & a_{22} & \dots & {\color{blue}a_{2j}} & \dots & a_{2m}\\
+          \dots & \dots & \dots & {\color{blue}\dots}& \dots & \dots\\
+          a_{n1} & a_{n2} & \dots & {\color{blue}a_{nj}} & \dots & a_{nm}
+        \end{array}
+      \right]
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Examples of entries of matrix product}
+    \begin{example}
+      Find the $(2,3)$-entry of 
+      \[ 
+        \left[
+          \begin{array}{rrr}
+            -1 & 0 & 3 \\
+            {2} & {-1} & {1}
+          \end{array}
+        \right]
+        \left[
+          \begin{array}{rrr}
+            -1 & 1 & {2} \\
+            0 & -2 & {4} \\
+            1 & 0 & {0}
+          \end{array}\right] 
+      \]
+    \end{example}
+        \begin{example}
+      Find the $(3,1)$-entry of 
+      \[ 
+        \left[
+          \begin{array}{rrr}
+            -1 & 0 & 3 \\
+            0 & 0 & {1}\\
+            5 & 4 & 9
+          \end{array}
+        \right]
+        \left[
+          \begin{array}{rrr}
+            12 & 1 & {2} \\
+            4 & 0 & {4} \\
+            -2 & 0 & {0}
+          \end{array}\right] 
+      \]
+  \end{example}
+\end{frame}
+
+\begin{frame}{General examples of (i,j)-entry}
+  In the following examples assume that the matrices are of the appropriate sizes so that the products involved make sense.\vfill
+  \begin{example}
+    Find the $(i,j)$-entry of
+    \begin{equation*}
+      (CB)A
+    \end{equation*}
+  \end{example}\vfill
+  \begin{example}
+    Find the $(i,j)$-entry of
+    \begin{equation*}
+      C(A+B)
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\begin{frame}{Transpose of a matrix}
+  \begin{definition}
+    If $A$ is \emph{any} matrix the \emph{transpose $A^T$ of $A$} has entries
+    \begin{equation*}
+      (A^T)_{ij} = A_{ji}
+    \end{equation*}
+  \end{definition}
+  \begin{example}
+    \begin{equation*}
+      \left[
+        \begin{array}{ccc}
+          5 & 2 & -3\\
+          -1 & 0 & 2
+        \end{array}
+      \right] =
+      \left[
+        \begin{array}{cc}
+          5 & -1\\
+          2 & 0\\
+          -3 & 2
+        \end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  In short: the columns of $A^T$ are the rows of $A$.
+\end{frame}
+
+\begin{frame}{Symmetric matrices}
+  \begin{definition}
+    A matrix $A$ is \emph{symmetric} iff $A = A^T$.\\
+    In terms of entries: $A_{ij} = A_{ji}$.
+  \end{definition}
+  \begin{example}
+    \begin{equation*}
+      \left[
+      \begin{array}{ccc}
+        1 & 4 & -2\\
+        4 & -3 & 17\\
+        -2 & 17 & 0
+      \end{array}
+      \right]
+    \end{equation*}
+    is symmetric but
+    \begin{equation*}
+      \left[
+      \begin{array}{ccc}
+	1 & 4 & -2\\
+        4 & -3 & 5\\
+        -2 & 17 & 0
+      \end{array}
+      \right]
+    \end{equation*}
+    is not.
+  \end{example}
+\end{frame}
+
+\begin{frame} {Examples of (i,j)-entry proofs}
+  \begin{example}
+    Prove $C(B+A) = CB+CA$.
+  \end{example}
+  \begin{example}
+    Prove $(BA)^T = A^TB^T$.
+  \end{example}
+  \begin{example}
+    Prove $(B+A)^T = B^T + A^T$.
+  \end{example}
+  \begin{example}
+    Prove that if $A$ and $B$ are symmetric then $A^T+2B$ is symmetric.
+  \end{example}
+  \begin{example}
+    Prove $C(BA) = (CB)A$. (Called matrix associativity.)
+  \end{example}
+\end{frame}
+
+\section{Identity and inverse matrices}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Identity matrix}
+  \begin{definition}
+    The \emph{$n\times n$ identity matrix} is:
+    \begin{equation*}
+      I_n = 
+      \left[
+	\begin{array}{cccc}
+          1 & 0 & \dots & 0\\
+          0 & 1 & \dots & 0\\
+          \dots & \dots & \dots & \dots\\
+          0 & 0 & \dots & 1
+	\end{array}
+      \right]
+    \end{equation*}
+    In terms of entries:
+    \begin{equation*}
+      (I_n)_{ij} = \begin{cases}
+        1 & \text{if }i=j\\
+        0 & \text{if }i\neq j
+      \end{cases}
+    \end{equation*}
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Product with identity}
+  Whenever the following products make sense:
+  \begin{align*}
+    BI_m = B & & \text{ and } & & I_mA = A
+  \end{align*}
+  Indeed for the first:
+  \begin{align*}
+    (BI_m)_{ij} &= \sum_{k=1}^mB_{ik}I_{kj}\\
+                &= \sum_{k\neq j}B_{jk}I_{kj} + B_{ij}I_{jj}\\
+                &= \sum_{k\neq j}0 + B_{ij} = B_{ij}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Inverse matrix}
+  \begin{definition}
+    If $A$ is an $n\times n$ matrix then the \emph{inverse matrix $A^{-1}$ of $A$} is a matrix such that
+    \begin{align*}
+     AA^{-1} = I_n & & \text{ and } & & A^{-1}A = I_n
+    \end{align*}
+  \end{definition}\vfill
+  {\color{red}Some warnings:}
+  \begin{itemize}
+  \item It doesn't make sense to ask for an inverse of a non-square matrix.
+    (Think in terms of linear transformations.)
+  \item Not all square matrices have inverses.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Examples of non-existence}
+  \begin{example}
+    No matrix that only has zero entries has an inverse.
+  \end{example}
+  \begin{example}
+    The following matrix does not have an inverse
+    \begin{equation*}
+      \left[
+	\begin{array}{cc}
+          0 & 1 \\
+          0 & 0
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \bf{In fact a $n\times n$ matrix has an inverse iff $rank(A)=n$.}
+\end{frame}
+
+\begin{frame}{Uniqueness of inverse}
+  \begin{lemma}
+    If a matrix $A$ has an inverse then it is unique.
+  \end{lemma}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Inversion algorithm}
+\label{sec:Inversion-algorithm}
+
+\begin{frame}{Motivation from linear combinations}
+  
+\end{frame}
+
+\begin{frame}{Inverse of a 2x2 matrix}
+  
+\end{frame}
+
+\begin{frame}{Examples}
+  
+\end{frame}
+
+\end{document}
