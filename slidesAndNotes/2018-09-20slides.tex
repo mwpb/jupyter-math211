@@ -1,0 +1,244 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\newcommand{\lectureDate}{\formatdate{20}{09}{2018}}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item (i,j)-entry proofs\vfill
+  \item Identity matrices\vfill
+  \item Inverse matrices\vfill
+  \item Small examples of inverses
+  \end{itemize}
+\end{frame}
+
+\section{Matrix inversion algorithm}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Aim of matrix inversion}
+  Given $B$ find $A$ such that $BA=I_n$:\vfill
+  \begin{equation*}
+    \left[
+      \begin{array}{cccc}
+        B \left[
+	\begin{array}{c}
+          a_{11}\\
+          a_{21}\\
+          \vdots\\
+          a_{m1}
+	\end{array}
+        \right]
+        B \left[
+	\begin{array}{c}
+          a_{12}\\
+          a_{22}\\
+          \vdots\\
+          a_{m2}
+	\end{array}
+        \right]
+        \dots
+        B \left[
+	\begin{array}{c}
+          a_{1n}\\
+          a_{2n}\\
+          \vdots\\
+          a_{mn}
+	\end{array}
+        \right]
+      \end{array}
+    \right]= \left[
+      \begin{array}{cccc}
+        1 & 0 & \dots & 0\\
+        0 & 1 & \dots & 0\\
+        \dots & \dots & \dots & \dots\\
+        0 & 0 & \dots & 1
+      \end{array}
+    \right]
+  \end{equation*}\vfill
+  I.e. find linear combinations of the columns of $B$ that give each of the standard basis vectors.
+\end{frame}
+
+\begin{frame}{The algorithm}
+  For the first standard basis vector we solve:
+  \begin{equation*}
+    Bx = \left[
+      \begin{array}{c}
+        1\\
+        0\\
+        \vdots\\
+        0
+      \end{array}
+    \right]\leftrightarrow
+    \left[
+      \begin{array}{cccc|c}
+        b_{11} & b_{12} & \dots & b_{1m} & 1\\
+        b_{21} & b_{22} & \dots & b_{2m} & 0\\
+        \dots & \dots & \dots & \dots & 0\\
+        b_{p1} & b_{p2} & \dots & b_{pm} & 0
+      \end{array}
+    \right]
+  \end{equation*}
+  and we can group all together as:
+  \begin{equation*}
+    \left[
+    \begin{array}{cccc|cccc}
+      b_{11} & b_{12} & \dots & b_{1m} & 1 & 0 & \dots & 0\\
+      b_{21} & b_{22} & \dots & b_{2m} & 0 & 1 & \dots & 0\\
+      \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+      b_{p1} & b_{p2} & \dots & b_{pm} &0 & 0 & \dots & 1
+    \end{array}
+    \right]
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Reduction}
+  Row reduce
+  \begin{equation*}
+    \left[
+    \begin{array}{cccc|cccc}
+      b_{11} & b_{12} & \dots & b_{1m} & 1 & 0 & \dots & 0\\
+      b_{21} & b_{22} & \dots & b_{2m} & 0 & 1 & \dots & 0\\
+      \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+      b_{p1} & b_{p2} & \dots & b_{pm} &0 & 0 & \dots & 1
+    \end{array}
+    \right]
+  \end{equation*}
+  to
+  \begin{equation*}
+    \left[R|A\right]=
+    \left[
+      \begin{array}{cccc|cccc}
+        1 & 0 & \dots & \star & a_{11} & a_{12} &\dots & a_{1n}\\
+        0 & 1 & \dots & \star & a_{21} & a_{22} &\dots & a_{2n}\\
+        0 & 0 & \dots & \star & \dots & \dots &\dots & \dots\\
+        0 & 0 & \dots & \star & a_{m1} & a_{m2} &\dots & a_{mn}
+      \end{array}
+    \right]
+  \end{equation*}
+  where $R$ is in reduced row echelon form.
+\end{frame}
+
+\begin{frame}{Finishing off}
+  \begin{equation*}
+    \left[R|A\right]=
+    \left[
+      \begin{array}{cccc|cccc}
+        1 & 0 & \dots & \star & a_{11} & a_{12} &\dots & a_{1n}\\
+        0 & 1 & \dots & \star & a_{21} & a_{22} &\dots & a_{2n}\\
+        0 & 0 & \dots & \star & \dots & \dots &\dots & \dots\\
+        0 & 0 & \dots & \star & a_{m1} & a_{m2} &\dots & a_{mn}
+      \end{array}
+    \right]
+  \end{equation*}\vfill
+  If $R$ is:-\vfill
+  \begin{description}
+  \item [the identity matrix] then $B$ is invertible with inverse $A$\vfill
+  \item [anything else] then $B$ is not invertible
+  \end{description}
+\end{frame}
+
+\begin{frame}{Relationship to solutions of systems}
+  Not an efficient method.
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Example}
+  
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Properties of inverses}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Inverse of transpose}
+  
+\end{frame}
+
+\begin{frame}{Inverses of products}
+  
+\end{frame}
+
+\begin{frame}{Alternative characterisation of invertible matrices}
+  For square matrices $BA=I$ is the same as $AB=I$...
+\end{frame}
+
+\section{Other matrix equations}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Example}
+  
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+
+\end{document}
