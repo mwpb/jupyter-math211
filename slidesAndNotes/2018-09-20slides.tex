@@ -34,7 +34,7 @@
   \tableofcontents
 \end{frame}
 
-\section{Last time}
+\section*{Last time}
 \label{sec:Last-time}
 
 \begin{frame}{Last time}
@@ -177,7 +177,16 @@
 \end{frame}
 
 \begin{frame}{Relationship to solutions of systems}
-  Not an efficient method.
+  Recall that a system of equations is equivalently a matrix equation:
+  \begin{equation*}
+    Ax=b
+  \end{equation*}
+  so if $A$ is invertible
+  \begin{equation*}
+    x = A^{-1}Ax = A^{-1}b
+  \end{equation*}
+  is the \emph{unique solution} to $Ax=b$.\vfill
+  \bf{This method is rarely the most efficient thing to do.}
 \end{frame}
 
 \begin{frame}
@@ -192,8 +201,29 @@
   \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}{Example}
-  
+\begin{frame}{Low dimensional examples}
+  \begin{example}
+    Find the inverse for
+    \begin{equation*}
+      \left[
+        \begin{array}{cc}
+          1&2\\
+          3&4
+        \end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find the inverse for the general 2x2 matrix
+    \begin{equation*}
+      \left[
+        \begin{array}{cc}
+          a&b\\
+          c&d
+        \end{array}
+      \right]
+    \end{equation*}
+  \end{example}
 \end{frame}
 
 \begin{frame}
