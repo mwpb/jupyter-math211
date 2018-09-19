@@ -4,6 +4,7 @@ from sympy import latex, Matrix
 from IPython.display import display, Markdown, Math, Latex
 from mpmath import mp
 import numpy as np
+from .elimination import roundMatrix
 
 mp.dps = 4
 def plot2DSystem(A):
@@ -15,7 +16,8 @@ def plot2DSystem(A):
             ax.plot(x, A[i][2]/A[i][1]-(A[i][0]/A[i][1])*x, color = colours[i])
         elif not math.isclose(A[i][0], 0):
             ax.axvline(x = A[i][2]/A[i][0], color = colours[i])
-
+            
 def printM(A):
+    roundMatrix(A)
     display((Latex(r'${'+latex(Matrix(A))+'}$')))
     print('\n')
