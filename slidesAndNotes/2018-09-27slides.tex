@@ -38,7 +38,11 @@
 \label{sec:Last-time}
 
 \begin{frame}{Last time}
-  last time
+  \begin{itemize}
+  \item Elementary matrices
+  \item Elementary matrices as theoretical tool
+  \item Matrix equations
+  \end{itemize}
 \end{frame}
 
 \section{Determinants}
@@ -50,7 +54,45 @@
 \end{frame}
 
 \begin{frame}{Two dimensional determinants}
-  First algebra showing get the columns of matrix.
+  Acting on the standard basis vectors:
+  \begin{equation*}
+    \left[
+      \begin{array}{cc}
+        a&b\\
+        c&d
+      \end{array}
+    \right]
+    \left[
+      \begin{array}{c}
+        1\\
+        0
+      \end{array}
+    \right] =
+    \left[
+      \begin{array}{c}
+        a\\
+        c
+      \end{array}
+    \right]\text{ and }
+    \left[
+      \begin{array}{cc}
+        a&b\\
+        c&d
+      \end{array}
+    \right]
+    \left[
+      \begin{array}{c}
+        0\\
+        1
+      \end{array}
+    \right] =
+    \left[
+      \begin{array}{c}
+        b\\
+        d
+      \end{array}
+    \right]
+  \end{equation*}
   Then picture in two dimensions.
   The signed area of the parallelogram.
   Calculate.
@@ -179,16 +221,45 @@
 \end{frame}
 
 \begin{frame}{Minors and cofactors}
-  Definitions. Slide 6 of general notes.
+  \begin{definition}
+    Let $A = \left[a_{ij} \right]$ be an $n \times n$ matrix. 
+    The \alert{$ij^{th}$ minor} of $A$, denoted as
+    $minor\left( A\right) _{ij},$ is the determinant
+    of the $n-1 \times n-1$ matrix which results from deleting the $i^{th}$ row and
+    the $j^{th}$ column of $A$.
+  \end{definition}
+
+  \[
+    A=
+    \left[
+      \begin{array}{rrrrrr}
+        a_{11} & a_{12} & \cdots & \textcolor{red}{a_{1j}} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & \textcolor{red}{a_{2j}} & \cdots & a_{2n} \\
+        \vdots & \vdots & & \vdots & & \vdots \\
+        \textcolor{blue}{a_{i1}} & \textcolor{blue}{a_{i2}} & \cdots & \textcolor{purple}{a_{ij}} & \cdots & \textcolor{blue}{a_{in}} \\
+        \vdots & \vdots & & \vdots & & \vdots \\
+        a_{n1} & a_{n2} & \cdots & \textcolor{red}{a_{nj}} & \cdots & a_{nn}
+      \end{array}
+    \right] 
+  \]
 \end{frame}
 
 \begin{frame}{Recursive definition of determinant}
-  In terms of cofactors.
-\end{frame}
-
-
-\begin{frame}
-  Questions?
+  \begin{definition}
+    The \emph{$ij^{th}$ cofactor} of $A$ is
+    \begin{equation*}
+      \mbox{cof}(A)_{ij}=(-1)^{i+j} minor \left(A\right)_{ij}
+    \end{equation*}
+  \end{definition}
+  It fact we can calculate the determinant using these matrices.
+  \begin{definition}
+    The \emph{cofactor expansion} along row $i$ is:
+    \begin{align*}
+      \det A &= \sum_{k=1}^n a_{ik}\mbox{cof}(A)_{ik}\\
+             &=a_{11} \mbox{cof}(A)_{11} + a_{12}\mbox{cof}(A)_{12} +
+      a_{13}\mbox{cof}(A)_{13} + \cdots + a_{1n}\mbox{cof}(A)_{1n}
+    \end{align*}
+  \end{definition}
 \end{frame}
 
 \section{Examples}
