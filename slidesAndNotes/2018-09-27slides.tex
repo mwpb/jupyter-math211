@@ -1,0 +1,262 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\newcommand{\lectureDate}{\formatdate{27}{09}{2018}}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  last time
+\end{frame}
+
+\section{Determinants}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Two dimensional determinants}
+  First algebra showing get the columns of matrix.
+  Then picture in two dimensions.
+  The signed area of the parallelogram.
+  Calculate.
+\end{frame}
+
+\begin{frame}{Effect of scalar multiplication of row}
+  Picture.
+\end{frame}
+
+\begin{frame}{Determinants of diagonal matrix and scalar multiple}
+  Determinant of diagonal.
+  Determinant of scalar multiple of a matrix.
+\end{frame}
+
+\begin{frame}{Effect of adding a multiple of one row to another}
+  
+\end{frame}
+
+\begin{frame}{Determinant of triangular matrix}
+  We can reduce a triangular matrix to a diagonal one.
+\end{frame}
+
+\begin{frame}{Effect of swapping two rows}
+  This essentially defines signed area in dimensions higher than three.
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          1&2&3\\
+          0&5&6\\
+          0&0&9
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          -3&5&-6\\
+          1&-1&3\\
+          2&-4&1
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+        \begin{array}{cccc}
+          3&1&2&4\\
+          -1&-3&8&0\\
+          1&-1&5&5\\
+          1&1&2&-1
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    If
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          a_1&a_2&a_3\\
+          b_1&b_2&b_3\\
+          c_1&c_2&c_3
+        \end{array}
+      \right| = 4 \text{ find }
+      \left|
+        \begin{array}{ccc}
+          -b_1&-b_2&-b_3\\
+          a_1+2b_1&a_2+2b_2&a_3+2b_3\\
+          3c_1&3c_2&3c_3
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          2&3&5\\
+          3&5&9\\
+          1&2&4
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Traditional determinants}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Minors and cofactors}
+  Definitions. Slide 6 of general notes.
+\end{frame}
+
+\begin{frame}{Recursive definition of determinant}
+  In terms of cofactors.
+\end{frame}
+
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find the (1,2)-minor of
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          1&1&3\\
+          2&4&1\\
+          5&2&6
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          1&1&3\\
+          2&4&1\\
+          5&2&6
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+        \begin{array}{cccc}
+          0&1&-2&1\\
+          5&0&0&7\\
+          0&1&-1&0\\
+          3&0&0&2
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+        \begin{array}{cccc}
+          -8&1&0&-4\\
+          5&7&0&-7\\
+          12&-3&0&8\\
+          -3&11&0&2
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\end{document}
