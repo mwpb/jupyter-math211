@@ -222,8 +222,19 @@
 \end{frame}
 
 \begin{frame}{How to find the corresponding matrix?}
-  If we are given an elementary row operation, how do we find the corresponding matrix?
-  Let the transformation act on the identity matrix.
+  Suppose we have an elementary row operation
+  \begin{equation*}
+    A\mapsto e(A)
+  \end{equation*}
+  We know that there is some $E$ such that
+  \begin{equation*}
+    e(A) = EA
+  \end{equation*}
+  therefore to find $E$ we can let $A=I$:
+  \begin{equation*}
+    e(I) = EI = E
+  \end{equation*}
+  \bf{In words: apply the row operation to the identity matrix.}
 \end{frame}
 
 \begin{frame}
@@ -238,6 +249,49 @@
   \end{beamercolorbox}
 \end{frame}
 
+\begin{frame}{Examples}
+  \begin{example}
+    Compute
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          1&0&0\\
+          0&1&0\\
+          0&0&-2
+	\end{array}
+      \right]
+      \left[
+	\begin{array}{cc}
+          1&2\\
+          3&4\\
+          5&6
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Compute
+    \begin{equation*}
+      \left[
+	\begin{array}{cccc}
+          1&0&0&0\\
+          0&0&0&1\\
+          0&0&1&0\\
+          0&1&0&0
+	\end{array}
+      \right]
+      \left[
+	\begin{array}{ccc}
+          1&2&3\\
+          4&5&6\\
+          7&8&9\\
+          10&11&12
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
 \begin{frame}{Example}
   \begin{example}
     If
@@ -248,7 +302,7 @@
           1&3
         \end{array}
       \right]\text{ and }
-      \left[
+      C= \left[
         \begin{array}{cc}
           1&3\\
           2&-5
@@ -285,6 +339,19 @@
     \end{equation*}
     as a product of elementary matrices.
   \end{example}
+  \begin{example}
+    Find a matrix $U$ such that
+    \begin{equation*}
+      U
+      \left[
+	\begin{array}{ccc}
+          3&0&1\\
+          2&-1&0
+	\end{array}
+      \right]
+    \end{equation*}
+    is in reduced row echelon form.
+  \end{example}
 \end{frame}
 
 \begin{frame}
@@ -300,8 +367,49 @@
 \end{frame}
 
 \begin{frame}{Row reduction as factorisation}
-  Is multiplying by sequence of elementary matrices.
-  Interpret in terms of augmented matrices.
+  \begin{itemize}
+  \item If we row reduce
+    \begin{equation*}
+      A \mapsto R
+    \end{equation*}
+    then there is a sequence of elementary matrices $E_i$ such that
+    \begin{equation*}
+      E_n\dots E_2E_1A = R
+    \end{equation*}
+  \item In augmented matrix notation
+  \begin{equation*}
+    [A|I]\mapsto [R|E_n\dots E_2E_1]
+  \end{equation*}
+  because the row operations that reduce $A\mapsto R$ are precisely those that take $I\mapsto E_n\dots E_2E_1$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Invertibility of square matrices}
+  \begin{theorem}[The inversion algorithm works]
+    If $B$ is a square matrix and $[B|I]$ row reduces as
+    \begin{equation*}
+      [B|I] \mapsto [I|A]
+    \end{equation*}
+    then $BA=I$ and $AB=I$.    
+    \begin{proof}
+      If $[B|I]\mapsto [I|A]$ then there is a sequence of elementary matrices $E_i$ such that
+      \begin{equation*}
+        I = E_n\dots E_2E_1B
+      \end{equation*}
+      and
+      \begin{equation*}
+        A = E_n\dots E_2E_1I
+      \end{equation*}
+      so $AB=I$ and $BA = (E_n\dots E_2E_1)^{-1}(E_n\dots E_2E_1) = I$ because the elementary matrices $E_i$ are invertible.
+    \end{proof}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Uniqueness of reduced row echelon form}
+  \begin{theorem}
+    If $R$ and $S$ are reduced row echelon matrices and there is a sequence of elementary row operations converting $R$ into $S$ then $R=S$.
+  \end{theorem}\vfill
+  (So the reduced row echelon form is unique.)
 \end{frame}
 
 \begin{frame}{Alternative characterisation of invertible matrices}
@@ -324,10 +432,6 @@
       There exists an $n\times n$ matrix $C$ with the property that $AC=I_n$.
     \end{enumerate}
   \end{theorem}
-\end{frame}
-
-\begin{frame}{Uniqueness of row echelon form}
-  Sketch of proof.
 \end{frame}
 
 \begin{frame}
@@ -379,44 +483,33 @@
 
 \begin{frame}{Examples}
   \begin{example}
-    Compute
-    \begin{equation*}
-      \left[
-	\begin{array}{ccc}
-          1&0&0\\
-          0&1&0\\
-          0&0&-2
-	\end{array}
-      \right]
-      \left[
-	\begin{array}{cc}
-          1&2\\
-          3&4\\
-          5&6
-	\end{array}
-      \right]
-    \end{equation*}
+    Which of the following equations is true for arbitrary matrices $A$ and $B$?
+    \begin{enumerate}
+    \item $(A-B)^2 = A^2-2AB+B^2$
+    \item $(A+B)(A-B) = A^2-B^2$
+    \item $A^2B^2 = A(AB)B$
+    \end{enumerate}
   \end{example}
+\end{frame}
+
+\begin{frame}{Example}
   \begin{example}
-    Compute
+    For what values of $a$ does the system
     \begin{equation*}
       \left[
-	\begin{array}{cccc}
-          1&0&0&0\\
-          0&0&0&1\\
-          0&0&1&0\\
-          0&1&0&0
-	\end{array}
-      \right]
-      \left[
-	\begin{array}{ccc}
-          1&2&3\\
-          4&5&6\\
-          7&8&9\\
-          10&11&12
+	\begin{array}{ccc|c}
+          1&2&-1&-4\\
+          -2&-3&2&4\\
+          a&-5&1&16
 	\end{array}
       \right]
     \end{equation*}
+    have
+    \begin{itemize}
+    \item infinitely many solutions
+    \item a unique solution
+    \item no solutions.
+    \end{itemize}
   \end{example}
 \end{frame}
 
