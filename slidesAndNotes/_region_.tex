@@ -1,4 +1,4 @@
-\message{ !name(2018-09-20slides.tex)}\documentclass{beamer}
+\message{ !name(2018-09-27slides.tex)}\documentclass{beamer}
 
 \useoutertheme[subsection=false]{miniframes}
 \usecolortheme{beaver}
@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{datetime}
+\usepackage[export]{adjustbox}
+
 
 \newcommand {\framedgraphic}[3] {
   \begin{frame}{#1}
@@ -20,7 +22,7 @@
     \end{center}
   \end{frame}
 }
-\newcommand{\lectureDate}{\formatdate{20}{09}{2018}}
+\newcommand{\lectureDate}{\formatdate{27}{09}{2018}}
 
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 \title{MATH211: Linear Methods I}
@@ -28,30 +30,9 @@
 \date{\lectureDate}
 \begin{document}
 
-\message{ !name(2018-09-20slides.tex) !offset(376) }
-\begin{equation*}
-    \left[
-      \begin{array}{ccc}
-        1&0&0\\
-        0&0&{\color{blue}1}\\
-        0&{\color{red}1}&0\\
-      \end{array}
-    \right]
-    \left[
-      \begin{array}{ccc}
-        a_{11}&a_{12}&a_{13}\\
-        a_{21}&a_{22}&a_{23}\\
-        a_{31}&a_{32}&a_{33}
-      \end{array}
-    \right]=
-    \left[
-      \begin{array}{ccc}
-        a_{11}&a_{12}&a_{13}\\
-        {\color{blue}a_{21}}&{\color{blue}a_{22}}&{\color{blue}a_{23}}\\
-        a_{31}&a_{32}&a_{33}
-      \end{array}
-    \right]
-  \end{equation*}
-\message{ !name(2018-09-20slides.tex) !offset(452) }
+\message{ !name(2018-09-27slides.tex) !offset(71) }
+\begin{minipage}{0.7\textwidth}
+  \end{minipage}
+\message{ !name(2018-09-27slides.tex) !offset(307) }
 
 \end{document}

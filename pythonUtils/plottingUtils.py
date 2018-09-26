@@ -25,6 +25,7 @@ def plotColumns(A):
     ax.arrow(0, 0, A[0][1], A[1][1], head_width=maximum/20, fc='r', ec='r', length_includes_head = True, zorder = 3)
     plt.grid(zorder = 0)
     plt.gca().set_aspect('equal', adjustable='box')
+    plt.savefig('test.png')
     plt.show()
 
 

@@ -5,8 +5,11 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{}
 \usepackage{graphicx}
+
 \usepackage{url}
 \usepackage{datetime}
+\usepackage[export]{adjustbox}
+
 
 \newcommand {\framedgraphic}[3] {
   \begin{frame}{#1}
@@ -39,8 +42,8 @@
 
 \begin{frame}{Last time}
   \begin{itemize}
-  \item Elementary matrices
-  \item Elementary matrices as theoretical tool
+  \item Elementary matrices\vfill
+  \item Elementary matrices as theoretical tool\vfill
   \item Matrix equations
   \end{itemize}
 \end{frame}
@@ -54,7 +57,7 @@
 \end{frame}
 
 \begin{frame}{Two dimensional determinants}
-  Acting on the standard basis vectors:
+  The standard basis vectors get sent to the columns:\vfill
   \begin{equation*}
     \left[
       \begin{array}{cc}
@@ -92,31 +95,136 @@
         d
       \end{array}
     \right]
-  \end{equation*}
-  Then picture in two dimensions.
-  The signed area of the parallelogram.
-  Calculate.
+  \end{equation*}\vfill
+  \begin{definition}
+    The \emph{determinant
+      \begin{equation*}
+        det(A) = \left| A\right|
+      \end{equation*}
+      of any square matrix $A$} is the \emph{signed area} spanned by the columns of the matrix.
+  \end{definition}
 \end{frame}
 
-\begin{frame}{Effect of scalar multiplication of row}
-  Picture.
+\begin{frame}{Picture of two dimensional determinant}
+  \begin{figure}
+    \begin{columns}
+      \column{.6\textwidth}
+      \includegraphics[height=0.8\textheight]{2018-09027geogebra-export.png}
+      \column{.2\textwidth}
+      \hspace{-2cm}
+      \begin{align*}
+        Area &= (a+b)(c+d)\\
+             &-bc-bc\\
+             &-\frac{1}{2}ac-\frac{1}{2}bd\\
+             &-\frac{1}{2}ac-\frac{1}{2}bd\\
+             &= ac+ad+bc+bd\\
+             &-2bc-ac-bd\\
+             &= ad-bc
+      \end{align*}
+    \end{columns}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    All identity matrices $I_n$ have determinant equal to $1$.
+  \end{example}
+  \begin{example}
+    All matrices with repeated columns have determinant equal to $0$.
+  \end{example}
+  \begin{example}
+    In fact a matrix is invertible iff its determinant is {\bf not} equal to $0$.
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{Effect of elementary column operations}
+  The effect of the elementary row/column operations on $A$ are:-\vfill
+  \begin{itemize}
+  \item Multiplying a row/column by a scalar $k$
+    \begin{itemize}
+    \item multiplies the determinant by $k$.
+    \end{itemize}\vfill
+  \item Swapping two rows/columns
+    \begin{itemize}
+    \item multiplies the determinant by $-1$.
+    \end{itemize}\vfill
+  \item Adding a multiple of one row/column to another
+    \begin{itemize}
+    \item has no effect on the determinant.
+    \end{itemize}
+  \end{itemize}\vfill
+  Pictures on Jupyter notebook.
 \end{frame}
 
 \begin{frame}{Determinants of diagonal matrix and scalar multiple}
-  Determinant of diagonal.
-  Determinant of scalar multiple of a matrix.
-\end{frame}
-
-\begin{frame}{Effect of adding a multiple of one row to another}
-  
+  \begin{example}[Diagonal matrices]
+    \begin{equation*}
+      det
+      \left[
+	\begin{array}{cccc}
+          \lambda_1 &0&0&0\\
+          0&\lambda_2&0&0\\
+          0&0&\lambda_3&0\\
+          0&0&0&\lambda_4
+	\end{array}
+      \right] = \lambda_1\lambda_2\lambda_3\lambda_4
+    \end{equation*}
+  \end{example}\vfill
+  \begin{example}[Scalar multiple]
+    If $A$ is an $n\times n$ matrix then
+    \begin{equation*}
+      det(kA) = k^n det(A)
+    \end{equation*}
+  \end{example}
 \end{frame}
 
 \begin{frame}{Determinant of triangular matrix}
-  We can reduce a triangular matrix to a diagonal one.
+  \begin{example}{Triangular matrix}
+    \begin{align*}
+      det
+      \left[
+	\begin{array}{cccc}
+          \lambda_1 &a_{12}&a_{13}&a_{14}\\
+          0&\lambda_2&a_{23}&a_{24}\\
+          0&0&\lambda_3&a_{34}\\
+          0&0&0&\lambda_4
+	\end{array}
+      \right] &=
+      det
+      \left[
+	\begin{array}{cccc}
+          \lambda_1 &0&0&0\\
+          a_{21}&\lambda_2&0&0\\
+          a_{31}&a_{32}&\lambda_3&0\\
+          a_{41}&a_{42}&a_{43}&\lambda_4
+	\end{array}
+                                \right] \\
+                    &=det
+      \left[
+	\begin{array}{cccc}
+          \lambda_1 &0&0&0\\
+          0&\lambda_2&0&0\\
+          0&0&\lambda_3&0\\
+          0&0&0&\lambda_4
+	\end{array}
+                 \right]\\
+                    &=
+      \lambda_1\lambda_2\lambda_3\lambda_4
+    \end{align*}
+  \end{example}
 \end{frame}
 
-\begin{frame}{Effect of swapping two rows}
-  This essentially defines signed area in dimensions higher than three.
+\begin{frame}{Calculating the determinant using row/column operations}
+  \begin{itemize}
+  \item Start with a square matrix $A$.\vfill
+  \item Perform row/column operations on $A$ to convert into triangular form.
+    \begin{itemize}
+    \item (Keep track of these because they can change the determinant!)
+    \item If we ever get a zero row/column then the determinant is $0$.
+    \end{itemize}\vfill
+  \item Calculate the determinant of the resulting triangular matrix.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -244,6 +352,34 @@
   \]
 \end{frame}
 
+\begin{frame}{Examples}
+  \begin{example}
+    Find the (1,2)-minor of
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          1&1&3\\
+          2&4&1\\
+          5&2&6
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find the (2,2)-minor of
+    \begin{equation*}
+      \left[
+	\begin{array}{cccc}
+          1&5&2&5\\
+          2&6&7&1\\
+          9&9&8&2\\
+          0&8&6&0
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
 \begin{frame}{Recursive definition of determinant}
   \begin{definition}
     The \emph{$ij^{th}$ cofactor} of $A$ is
@@ -262,6 +398,20 @@
   \end{definition}
 \end{frame}
 
+\begin{frame}{Three dimensions}
+  \begin{example}
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          a_{11}&a_{12}&a_{13}\\
+          a_{21}&a_{22}&a_{23}\\
+          a_{31}&a_{32}&a_{33}
+        \end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
 \section{Examples}
 
 \begin{frame}
@@ -271,18 +421,7 @@
 \end{frame}
 
 \begin{frame}{Examples}
-  \begin{example}
-    Find the (1,2)-minor of
-    \begin{equation*}
-      \left[
-	\begin{array}{ccc}
-          1&1&3\\
-          2&4&1\\
-          5&2&6
-	\end{array}
-      \right]
-    \end{equation*}
-  \end{example}
+  
   \begin{example}
     Find
     \begin{equation*}
