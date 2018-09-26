@@ -380,26 +380,62 @@
   \end{example}
 \end{frame}
 
-\begin{frame}{Recursive definition of determinant}
-  \begin{definition}
+\begin{frame}{Cofactors}
+    \begin{definition}
     The \emph{$ij^{th}$ cofactor} of $A$ is
     \begin{equation*}
       \mbox{cof}(A)_{ij}=(-1)^{i+j} minor \left(A\right)_{ij}
     \end{equation*}
   \end{definition}
-  It fact we can calculate the determinant using these matrices.
-  \begin{definition}
-    The \emph{cofactor expansion} along row $i$ is:
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find the (1,2)-cofactor of
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          1&1&3\\
+          2&4&1\\
+          5&2&6
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find the (2,2)-cofactor of
+    \begin{equation*}
+      \left[
+	\begin{array}{cccc}
+          1&5&2&5\\
+          2&6&7&1\\
+          9&9&8&2\\
+          0&8&6&0
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Recursive definition of determinant}
+  \begin{definition}[Cofactor expansion along row i]
     \begin{align*}
       \det A &= \sum_{k=1}^n a_{ik}\mbox{cof}(A)_{ik}\\
-             &=a_{11} \mbox{cof}(A)_{11} + a_{12}\mbox{cof}(A)_{12} +
-      a_{13}\mbox{cof}(A)_{13} + \cdots + a_{1n}\mbox{cof}(A)_{1n}
+             &=a_{i1} \mbox{cof}(A)_{i1} + a_{i2}\mbox{cof}(A)_{i2} +
+      a_{i3}\mbox{cof}(A)_{i3} + \cdots + a_{in}\mbox{cof}(A)_{in}
+    \end{align*}
+  \end{definition}
+  \begin{definition}[Cofactor expansion along column i]
+    \begin{align*}
+      \det A &= \sum_{k=1}^n a_{kj}\mbox{cof}(A)_{kj}\\
+             &=a_{1j} \mbox{cof}(A)_{1j} + a_{2j}\mbox{cof}(A)_{2j} +
+      a_{3j}\mbox{cof}(A)_{3j} + \cdots + a_{nj}\mbox{cof}(A)_{nj}
     \end{align*}
   \end{definition}
 \end{frame}
 
 \begin{frame}{Three dimensions}
-  \begin{example}
+  \begin{example}[Row 1 expansion]
     \begin{equation*}
       \left|
         \begin{array}{ccc}
@@ -407,6 +443,49 @@
           a_{21}&a_{22}&a_{23}\\
           a_{31}&a_{32}&a_{33}
         \end{array}
+      \right|=
+      a_{11}\left|
+	\begin{array}{cc}
+          a_{22}&a_{23}\\
+          a_{32}&a_{33}
+	\end{array}
+      \right|-a_{12} \left|
+	\begin{array}{cc}
+          a_{21}&a_{23}\\
+          a_{31}&a_{33}
+	\end{array}
+      \right|+a_{13} \left|
+	\begin{array}{cc}
+          a_{21}&a_{22}\\
+          a_{31}&a_{32}
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+   \begin{example}[Row 2 expansion]
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          a_{11}&a_{12}&a_{13}\\
+          a_{21}&a_{22}&a_{23}\\
+          a_{31}&a_{32}&a_{33}
+        \end{array}
+      \right|=
+      -a_{21}\left|
+	\begin{array}{cc}
+          a_{12}&a_{13}\\
+          a_{32}&a_{33}
+	\end{array}
+      \right|+a_{22} \left|
+	\begin{array}{cc}
+          a_{11}&a_{13}\\
+          a_{31}&a_{33}
+	\end{array}
+      \right|-a_{23} \left|
+	\begin{array}{cc}
+          a_{11}&a_{12}\\
+          a_{31}&a_{32}
+	\end{array}
       \right|
     \end{equation*}
   \end{example}
