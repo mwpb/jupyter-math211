@@ -353,8 +353,9 @@
 \end{frame}
 
 \begin{frame}{Examples}
+  \alert{The following example is corrected from lectures.}
   \begin{example}
-    Find the (1,2)-minor of
+    The (1,2)-minor of
     \begin{equation*}
       \left[
 	\begin{array}{ccc}
@@ -364,9 +365,22 @@
 	\end{array}
       \right]
     \end{equation*}
+    is
+    \begin{equation*}
+      \left|
+        \begin{array}{ccc}
+          2&1\\
+          5&6
+	\end{array}
+      \right| = 12-5 = 7
+    \end{equation*}
   \end{example}
+\end{frame}
+
+\begin{frame}{Example}
+  \alert{The following example is corrected from lectures.}
   \begin{example}
-    Find the (2,2)-minor of
+    The (2,2)-minor of
     \begin{equation*}
       \left[
 	\begin{array}{cccc}
@@ -377,11 +391,22 @@
 	\end{array}
       \right]
     \end{equation*}
+    is
+    \begin{equation*}
+      \left|
+	\begin{array}{cccc}
+          1&2&5\\
+          9&8&2\\
+          0&6&0
+	\end{array}
+      \right| = \dots = 258
+    \end{equation*}
+    (Please see written notes.)
   \end{example}
 \end{frame}
 
 \begin{frame}{Cofactors}
-    \begin{definition}
+  \begin{definition}
     The \emph{$ij^{th}$ cofactor} of $A$ is
     \begin{equation*}
       \mbox{cof}(A)_{ij}=(-1)^{i+j} minor \left(A\right)_{ij}
@@ -390,8 +415,9 @@
 \end{frame}
 
 \begin{frame}{Examples}
+  \alert{The following examples are corrected from lectures.}
   \begin{example}
-    Find the (1,2)-cofactor of
+    The (1,2)-cofactor of
     \begin{equation*}
       \left[
 	\begin{array}{ccc}
@@ -401,9 +427,10 @@
 	\end{array}
       \right]
     \end{equation*}
+    is $(-1)^{1+2}minor_{12}(A) = -7$.
   \end{example}
   \begin{example}
-    Find the (2,2)-cofactor of
+    The (2,2)-cofactor of
     \begin{equation*}
       \left[
 	\begin{array}{cccc}
@@ -412,7 +439,7 @@
           9&9&8&2\\
           0&8&6&0
 	\end{array}
-      \right]
+      \right] \text{ is } (-1)^{2+2}minor_{22}(A) = 258
     \end{equation*}
   \end{example}
 \end{frame}
@@ -425,7 +452,7 @@
       a_{i3}\mbox{cof}(A)_{i3} + \cdots + a_{in}\mbox{cof}(A)_{in}
     \end{align*}
   \end{definition}
-  \begin{definition}[Cofactor expansion along column i]
+  \begin{definition}[Cofactor expansion along column j]
     \begin{align*}
       \det A &= \sum_{k=1}^n a_{kj}\mbox{cof}(A)_{kj}\\
              &=a_{1j} \mbox{cof}(A)_{1j} + a_{2j}\mbox{cof}(A)_{2j} +

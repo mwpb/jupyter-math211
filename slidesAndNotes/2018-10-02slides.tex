@@ -1,0 +1,457 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+
+\newcommand {\framedgraphic}[3] {
+  \begin{frame}{#1}
+    \vspace{-0.5cm}
+    \begin{center}
+      \includegraphics[width=0.9\textwidth,keepaspectratio]{#2}
+    \end{center}
+    \vspace{-1cm}
+    \begin{center}
+      #3
+    \end{center}
+  \end{frame}
+}
+\newcommand{\lectureDate}{\formatdate{02}{10}{2018}}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item Determinants as area/volume etc..\vfill
+  \item Computing determinants using row operations.\vfill
+  \item The cofactor expansion (see again this time).
+  \end{itemize}
+\end{frame}
+
+\section{First row expansion}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Two dimensional determinant}
+  Recall that
+  \begin{equation*}
+    \left|
+      \begin{array}{cc}
+	a&b\\
+        c&d
+      \end{array}
+    \right| = ad-bc
+  \end{equation*}
+  \begin{example}
+    \begin{equation*}
+      \left|
+	\begin{array}{cc}
+          10&1\\
+          9&5
+	\end{array}
+      \right| = 50-9 = 41
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    \begin{equation*}
+      \left|
+	\begin{array}{cc}
+          1&2\\
+          3&4
+	\end{array}
+      \right|= 4-6 = -2
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Three dimensional determinants}
+  \begin{definition}
+    The \emph{cofactor expansion along row 1 is}
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          a_{11}&a_{12}&a_{13}\\
+          a_{21}&a_{22}&a_{23}\\
+          a_{31}&a_{32}&a_{33}
+	\end{array}
+      \right| = a_{11} \left|
+	\begin{array}{cc}
+          a_{22}&a_{23}\\
+          a_{32}&a_{33}
+	\end{array}
+      \right|-a_{12} \left|
+	\begin{array}{cc}
+          a_{21}&a_{23}\\
+          a_{31}&a_{33}
+	\end{array}
+      \right|+a_{13} \left|
+	\begin{array}{cc}
+          a_{21}&a_{22}\\
+          a_{31}&a_{32}
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{definition}
+  \begin{example}
+    \begin{align*}
+      \left|
+	\begin{array}{ccc}
+          1&1&3\\
+          2&4&1\\
+          5&2&6
+	\end{array}
+      \right| &= 1 \left|
+	\begin{array}{cc}
+          4&1\\
+          2&6
+	\end{array}
+      \right| -1 \left|
+	\begin{array}{cc}
+          2&1\\
+          5&6
+	\end{array}
+      \right|+3 \left|
+	\begin{array}{cc}
+          2&4\\
+          5&2
+	\end{array}
+             \right|\\
+           &= 1\cdot(24-2)-1\cdot(12-5)+3\cdot(4-20) \\
+      &= 20-7-48 = -35
+    \end{align*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          1&2&3\\
+          0&5&6\\
+          0&0&9
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}\vfill
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          1&2&3\\
+          4&5&6\\
+          7&8&9
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Expansions in general}
+  \begin{definition}[Non-standard]
+    If $A$ is a matrix write $A(i|j)$ for the matrix obtained from $A$ by deleting the $i$th row and the $j$th column.
+  \end{definition}
+  \begin{definition}
+    The \emph{cofactor expansion of $A$ along the first row is}
+    \begin{align*}
+      \left|A\right| = \sum_{k=1}^na_{1k}(-1)^{1+k}\left| A(1| k) \right|
+    \end{align*}
+    which when expanded is:
+    \begin{equation*}
+      \left|A\right|= a_{11}\left| A(1| 1) \right|-a_{12}\left| A(1| 2) \right|+a_{13}\left| A(1| 3) \right|-\dots+(-1)^{1+n}\left| A(1| n) \right|
+    \end{equation*}
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Auxiliary definitions}
+  \begin{definition}[Minor]
+    \begin{equation*}
+      minor_{ij}(A) = \left|A(i| j)\right|
+    \end{equation*}
+  \end{definition}\vfill
+  \begin{definition}[Cofactor]
+    \begin{align*}
+      cof_{ij}(A) &= (-1)^{i+j}minor_{ij}(A)\\
+                  &= (-1)^{i+j}\left|A(i| j)\right|
+    \end{align*}
+  \end{definition}\vfill
+  \begin{lemma}[Expansion along row 1]
+    \begin{equation*}
+      \left|A\right| = \sum_{k=1}^na_{1k}cof_{1k}(A)
+    \end{equation*}
+  \end{lemma}
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{cccc}
+          0&1&-2&1\\
+          5&0&0&7\\
+          0&1&-1&0\\
+          3&0&0&2
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{cccc}
+          2&5&4&3\\
+          0&4&1&7\\
+          0&0&3&2\\
+          0&0&0&5
+	\end{array}
+      \right|
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Any row expansion}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{General cofactor expansion}
+  In fact we may use the cofactors of arbitrary rows and columns:\vfill
+  \begin{lemma}[Expansion along arbitrary row or column]
+    \begin{align*}
+      \left|A\right| &= \sum_{k=1}^n a_{ik} (-1)^{i+k}\left|A(i| k)\right|\\
+                     &= \sum_{k=1}^n a_{kj}(-1)^{k+j}\left|A(k| j)\right|
+    \end{align*}
+  \end{lemma}\vfill
+  So we can choose the row or column which is most convenient.
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{ccc}
+          1&2&3\\
+          0&5&6\\
+          0&0&9
+	\end{array}
+      \right|
+    \end{equation*}
+    by expanding along row 3 or column 1.
+  \end{example}\vfill
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{cccc}
+          0&1&-2&1\\
+          5&0&0&7\\
+          0&1&-1&0\\
+          3&0&0&2
+	\end{array}
+      \right|
+    \end{equation*}
+    by expanding along column 2.
+  \end{example}
+\end{frame}
+
+\begin{frame}{Example}
+  \begin{example}
+    Find
+    \begin{equation*}
+      \left|
+	\begin{array}{cccc}
+          -8&1&0&-4\\
+          5&7&0&-7\\
+          12&-3&0&8\\
+          -3&11&0&2
+	\end{array}
+      \right|
+    \end{equation*}
+    by choosing the correct column\dots
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\section{Inversion formula}
+
+\begin{frame}
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Duplicating rows}
+  Suppose that an $n\times n$ matrix has $i$th row equal to $j$th row:
+  \begin{equation*}
+    \left|A\right| = \left[
+      \begin{array}{cccc}
+        a_{11} & a_{12} & \dots & a_{1n}\\
+        a_{21} & a_{22} & \dots & a_{2n}\\
+        \dots & \dots & \dots & \dots\\
+        {\color{blue}a_{i1}} & {\color{blue}a_{i2}} & {\color{blue}\dots} & {\color{blue}a_{in}}\\
+        \dots & \dots & \dots & \dots\\
+        {\color{blue}a_{i1}} & {\color{blue}a_{i2}} & {\color{blue}\dots}& {\color{blue}a_{in}}\\
+        \dots & \dots & \dots & \dots\\
+        a_{n1} & a_{n2} & \dots & a_{nn}\\
+      \end{array}
+    \right]
+  \end{equation*}
+  then we know that $\left|A\right| = 0$. (Why?)
+\end{frame}
+
+\begin{frame}{Adjugate matrix}
+  If we expand
+  \begin{equation*}
+    \left|A\right| = \left[
+      \begin{array}{cccc}
+        a_{11} & a_{12} & \dots & a_{1n}\\
+        a_{21} & a_{22} & \dots & a_{2n}\\
+        \dots & \dots & \dots & \dots\\
+        {\color{blue}a_{i1}} & {\color{blue}a_{i2}} & {\color{blue}\dots} & {\color{blue}a_{in}}\\
+        \dots & \dots & \dots & \dots\\
+        {\color{blue}a_{i1}} & {\color{blue}a_{i2}} & {\color{blue}\dots}& {\color{blue}a_{in}}\\
+        \dots & \dots & \dots & \dots\\
+        a_{n1} & a_{n2} & \dots & a_{nn}\\
+      \end{array}
+    \right]
+  \end{equation*}
+  along the $j$th row then we get:
+  \begin{align*}
+    0 = \left|A\right| &= \sum_{k=1}^n a_{jk}(-1)^{j+k}\left|A(j|k)\right|\\
+                   &= \sum_{k=1}^n a_{ik}(-1)^{j+k}\left|A(j|k)\right|
+  \end{align*}
+\end{frame}
+
+\begin{frame}{The adjugate matrix}
+  Now the last term looks like a matrix product:
+  \begin{equation*}
+    \sum_{k=1}^n a_{ik}(-1)^{j+k}\left|A(j|k)\right| = (A(adj (A)))_{ij}
+  \end{equation*}
+  \begin{definition}[Adjugate matrix]
+    \begin{align*}
+      adj (A)_{ij} &= (-1)^{i+j}\left|A(j|i)\right|\\
+                   &= cof_{ji}(A)
+    \end{align*}
+  \end{definition}
+  So $adj(A)$ is the transpose of the matrix of cofactors $cof_{ij}(A)$.
+\end{frame}
+
+\begin{frame}{A theorem}
+  \begin{theorem}
+    \begin{equation*}
+      A\cdot adj(A) = adj(A)\cdot A = det(A) I
+    \end{equation*}
+    \begin{proof}
+      Just compute the ij-entries:
+      \begin{align*}
+        (A\cdot adj(A))_{ij} &= \sum_{k=1}^n a_{ik}adj(A)_{kj}\\
+                             &= \sum_{k=1}^n a_{ik}(-1)^{j+k}\left|A(j|k)\right|
+      \end{align*}
+    \end{proof}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{A theorem continued...}
+  \begin{theorem}
+    \begin{equation*}
+      A\cdot adj(A) = adj(A)\cdot A = det(A) I
+    \end{equation*}
+    \begin{proof}
+      ...so on the diagonal (when $i=j$) the entry is
+      \begin{equation*}
+        \sum_{k=1}^n a_{ik}(-1)^{i+k}\left|A(i|k)\right| = det(A)
+      \end{equation*}
+      and off the diagonal
+      \begin{equation*}
+        \sum_{k=1}^n a_{ik}(-1)^{j+k}\left|A(j|k)\right| = 0
+      \end{equation*}
+      as required.
+    \end{proof}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{The inversion formula}
+  So we know that
+  \begin{equation*}
+    A\cdot adj(A) = adj(A)\cdot A = det(A) I
+  \end{equation*}\vfill
+  and therefore if $det(A)\neq 0$ then
+  \begin{equation*}
+    A^{-1} = \frac{1}{det(A)} adj(A)
+  \end{equation*}\vfill
+  {\bf Warning:} for $n>2$ this is a very inefficient way to compute an inverse.
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Compute the inverse of the following matrices:-
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          2&1&3\\
+          5&-7&1\\
+          3&0&-6
+	\end{array}
+      \right]
+    \end{equation*}
+    \begin{equation*}
+      \left[
+	\begin{array}{ccc}
+          4&0&3\\
+          1&9&7\\
+          0&6&4
+	\end{array}
+      \right]
+    \end{equation*}
+    \begin{equation*}
+      \left[
+	\begin{array}{cc}
+          a&b\\
+          c&d
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  Questions?
+\end{frame}
+
+\end{document}
