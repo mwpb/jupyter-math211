@@ -8,17 +8,18 @@ from .elimination import roundMatrix
 import matplotlib.patches as patches
 
 def plotColumns(A):
-    xmax = max(A[0][:])+1
-    ymax = max(A[1][:])+1
-    xmin = min(A[0][:])-1
-    ymin = min(A[1][:])-1
-    maximum = max(abs(xmax), abs(ymax))
-    minimum = min(ymin, xmin)
+    zero = [0,0]
+    sumvector = [A[0][0]+A[0][1], A[1][0]+A[1][1]]
+    xmax = max(zero[0], sumvector[0], A[0][0], A[0][1])+0.5
+    xmin = min(zero[0], sumvector[0], A[0][0], A[0][1])-0.5
+    ymax = max(zero[1], sumvector[1], A[1][0], A[1][1])+0.5
+    ymin = min(zero[1], sumvector[1], A[1][0], A[1][1])-0.5
+    maximum = max(xmax, ymax)+min(ymin, xmin)
     style="Simple,tail_width=0.5,head_width=4,head_length=8"
 
     ax = plt.axes()
-    ax.set_xlim(minimum, maximum)
-    ax.set_ylim(minimum, maximum)
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
     ax.add_patch(plt.Polygon([[0,0], [A[0][0],A[1][0]], [A[0][0]+A[0][1], A[1][0]+A[1][1]], [A[0][1], A[1][1]]], color='palegreen' , zorder = 2))
     #ax.add_patch(patches.FancyArrowPatch([A[0][0]/2,A[1][0]/2], [A[0][1]/2,A[1][1]/2],connectionstyle="arc3,rad=.5", arrowstyle=style, color="k", zorder=3))
     ax.arrow(0, 0, A[0][0], A[1][0], head_width=maximum/20, fc='b', ec='b', length_includes_head = True, zorder = 3)
