@@ -121,7 +121,7 @@
 
 \begin{frame}{Using adjugate to solve system}
   \begin{align*}
-    x_i &= (A^{-1}b)_{ij}\\
+    x_i &= (A^{-1}b)_{i}\\
         &= \sum_{k=1}^n(A^{-1})_{ik}b_k\\
         &= \sum_{k=1}^n\frac{1}{det(A)}adj(A)_{ik}b_k\\
         &= \frac{1}{det(A)}\sum_{k=1}^nb_k(-1)^{i+k}\left|A(k, i)\right|\\
