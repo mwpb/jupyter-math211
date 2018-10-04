@@ -146,7 +146,7 @@
   \begin{equation*}
     x_i = \frac{det(A_i)}{det(A)}
   \end{equation*}
-  Again this is not efficient computationally.
+  This method of solving systems is usually computationally inefficient.
 \end{frame}
 
 \begin{frame}{Example}
@@ -199,7 +199,7 @@
 \end{frame}
 
 \begin{frame}{Determinants and elementary matrices}
-  The effects of the elementary operations:-
+  Recall:-\vfill
   \begin{itemize}
   \item Multiplying a row/column by a scalar $k$
     \begin{itemize}
@@ -214,7 +214,7 @@
     \item has no effect on the determinant.
     \end{itemize}
   \end{itemize}\vfill
-  can be carried out by multiplying on the left by the corresponding elementary matrix:
+  Furthermore each operation can be carried out by multiplying on the left by the corresponding elementary matrix:
   \begin{equation*}
     A \mapsto EA
   \end{equation*}
@@ -252,6 +252,20 @@
     \begin{equation*}
       det(BA) = det(B)det(A)
     \end{equation*}
+    \begin{proof}
+      Non-essential exercise. (Divide into cases based on whether $A$ and $B$ are invertible.)
+    \end{proof}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Determinant of transpose}
+  \begin{theorem}[Determinant of transpose]
+    \begin{equation*}
+      det(A^T) = det(A)
+    \end{equation*}
+    \begin{proof}
+      The row operations that take $A$ to triangular form have the same effect on the determinant as the column operations that take $A^T$ to triangular form.
+    \end{proof}
   \end{theorem}
 \end{frame}
 
@@ -261,6 +275,9 @@
     \begin{equation*}
       det(A^{-1}) = \frac{1}{det(A)}
     \end{equation*}
+    \begin{proof}
+      Check for elementary matrices. Then express $A$ in terms of elementary matrices.
+    \end{proof}
   \end{theorem}
   \begin{theorem}[Determinant of adjugate]
     For any square matrix $A$
@@ -343,6 +360,21 @@
     $p(x)$ of degree at most three, 
     and then estimate the value of $y$ corresponding to $x=\frac{3}{2}$.
   \end{example}
+\end{frame}
+
+\begin{frame}{General theory}
+  If $x_1$, $x_2$, \dots, $x_n$ are all distinct then
+  \begin{equation*}
+    \left|
+      \begin{array}{cccccc}
+        1&x_1&x_1^2&x_1^3&\dots&x_1^n\\
+        1&x_2&x_2^2&x_2^3&\dots&x_2^n\\
+        \dots&\dots&\dots&\dots&\dots&\dots\\
+        1&x_n&x_n^2&x_n^3&\dots&x^n
+      \end{array}
+    \right|
+  \end{equation*}
+  is non-zero.
 \end{frame}
 
 \begin{frame}
