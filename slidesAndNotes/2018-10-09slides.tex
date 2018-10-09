@@ -97,11 +97,6 @@
     \item Pick an arbitrary `unit' perhaps Joule.
     \end{itemize}
   \end{example}
-  \begin{example}[Non-example - temperature]
-    \begin{itemize}
-    \item No negative temperatures in Kelvin?
-    \end{itemize}
-  \end{example}
 \end{frame}
 
 \begin{frame}{Picture in 2D}
@@ -458,26 +453,167 @@
   \end{definition}
 \end{frame}
 
-\begin{frame}{Advantages of parametric form}
+\begin{frame}{Properties of parametric form}
   \begin{itemize}
-  \item Can immediately see what kind of geometric object it is.
-  \item Often easier to come up with in the first place.
-    \begin{itemize}
-    \item E.g. if given two/three points on the line/plane.
-    \end{itemize}
+  \item Can immediately see what kind of geometric object it is.\vfill
+  \item Often easier to write down.\vfill
+  \item The parametric form of a line/plane is \emph{not} unique.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{The `symmetric' form of a line in 3D}
-  
-\end{frame}
-
-\begin{frame}{Examples}
-  
+\begin{frame}{The symmetric form of a line in 3D}
+  Sometimes a `half-way' form of the equation of a line in $\mathbb R^3$ is used.\vfill
+  \begin{definition}[Symmetric form of equation for line]
+    \begin{equation*}
+      \frac{x_1+b_1}{a_1} = \frac{x_2+b_2}{a_2} =\frac{x_3+b_3}{a_3}
+    \end{equation*}
+    where $a_i\neq 0$.
+  \end{definition}\vfill
+  We can convert this to parametric form immediately by setting all three terms equation to a parameter $s$:
+  \begin{align*}
+    x_1+b_1&= a_1s\\
+    x_2+b_2&= a_2s\\
+    x_3+b_3&= a_3s
+  \end{align*}
 \end{frame}
 
 \begin{frame}
   Questions?
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{example}
+    Convert the following line into a parametric form
+    \begin{equation*}
+      \frac{x-2}{3} = \frac{y-1}{2} = z+3
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Write down a parametric equation for the line passing through the points
+    \begin{equation*}
+      \left[
+	\begin{array}{c}
+          2\\
+          -1\\
+          7
+	\end{array}
+      \right]\text{ and }
+      \left[
+	\begin{array}{c}
+          -3\\
+          4\\
+          5
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Example}
+   \begin{example}
+    Write down a parametric equation for the line passing through
+    \begin{equation*}
+      \left[
+	\begin{array}{c}
+          4\\
+          -7\\
+          1
+	\end{array}
+      \right]
+    \end{equation*}
+    and parallel to the line
+    \begin{equation*}
+      \left[
+	\begin{array}{c}
+          x_1\\
+          x_2\\
+          x_3
+	\end{array}
+      \right] = \left[
+	\begin{array}{c}
+          4\\
+          -7\\
+          1
+	\end{array}
+      \right]+t \left[
+	\begin{array}{c}
+          2\\
+          -5\\
+          3
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Example}
+  \begin{example}
+    For the following two lines find the point of intersection.
+    \begin{equation*}
+      \left[
+	\begin{array}{c}
+          x_1\\
+          x_2\\
+          x_3
+	\end{array}
+      \right] = \left[
+	\begin{array}{c}
+          3\\
+          1\\
+          3
+	\end{array}
+      \right]+ t \left[
+	\begin{array}{c}
+          1\\
+          -2\\
+          3
+	\end{array}
+      \right]\text{ and }
+      \left[
+	\begin{array}{c}
+          x_1\\
+          x_2\\
+          x_3
+	\end{array}
+      \right] = \left[
+	\begin{array}{c}
+          4\\
+          6\\
+          1
+	\end{array}
+      \right]+ t \left[
+	\begin{array}{c}
+          2\\
+          3\\
+          1
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
+  \begin{example}
+    Write down a system of equations whose solution set is the line
+    \begin{equation*}
+      \left[
+	\begin{array}{c}
+          x_1\\
+          x_2\\
+          x_3
+	\end{array}
+      \right] = \left[
+	\begin{array}{c}
+          1\\
+          -1\\
+          2
+	\end{array}
+      \right]+s \left[
+	\begin{array}{c}
+          2\\
+          1\\
+          3
+	\end{array}
+      \right]
+    \end{equation*}
+  \end{example}
 \end{frame}
 
 \section{Distance and scalar product}
@@ -489,7 +625,7 @@
 \end{frame}
 
 \begin{frame}{Length of a vector}
-  2d 3d and nd
+  
 \end{frame}
 
 \begin{frame}{Examples}
