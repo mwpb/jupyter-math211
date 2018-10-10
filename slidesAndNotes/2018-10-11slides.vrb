@@ -1,0 +1,8 @@
+\frametitle{Converting between various forms}
+\begin{equation*}
+    \begin{tikzcd}
+      {}&\text{System of equations} \arrow{ddr}{\text{Row reduction}} &{}\\
+      {}&{}&{}\\
+      \text{Symmetric form} \arrow{uur}{\text{Split and rearrange}} &{} & \text{Parametric form} \arrow{ll}{\text{Eliminate parameter}}
+    \end{tikzcd}
+  \end{equation*}
