@@ -634,6 +634,10 @@
       \right]
     \end{equation*}
   \end{example}
+  \begin{example}
+    A rhombus is a parallelogram with sides of equal length.
+    Prove that the diagonals of a rhombus are perpendicular.
+  \end{example}
 \end{frame}
 
 \begin{frame}
@@ -649,9 +653,30 @@
 \end{frame}
 
 \begin{frame}{Projection onto a vector}
-  
+  \begin{columns}
+    \column{0.5\textwidth}
+    \includegraphics[scale=1.7]{projection-onto-unit.png}
+    \column{0.4\textwidth}
+    If $e$ is a unit vector then
+    \begin{equation*}
+      e\cdot v = |e||v|cos \theta = |v|cos \theta
+    \end{equation*}
+    and so $e\cdot v$ is the length of $v$ projected onto the line in direction $e$.
+  \end{columns}
 \end{frame}
 
+\begin{frame}{Projection onto a vector}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \includegraphics[scale=1.7]{decomposition-vector.png}
+    \column{0.4\textwidth}
+    Therefore we can write
+    \begin{equation*}
+      v = (e\cdot v)e + (v- e(e\cdot v))
+    \end{equation*}
+    where $(e\cdot v)e$ is parallel to $e$ and $(v- e(e\cdot v))$ is orthogonal to $e$.
+  \end{columns}
+\end{frame}
 
 \begin{frame}{Examples}
   \begin{example}
