@@ -72,12 +72,12 @@
 \includegraphics{2d-normal.png}
 \column{0.5\textwidth}
 \begin{itemize}
-\item Let $P$ be a point on the line and $n$ a normal vector to the line.
-\item For every point $Q$ on the line the vector $\overrightarrow{PQ}$ is orthogonal to $n$.
+\item Let $P$ and $n$ be vectors in $\mathbb{R}^2$.
+\item The set of points $Q$ such that $\overrightarrow{PQ}$ is orthogonal to $n$ form a line.
 \item Therefore the solutions to \begin{equation*}
     n\cdot(x-P) = 0
 \end{equation*}
-form a line.
+form a line through $P$ and orthogonal to $n$.
 \end{itemize}
 \end{columns}
 \end{frame}
@@ -89,13 +89,13 @@ form a line.
     \includegraphics[scale=1]{normal-to-plane.png}
     \column{0.4\textwidth}
     \begin{itemize}
-    \item Let $P$ be a point in the plane and $n$ a normal vector to the plane.
-    \item For every point $Q$ in the plane the vector $\overrightarrow {PQ}$ is orthogonal to $n$.
+    \item Let $P$ and $n$ be vectors in $\mathbb{R}^3$.
+    \item The set of points $Q$ such that $\overrightarrow {PQ}$ is orthogonal to $n$ form a plane.
     \item Therefore the solutions to
       \begin{equation*}
         n\cdot (x-P) = 0
       \end{equation*}
-      form a plane.
+      form a plane through $P$ and orthogonal to $n$.
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -328,7 +328,7 @@ form a line.
 
 \begin{frame}{Example}
     \begin{example}
-        Find the shortest distance from the point
+        Find the closest point to
         \begin{equation*}
           \left[
         \begin{array}{c}
@@ -337,10 +337,10 @@ form a line.
         \end{array}
           \right]
         \end{equation*}
-        to the line with equation $5x+y = -2$.
+        on the line with equation $5x+y = -2$.
       \end{example}
     \begin{example}
-    Find the shortest distance from the point
+    Find the closest point to
     \begin{equation*}
       \left[
 	\begin{array}{c}
@@ -350,7 +350,7 @@ form a line.
 	\end{array}
       \right]
     \end{equation*}
-    to the plane with equation $5x+y+z = -1$.
+    on the plane with equation $5x+y+z = -1$.
   \end{example}
 \end{frame}
 
@@ -382,7 +382,18 @@ form a line.
 \end{frame}
 
 \begin{frame}{Triangle inequality}
-
+\begin{theorem}
+  If $u$ and $v$ are vectors in $\mathbb{R}^n$ then
+  \begin{equation*}
+    \|u+v\| \leq \|u\|+\|v\|
+  \end{equation*}
+\end{theorem}\vfill
+\begin{theorem}
+  If $u$ and $v$ are vectors in $\mathbb{R}^n$ then
+  \begin{equation*}
+    |\|u\|-\|v\||\leq \|u-v\|
+  \end{equation*}
+\end{theorem}
 \end{frame}
 
 \begin{frame}{Example}
