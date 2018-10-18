@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1539818769 "2018-10-18slides.xdv" "2018-10-18slides.pdf" "2018-10-18slides" 1539818776
-  "2018-10-18slides.xdv" 1539818768 607728 42fc8587a07880d9681762acb198e4ef "xelatex"
+["xdvipdfmx"] 1539829941 "2018-10-18slides.xdv" "2018-10-18slides.pdf" "2018-10-18slides" 1539830930
+  "2018-10-18slides.xdv" 1539829940 607728 9016ba7fe67f3f796910b42d5903763f "xelatex"
   (generated)
   "2018-10-18slides.pdf"
-["xelatex"] 1539818764 "2018-10-18slides.tex" "2018-10-18slides.xdv" "2018-10-18slides" 1539818776
+["xelatex"] 1539829935 "2018-10-18slides.tex" "2018-10-18slides.xdv" "2018-10-18slides" 1539830930
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -196,11 +196,11 @@
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1523934532 3731946 97a69080a287fbc922a3cd699c6fd124 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "2018-10-18slides.aux" 1539818768 6595 62eee753374d4b1860d59759eb95a5c1 ""
-  "2018-10-18slides.nav" 1539818768 3543 8c770cfea7e15c71d2b3945e90146366 ""
-  "2018-10-18slides.out" 1539818768 236 d58fc823f127660dcba82bd8d7a2a7e8 ""
-  "2018-10-18slides.tex" 1539818758 11871 eedadda98a89bc135fb9ade2e7d1b16e ""
-  "2018-10-18slides.toc" 1539818768 190 95f821415975235a3945fc3f591ddda8 ""
+  "2018-10-18slides.aux" 1539829940 6595 62eee753374d4b1860d59759eb95a5c1 ""
+  "2018-10-18slides.nav" 1539829940 3543 8c770cfea7e15c71d2b3945e90146366 ""
+  "2018-10-18slides.out" 1539829940 236 d58fc823f127660dcba82bd8d7a2a7e8 ""
+  "2018-10-18slides.tex" 1539830921 11871 900fa40879e3a0a6c4661016283731df ""
+  "2018-10-18slides.toc" 1539829940 190 95f821415975235a3945fc3f591ddda8 ""
   "2d-normal-closest.png" 1539636030 348075 75ef9b5fe7de6fcbd02fa634c1576d7f ""
   "2d-parametric-closest.png" 1539637237 320297 6b2d787714ddf0717e07c0e48bd63604 ""
   "cross-product-direction.png" 1539812859 207320 4490b9078aaaeea63cc4a9c255eb46c9 ""
@@ -208,10 +208,10 @@
   "projection-onto-unit.png" 1539631929 207599 98a40781a81e13ed4646f29586d41ec2 ""
   "skwe-lines.png" 1539816414 249995 502433a8fa462e2199d2a38543038c8d ""
   (generated)
-  "2018-10-18slides.out"
+  "2018-10-18slides.aux"
+  "2018-10-18slides.log"
   "2018-10-18slides.nav"
   "2018-10-18slides.snm"
-  "2018-10-18slides.log"
-  "2018-10-18slides.aux"
   "2018-10-18slides.toc"
   "2018-10-18slides.xdv"
+  "2018-10-18slides.out"
