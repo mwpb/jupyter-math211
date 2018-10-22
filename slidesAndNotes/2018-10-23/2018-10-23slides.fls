@@ -354,9 +354,10 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT cross-product-direction.png
 INPUT cross-projection.png
-INPUT skwe-lines.png
+INPUT 2d-parametric-closest.png
+INPUT skew-distance1.png
+INPUT skew-distance2.png
 INPUT parallelogram.png
-INPUT projection-onto-unit.png
 OUTPUT 2018-10-23slides.nav
 OUTPUT 2018-10-23slides.toc
 OUTPUT 2018-10-23slides.snm
