@@ -1,0 +1,691 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+\usepackage{tikz-cd}
+\newcommand{\lectureDate}{\formatdate{25}{10}{2018}}
+
+\setbeamertemplate{caption}
+{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item Midterm review\vfill
+  \item Cross product\vfill
+  \item Applications to distance, area and volume\vfill
+  \end{itemize}
+\end{frame}
+
+\section{Misc}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Triangle inequality}
+\begin{theorem}
+  If $u$ and $v$ are vectors in $\mathbb{R}^n$ then
+  \begin{equation*}
+    \|u+v\| \leq \|u\|+\|v\|
+  \end{equation*}
+\end{theorem}\vfill
+\begin{theorem}
+  If $u$ and $v$ are vectors in $\mathbb{R}^n$ then
+  \begin{equation*}
+    |\|u\|-\|v\||\leq \|u-v\|
+  \end{equation*}
+\end{theorem}
+\end{frame}
+
+\begin{frame}{The Lagrange identity}
+The following identity follows directly from the Pythagorean theorem.
+\begin{theorem}
+If $u$ and $v$ are in $\mathbb{R}^3$ then
+\begin{equation*}
+\|u\|^2\|v\|^2 = \|u\times v\|^2 + (u\cdot v)^2
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}{Example}
+    \begin{example}
+        Find equations for the lines through
+        \begin{equation*}
+            \left[
+            \begin{array}{c}
+            1\\
+            0\\
+            1
+            \end{array}
+            \right]
+        \end{equation*}
+        that meet the line
+        \begin{equation*}
+            \left[
+            \begin{array}{c}
+            x\\
+            y\\
+            z
+            \end{array}
+            \right] = \left[
+            \begin{array}{c}
+            1\\
+            2\\
+            0
+            \end{array}
+            \right]+s \left[
+            \begin{array}{c}
+            2\\
+            -1\\
+            2
+            \end{array}
+            \right]
+        \end{equation*}
+        at the two points distance three from $(1, 2, 0)$.
+    \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the area of the triangle having vertices
+\begin{equation*}
+\left[
+\begin{array}{c}
+3\\
+-1\\
+2
+\end{array}
+\right], \left[
+\begin{array}{c}
+1\\
+1\\
+0
+\end{array}
+\right]\text{ and } \left[
+\begin{array}{c}
+1\\
+2\\
+-1
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Find the volume of the parallelepiped determined by the vectors
+\begin{equation*}
+\left[
+\begin{array}{c}
+2\\
+1\\
+-1
+\end{array}
+\right], \left[
+\begin{array}{c}
+1\\
+0\\
+2
+\end{array}
+\right]\text{ and } \left[
+\begin{array}{c}
+2\\
+1\\
+1
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+    \begin{example}
+        The diagonals of a parallelogram bisect each other.
+      \end{example}
+      \begin{example}
+        If $ABCD$ is an arbitrary quadrilateral then the midpoints of the four sides form a parallelogram.
+      \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the shortest distance between the following plane and line.
+\begin{equation*}
+P_1:x-y+2z=2, L_1:\left[
+\begin{array}{c}
+1\\
+1\\
+3
+\end{array}
+\right]+t \left[
+\begin{array}{c}
+1\\
+-1\\
+-1
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Find the shortest distance between the following two planes.
+\begin{equation*}
+P_1:x-y+2z=5, P_2:2x-2y+4z=4
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the distance between the following two lines.
+\begin{equation*}
+\left[
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right] = \left[
+\begin{array}{c}
+3\\
+1\\
+-1
+\end{array}
+\right]+s \left[
+\begin{array}{c}
+1\\
+1\\
+-1
+\end{array}
+\right]\text{ and } \left[
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right] = \left[
+\begin{array}{c}
+1\\
+2\\
+0
+\end{array}
+\right] +t \left[
+\begin{array}{c}
+1\\
+0\\
+2
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\section{Linear transformations}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Functions between Euclidean spaces}
+\begin{definition}
+A \emph{function $f$ from $\mathbb{R}^n$ to $\mathbb{R}^m$ written}
+\begin{equation*}
+f:\mathbb{R}^n \rightarrow \mathbb{R}^m
+\end{equation*}
+is a rule that assigns to every $x$ in $\mathbb{R}^n$ an element $y$ in $\mathbb{R}^m$.
+\end{definition}
+\begin{itemize}
+	\item If $y$ is the element assigned to $x$ we write $y = f(x)$ and
+	\begin{equation*}
+	f:x \mapsto f(x)
+	\end{equation*}
+	\item Two different elements $x_0$ and $x_1$ of $\mathbb{R}^n$ may be assigned the same element $y$ of $\mathbb{R}^m$. I.e:
+	\begin{equation*}
+	f(x_0) = y = f(x_1)
+	\end{equation*}
+	\item We cannot assign two different elements $y_0$ and $y_1$ of $\mathbb{R}^m$ to a single element $x$ of $\mathbb{R}^n$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+\begin{equation*}
+f(x) = x+1 \text{ and } f(x) = x^2+3x-5 \text{ and } f(x) = 5
+\end{equation*}
+are all functions $\mathbb{R}^1 \rightarrow \mathbb{R}^1$
+\end{example}
+\begin{example}
+\begin{equation*}
+f(x, y) = \left[
+\begin{array}{c}
+x\\
+x+y\\
+xy
+\end{array}
+\right]
+\end{equation*}
+is a function $f:\mathbb{R}^2 \rightarrow \mathbb{R}^3$
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+If $f(x) = x^2$ then both $+1$ and $-1$ are assigned the value $+1$. I.e.
+\begin{equation*}
+f(-1) = 1 = f(+1)
+\end{equation*}
+\end{example}
+\begin{example}[Non-example]
+\begin{equation*}
+f(x) = \begin{cases}
+	-1 & \text{ if }x<1\\
+	+1 & \text{ if }x>-1
+\end{cases}
+\end{equation*}
+is not a function because the numbers between $-1$ and $+1$ are assigned two different numbers.
+\end{example}
+\end{frame}
+
+\begin{frame}{Linear transformations}
+\begin{definition}
+A \emph{linear transformation $T:\mathbb{R}^n \rightarrow \mathbb{R}^m$} is a function satisfying:
+\begin{itemize}
+	\item (Linearity) $T(x+y) = T(x) + T(y)$
+	\item (Scalar multiplication) $T(kx) = kT(x)$
+\end{itemize}
+\end{definition}
+Some consequences:-
+\begin{itemize}
+	\item $T(0) = 0$
+	\item $T(-x) = -T(x)$
+	\item $T\left(\sum_{i=1}^n k_i v_i\right) = \sum_{i=1}^n k_i T(v_i)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Is the following a linear transformation?
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+2x\\
+y\\
+-x+2y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Is the following a linear transformation?
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+xy\\
+x+y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Is rotation about the origin in $\mathbb{R}^2$ through an angle $\theta$ a linear transformation?
+\end{example}
+\begin{example}
+Is reflection in the x-axis a linear transformation?
+\end{example}
+\begin{example}
+Is $f(x) = x+1$ a linear transformation?
+\end{example}
+\end{frame}
+
+\section{Matrices redux}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Linear transformations determined by action on basis}
+If $T$ is linear then
+\begin{equation*}
+T\left(\sum_{i=0}^n k_i v_i\right) = \sum_{i=0}^n k_i T(v_i)
+\end{equation*}
+But for all $v$ in $\mathbb{R}^n$ we can write $v$ as a linear combination of the standard basis vectors:
+\begin{equation*}
+v = \left[
+\begin{array}{c}
+v_1\\
+v_2\\
+v_3\\
+\vdots\\
+v_n
+\end{array}
+\right] = \sum_{i=0}^n v_i e_i = v_1 \left[
+\begin{array}{c}
+1\\
+0\\
+0\\
+\vdots\\
+0
+\end{array}
+\right] + v_2 \left[
+\begin{array}{c}
+0\\
+1\\
+0\\
+\vdots\\
+0
+\end{array}
+\right] + v_3 \left[
+\begin{array}{c}
+0\\
+0\\
+1\\
+\vdots\\
+0
+\end{array}
+\right]+\dots v_n \left[
+\begin{array}{c}
+0\\
+0\\
+0\\
+\vdots\\
+1
+\end{array}
+\right]
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Linear transformation determined by action on basis}
+So:
+\begin{equation*}
+T(v) = T\left(\sum_{i=0}^n v_i e_i\right) = \sum_{i=0}^n v_i T(e_i)
+\end{equation*}\vfill
+{\bf Slogan:} A linear transformation is completely determined by its action on the standard basis vectors.\vfill
+More explicitly: we only need to know
+\begin{equation*}
+T(e_1), T(e_2),\dots, T(e_n)
+\end{equation*}
+to work out the whole transformation!
+\end{frame}
+
+\begin{frame}{Matrices redux}
+If $T:\mathbb{R}^n \rightarrow \mathbb{R}^m$ then
+\begin{equation*}
+T(e_1), T(e_2),\dots, T(e_n)
+\end{equation*}
+are in $\mathbb{R}^m$. And so the transformation is completely determined by $n\times m$ scalars\dots
+\end{frame}
+
+\begin{frame}{Matrices redux}
+\begin{definition}
+The \emph{matrix $[T]$ of a linear transformation $T$} is the matrix that has columns given by the images of the standard basis vectors:
+\begin{equation*}
+[T] = \left[
+\begin{array}{cccc}
+T(e_1) & T(e_2) &\dots & T(e_n)
+\end{array}
+\right]
+\end{equation*} 
+\end{definition}\vfill
+(It turns out that the definition of matrix product is forced on us after this choice if we want it to match the composition of functions.)
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	-7\\
+	3\\
+	-9
+	\end{array}
+	\right]
+	\end{equation*}
+	if $T$ is linear and
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	3\\
+	1
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	4\\
+	4\\
+	0\\
+	-2
+	\end{array}
+	\right]\text{ and } T \left[
+	\begin{array}{c}
+	4\\
+	0\\
+	5
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	4\\
+	5\\
+	-1\\
+	5
+	\end{array}
+	\right]
+	\end{equation*}
+	% Ans: [-4,-6,2,-12]
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Examples}
+\begin{example}
+	Find
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	3\\
+	-2\\
+	-4
+	\end{array}
+	\right]
+	\end{equation*}
+	if $T$ is linear and
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	1\\
+	0\\
+	-2
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	2\\
+	3\\
+	-1
+	\end{array}
+	\right]\text{ and } T \left[
+	\begin{array}{c}
+	0\\
+	-1\\
+	1\\
+	1
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	5\\
+	0\\
+	1
+	\end{array}
+	\right]
+	\end{equation*}
+	% Ans: [-8,3,-3]
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the matrix of the linear transformation
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x+2y\\
+x-y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Find the matrix of the linear transformation satisfying
+\begin{equation*}
+T \left[
+\begin{array}{c}
+1\\
+1
+\end{array}
+\right] = \left[
+\begin{array}{c}
+1\\
+2
+\end{array}
+\right]\text{ and } T \left[
+\begin{array}{c}
+0\\
+-1
+\end{array}
+\right] = \left[
+\begin{array}{c}
+3\\
+2
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+For the following linear transformations $S$ and $T$ what is $S\circ T$, $T\circ S$ and what are the corresponding matrices?
+\begin{equation*}
+S \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x\\
+-y
+\end{array}
+\right]\text{ and } T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+-y\\
+x
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+What is the inverse transformation and corresponding matrix for
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x+y\\
+y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+What is the matrix of the linear transformation for counter-clockwise rotation about the origin by an angle of $\theta$?
+\end{example}
+\begin{example}
+What is the matrix of the linear transformation for reflection in the x-axis?
+\end{example}
+\begin{example}
+What is the matrix of the linear transformation that is $v\times (-)$ for some vector $v\in \mathbb{R}^3$?
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+What is the matrix of the linear transformation for reflection in the line $y = mx$?
+\end{example}
+\begin{example}
+What is the matrix of the linear transformation consisting of first reflects in the x-axis and then rotates through an angle of $\frac{\pi}{2}$?
+\end{example}
+\begin{example}
+Find the rotation or reflection that equals reflection in the line $y = -x$ followed by reflection in the y-axis.
+\end{example}
+\end{frame}
+
+\begin{frame}{Summary of linear transformations}
+\begin{itemize}
+	\item Recall interpretation of matrix action on a vector
+	\item Definition of linear transformation; examples and non-examples
+	\item The matrix of a linear transformation; completely determined by action on basis
+	\item Linear transformation preserves 0, - and linear combinations
+	\item Composition of functions, linear transformation and relationship to matrices.
+	\item Inverse functions and relationship to inverse matrices.
+	\item Determinant of rotation and reflection. Composite of rotations/reflections with rotations/reflections
+\end{itemize}
+\end{frame}
+
+\end{document}
