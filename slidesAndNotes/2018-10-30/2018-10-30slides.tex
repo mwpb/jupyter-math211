@@ -1,0 +1,491 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+\usepackage{tikz-cd}
+\newcommand{\lectureDate}{\formatdate{30}{10}{2018}}
+
+\setbeamertemplate{caption}
+{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+  \begin{itemize}
+  \item	Triangle inequality and Lagrange identity.\vfill
+  \item More example problems in Euclidean space.\vfill
+  \item Linear transformations.
+  \end{itemize}
+\end{frame}
+
+\section{Linear transformations}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Linear transformations}
+\begin{definition}
+A \emph{linear transformation $T:\mathbb{R}^n \rightarrow \mathbb{R}^m$} is a function satisfying:
+\begin{itemize}
+	\item (Additivity) $T(x+y) = T(x) + T(y)$
+	\item (Scalar multiplication) $T(kx) = kT(x)$
+\end{itemize}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Is the following a linear transformation?
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+2x\\
+y\\
+-x+2y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Is the following a linear transformation?
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+xy\\
+x+y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Is rotation about the origin in $\mathbb{R}^2$ through an angle $\theta$ a linear transformation?
+\end{example}
+\begin{example}
+Is reflection in the x-axis a linear transformation?
+\end{example}
+\begin{example}
+Is $f(x) = x+1$ a linear transformation?
+\end{example}
+\end{frame}
+
+\section{Action on combinations}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Action on combinations}
+Recall that if $T$ is linear then
+\begin{equation*}
+T\left(\sum_{i=0}^n k_i v_i\right) = \sum_{i=0}^n k_i T(v_i)
+\end{equation*}
+so if we know $T(v_i)$ then we can work out the value of $T$ on any linear combination of the $v_i$.
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	-7\\
+	3\\
+	-9
+	\end{array}
+	\right]
+	\end{equation*}
+	if $T$ is linear and
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	3\\
+	1
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	4\\
+	4\\
+	0\\
+	-2
+	\end{array}
+	\right]\text{ and } T \left[
+	\begin{array}{c}
+	4\\
+	0\\
+	5
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	4\\
+	5\\
+	-1\\
+	5
+	\end{array}
+	\right]
+	\end{equation*}
+	% Ans: [-4,-6,2,-12]
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Examples}
+\begin{example}
+	Find
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	3\\
+	-2\\
+	-4
+	\end{array}
+	\right]
+	\end{equation*}
+	if $T$ is linear and
+	\begin{equation*}
+	T \left[
+	\begin{array}{c}
+	1\\
+	1\\
+	0\\
+	-2
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	2\\
+	3\\
+	-1
+	\end{array}
+	\right]\text{ and } T \left[
+	\begin{array}{c}
+	0\\
+	-1\\
+	1\\
+	1
+	\end{array}
+	\right] = \left[
+	\begin{array}{c}
+	5\\
+	0\\
+	1
+	\end{array}
+	\right]
+	\end{equation*}
+	% Ans: [-8,3,-3]
+\end{example}
+\end{frame}
+
+\section{Matrices redux}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Linear transformations determined by action on basis}
+If $T$ is linear then
+\begin{equation*}
+T\left(\sum_{i=0}^n k_i v_i\right) = \sum_{i=0}^n k_i T(v_i)
+\end{equation*}
+But for all $v$ in $\mathbb{R}^n$ we can write $v$ as a linear combination of the standard basis vectors:
+\begin{equation*}
+v = \left[
+\begin{array}{c}
+v_1\\
+v_2\\
+v_3\\
+\vdots\\
+v_n
+\end{array}
+\right] = \sum_{i=0}^n v_i e_i = v_1 \left[
+\begin{array}{c}
+1\\
+0\\
+0\\
+\vdots\\
+0
+\end{array}
+\right] + v_2 \left[
+\begin{array}{c}
+0\\
+1\\
+0\\
+\vdots\\
+0
+\end{array}
+\right] + v_3 \left[
+\begin{array}{c}
+0\\
+0\\
+1\\
+\vdots\\
+0
+\end{array}
+\right]+\dots v_n \left[
+\begin{array}{c}
+0\\
+0\\
+0\\
+\vdots\\
+1
+\end{array}
+\right]
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Linear transformation determined by action on basis}
+So:
+\begin{equation*}
+T(v) = T\left(\sum_{i=0}^n v_i e_i\right) = \sum_{i=0}^n v_i T(e_i)
+\end{equation*}\vfill
+{\bf Slogan:} A linear transformation is completely determined by its action on the standard basis vectors.\vfill
+More explicitly: we only need to know
+\begin{equation*}
+T(e_1), T(e_2),\dots, T(e_n)
+\end{equation*}
+to work out the whole transformation!
+\end{frame}
+
+\begin{frame}{Matrices redux}
+If $T:\mathbb{R}^n \rightarrow \mathbb{R}^m$ then
+\begin{equation*}
+T(e_1), T(e_2),\dots, T(e_n)
+\end{equation*}
+are in $\mathbb{R}^m$. And so the transformation is completely determined by $n\times m$ scalars\dots
+\end{frame}
+
+\begin{frame}{Matrices redux}
+\begin{definition}
+The \emph{matrix $[T]$ of a linear transformation $T$} is the matrix that has columns given by the images of the standard basis vectors:
+\begin{equation*}
+[T] = \left[
+\begin{array}{cccc}
+T(e_1) & T(e_2) &\dots & T(e_n)
+\end{array}
+\right]
+\end{equation*} 
+\end{definition}\vfill
+(It turns out that the definition of matrix product is forced on us after this choice if we want it to match the composition of functions.)
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the matrix of the linear transformation
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x+2y\\
+x-y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+Find the matrix of the linear transformation satisfying
+\begin{equation*}
+T \left[
+\begin{array}{c}
+1\\
+1
+\end{array}
+\right] = \left[
+\begin{array}{c}
+1\\
+2
+\end{array}
+\right]\text{ and } T \left[
+\begin{array}{c}
+0\\
+-1
+\end{array}
+\right] = \left[
+\begin{array}{c}
+3\\
+2
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+For the following linear transformations $S$ and $T$ what is $S\circ T$, $T\circ S$ and what are the corresponding matrices?
+\begin{equation*}
+S \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x\\
+-y
+\end{array}
+\right]\text{ and } T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+-y\\
+x
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+What is the inverse transformation and corresponding matrix for
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x+y\\
+y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+What is the matrix of the linear transformation for counter-clockwise rotation about the origin by an angle of $\theta$?
+\end{example}
+\begin{example}
+What is the matrix of the linear transformation for reflection in the x-axis?
+\end{example}
+\begin{example}
+What is the matrix of the linear transformation that is $v\times (-)$ for some vector $v\in \mathbb{R}^3$?
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+What is the matrix of the linear transformation for reflection in the line $y = mx$?
+\end{example}
+\end{frame}
+
+\section{Composition}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Composition of functions}
+\begin{definition}
+If we have functions
+\begin{equation*}
+\mathbb{R}^n \xrightarrow{f} \mathbb{R}^m \text{ and }\mathbb{R}^m \xrightarrow{g} \mathbb{R}^p
+\end{equation*}
+then the \emph{composite function $g\circ f$} is the function defined by
+\begin{equation*}
+(g\circ f)(x) = g(f(x))
+\end{equation*}
+\end{definition}
+\begin{itemize}
+	\item I.e. first apply $f$ to $x$ and then apply $g$ to the result.
+	\item Note that $\mathbb{R}^n \xrightarrow{g\circ f} \mathbb{R}^p$.
+\end{itemize}
+\begin{example}
+The composite of two linear transformations is again linear.
+(Easy exercise.)
+\end{example}
+\end{frame}
+
+\begin{frame}{The matrix of a composite transformation}
+We know that the matrix of the composite $T\circ S$ is:
+\begin{equation*}
+\left[
+\begin{array}{cccc}
+T(S(e_1)) & T(S(e_2)) & \dots & T(S(e_n))
+\end{array}
+\right]
+\end{equation*}
+where $S: \mathbb{R}^n \rightarrow \mathbb{R}^m$ and $T: \mathbb{R}^m \rightarrow \mathbb{R}^p$.\vfill
+{\bf Question:} What is this in terms of the matrices of $T$ and $S$?\vfill
+\begin{theorem}
+The matrix of a composite is the composite of the matrices:
+\begin{equation*}
+[T\circ S] = [T][S]
+\end{equation*}
+\begin{proof}
+Note that the terms $S(e_i)$ are the columns of $[S]$.
+\end{proof}
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+What is the matrix of the linear transformation consisting of first reflects in the x-axis and then rotates through an angle of $\frac{\pi}{2}$?
+\end{example}
+\begin{example}
+Find the rotation or reflection that equals reflection in the line $y = -x$ followed by reflection in the y-axis.
+\end{example}
+\end{frame}
+
+\begin{frame}{Summary of linear transformations}
+\begin{itemize}
+	\item Recall interpretation of matrix action on a vector
+	\item Definition of linear transformation; examples and non-examples
+	\item The matrix of a linear transformation; completely determined by action on basis
+	\item Linear transformation preserves 0, - and linear combinations
+	\item Composition of functions, linear transformation and relationship to matrices.
+	\item Inverse functions and relationship to inverse matrices.
+	\item Determinant of rotation and reflection. Composite of rotations/reflections with rotations/reflections
+\end{itemize}
+\end{frame}
+
+\end{document}
