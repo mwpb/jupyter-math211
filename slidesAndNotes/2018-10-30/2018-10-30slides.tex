@@ -91,7 +91,11 @@ x+y
 
 \begin{frame}{Examples}
 \begin{example}
+Every matrix $A$ determined a linear transformation $x \mapsto Ax$.
+\end{example}
+\begin{example}
 Is rotation about the origin in $\mathbb{R}^2$ through an angle $\theta$ a linear transformation?
+(The standard convention is to measure the angle in the anti-clockwise direction.)
 \end{example}
 \begin{example}
 Is reflection in the x-axis a linear transformation?
@@ -352,50 +356,6 @@ T \left[
 \end{example}
 \end{frame}
 
-\begin{frame}{Examples}
-\begin{example}
-For the following linear transformations $S$ and $T$ what is $S\circ T$, $T\circ S$ and what are the corresponding matrices?
-\begin{equation*}
-S \left[
-\begin{array}{c}
-x\\
-y
-\end{array}
-\right] = \left[
-\begin{array}{c}
-x\\
--y
-\end{array}
-\right]\text{ and } T \left[
-\begin{array}{c}
-x\\
-y
-\end{array}
-\right] = \left[
-\begin{array}{c}
--y\\
-x
-\end{array}
-\right]
-\end{equation*}
-\end{example}
-\begin{example}
-What is the inverse transformation and corresponding matrix for
-\begin{equation*}
-T \left[
-\begin{array}{c}
-x\\
-y
-\end{array}
-\right] = \left[
-\begin{array}{c}
-x+y\\
-y
-\end{array}
-\right]
-\end{equation*}
-\end{example}
-\end{frame}
 
 \begin{frame}{Examples}
 \begin{example}
@@ -407,9 +367,6 @@ What is the matrix of the linear transformation for reflection in the x-axis?
 \begin{example}
 What is the matrix of the linear transformation that is $v\times (-)$ for some vector $v\in \mathbb{R}^3$?
 \end{example}
-\end{frame}
-
-\begin{frame}{Examples}
 \begin{example}
 What is the matrix of the linear transformation for reflection in the line $y = mx$?
 \end{example}
@@ -487,5 +444,51 @@ Find the rotation or reflection that equals reflection in the line $y = -x$ foll
 	\item Determinant of rotation and reflection. Composite of rotations/reflections with rotations/reflections
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+For the following linear transformations $S$ and $T$ what is $S\circ T$, $T\circ S$ and what are the corresponding matrices?
+\begin{equation*}
+S \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x\\
+-y
+\end{array}
+\right]\text{ and } T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+-y\\
+x
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+What is the inverse transformation and corresponding matrix for
+\begin{equation*}
+T \left[
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right] = \left[
+\begin{array}{c}
+x+y\\
+y
+\end{array}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
 
 \end{document}
