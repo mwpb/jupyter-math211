@@ -1,0 +1,3 @@
+\frametitle{Graphical interpretation}
+So we draw the complex number $a+bi$ as the point $(a, b)$ in $\mathbb{R}^2$:
+\includegraphics{complex-plane.png}
