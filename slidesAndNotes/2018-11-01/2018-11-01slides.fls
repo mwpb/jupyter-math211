@@ -366,6 +366,7 @@ OUTPUT 2018-11-01slides.vrb
 INPUT 2018-11-01slides.vrb
 INPUT 2018-11-01slides.vrb
 INPUT complex-plane.png
+INPUT complex-addition.png
 OUTPUT 2018-11-01slides.nav
 OUTPUT 2018-11-01slides.toc
 OUTPUT 2018-11-01slides.snm

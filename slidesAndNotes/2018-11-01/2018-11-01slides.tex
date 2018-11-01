@@ -28,8 +28,8 @@
 
 \begin{frame}{Last time}
   \begin{itemize}
-  \item Linear transformations
-  \item Action on compositions
+  \item Linear transformations\vfill
+  \item Action on compositions\vfill
   \item Matrix of a linear transformation
   \end{itemize}
 \end{frame}
@@ -294,44 +294,53 @@ cx+dy
 \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}{Early difficulties...}
+\begin{frame}{Progression of thought about complex numbers}
 
+% \begin{quote}
+% .. subtle as they are useless ..
+% \end{quote}
+% (Girolamo Cardano - discoverer of complex numbers)
+% \vfill
 \begin{quote}
-.. subtle as they are useless ..
+\dots the whole matter seems to rest on sophistry rather than truth\dots
 \end{quote}
-(Girolamo Cardano - discoverer of complex numbers)
+(Rafael Bombelli 1526-1572. Early innovator in use of complex numbers)
 \vfill
-
 \begin{quote}
-..the whole matter seems to rest on sophistry rather than truth
+The shortest path between two truths in the real domain passes through the complex domain.
 \end{quote}
-(Rafael Bombelli - early innovator in use of complex numbers)
-\vfill
+(Jacques Hadamard 1865-1963)
+% \begin{quote}
+% Indeed, nowadays no electrical engineer could get along without complex numbers, and neither could anyone working in aerodynamics or fluid dynamics.
+% \end{quote}
+% (Keith Devlin - British mathematician)
 
-\begin{quote}
-The imaginary number is a fine and wonderful resource of the human spirit, almost an amphibian between being and not being.
-\end{quote}
-(Leibniz)
+% \vfill
+
+% \begin{quote}
+% The imaginary number is a fine and wonderful resource of the human spirit, almost an amphibian between being and not being.
+% \end{quote}
+% (Leibniz)
 \end{frame}
 
-\begin{frame}{More recently...}
-\begin{quote}
-It has been written that the shortest and best way between two truths of the real domain often passes through the imaginary one.
-\end{quote}
-(Jacques Hadamard)
-\vfill
+% \begin{frame}{More recently...}
+% \begin{quote}
+% It has been written that the shortest and best way between two truths of the real domain often passes through the imaginary one.
+% \end{quote}
+% (Jacques Hadamard)
+% \vfill
 
-\begin{quote}
-I tell you, with complex numbers you can do anything.
-\end{quote}
-(John Derbyshire - mathematics writer)
-\vfill
+% \begin{quote}
+% I tell you, with complex numbers you can do anything.
+% \end{quote}
+% (John Derbyshire - mathematics writer)
+% \vfill
 
-\begin{quote}
-Indeed, nowadays no electrical engineer could get along without complex numbers, and neither could anyone working in aerodynamics or fluid dynamics.
-\end{quote}
-(Keith Devlin - British mathematician)
-\end{frame}
+% \begin{quote}
+% Indeed, nowadays no electrical engineer could get along without complex numbers, and neither could anyone working in aerodynamics or fluid dynamics.
+% \end{quote}
+% (Keith Devlin - British mathematician)
+% \end{frame}
 
 \begin{frame}{Algebraic motivation - extending the number system}
 \begin{quote}
@@ -342,15 +351,15 @@ God made the integers; all else is the work of man.
 	\item Using only positive integers $\{1, 2, 3, \dots\}$
 	\begin{itemize}
 		\item we cannot find solution a to $x+1 = 0$
-	\end{itemize}
+	\end{itemize}\vfill
 	\item Using only integers $\{\dots, -2, -1, 0, 1, 2 \dots\}$
 	\begin{itemize}
 		\item we cannot find a solution to $3x+2 = 0$
-	\end{itemize}
+	\end{itemize}\vfill
 	\item Using only fractions $\{\frac{a}{b} \text{ for } b\neq0 \}$
 	\begin{itemize}
 		\item we cannot find a solution to $x^2-2 =0$
-	\end{itemize}
+	\end{itemize}\vfill
 	\item Using only decimals
 	\begin{itemize}
 		\item we cannot find a solution to $x^2 + 1 = 0$\dots
@@ -410,13 +419,17 @@ So we draw the complex number $a+bi$ as the point $(a, b)$ in $\mathbb{R}^2$:
 \includegraphics{complex-plane.png}
 \end{frame}
 
-\begin{frame}{Summary}
-\begin{itemize}
-	\item Graphical interpretation.
-	\item Addition: algebra and geometry.
-	\item Multiplication: algebra and geometry.
-	\item Conjugate: algebra and geometry.
-\end{itemize}
+\begin{frame}{Addition of complex numbers}
+\begin{columns}
+\column{0.4\textwidth}
+\includegraphics[scale=0.5]{complex-addition.png}
+\column{0.5\textwidth}
+Complex addition is defined component-wise:
+\begin{equation*}
+(a+ib)+(c+id) = (a+c)+(b+d)i
+\end{equation*}
+and therefore has the same graphical interpretation as the addition of vectors in $\mathbb{R}^2$.
+\end{columns}
 \end{frame}
 
 \begin{frame}{Examples}
@@ -440,6 +453,37 @@ Evaluate
 % ANS: 6+17i
 \end{example}
 \end{frame}
+
+\begin{frame}{Historical curiosity}
+Apparently Bombelli describes complex arithmetic thus:
+\begin{quote}
+"Plus by plus of minus, makes plus of minus.
+Minus by plus of minus, makes minus of minus.
+Plus by minus of minus, makes minus of minus.
+Minus by minus of minus, makes plus of minus.
+Plus of minus by plus of minus, makes minus.
+Plus of minus by minus of minus, makes plus.
+Minus of minus by plus of minus, makes plus.
+Minus of minus by minus of minus makes minus." 
+\end{quote}
+according to Crossley in `The Emergence of Number'.
+A hint from Crossley is: the last two lines would become 
+\begin{equation*}
+-\sqrt{-a}\cdot\sqrt{-b}= \sqrt{ab}\text{ and }(-\sqrt{-a})\cdot(-\sqrt{-b})= -\sqrt{ab}
+\end{equation*}
+in modern notation.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+	\item Graphical interpretation.
+	\item Addition: algebra and geometry.
+	\item Multiplication: algebra and geometry.
+	\item Conjugate: algebra and geometry.
+\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Examples}
 \begin{example}
