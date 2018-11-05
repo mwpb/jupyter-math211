@@ -1,3 +1,18 @@
 \frametitle{Graphical interpretation}
-So we draw the complex number $a+bi$ as the point $(a, b)$ in $\mathbb{R}^2$:
-\includegraphics{complex-plane.png}
+\begin{columns}
+^^I\column{0.5\textwidth}
+^^I\includegraphics[scale=0.8]{complex-plane.png}
+^^I\column{0.4\textwidth}
+^^IWe draw the complex number $z=a+bi$ as the point $(a, b)$ in $\mathbb{R}^2$.\vfill
+^^I\begin{definition}
+^^IThe \emph{modulus of $z$} is its length in $\mathbb{R}^2$:
+^^I\begin{equation*}
+^^I|z| = \left| \left[
+^^I\begin{array}{c}
+^^Ia\\
+^^Ib
+^^I\end{array}
+^^I\right]\right| = \sqrt{a^2+b^2}
+^^I\end{equation*}
+^^I\end{definition}
+\end{columns}

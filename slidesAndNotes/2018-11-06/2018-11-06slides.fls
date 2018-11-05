@@ -367,6 +367,7 @@ INPUT 2018-11-06slides.vrb
 INPUT 2018-11-06slides.vrb
 INPUT complex-plane.png
 INPUT complex-addition.png
+INPUT conjugate.png
 OUTPUT 2018-11-06slides.nav
 OUTPUT 2018-11-06slides.toc
 OUTPUT 2018-11-06slides.snm
