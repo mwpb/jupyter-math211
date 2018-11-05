@@ -244,6 +244,10 @@ $b$ is called the \emph{imaginary part} of $z$.
 \end{definition}
 \end{frame}
 
+\begin{frame}{Questions}
+Questions?
+\end{frame}
+
 \section{Plus and times}
 
 \begin{frame}
@@ -253,6 +257,102 @@ $b$ is called the \emph{imaginary part} of $z$.
 \end{beamercolorbox}
 \end{frame}
 
+\begin{frame}{Motivation}
+Treat $i$ as a number that satisfies the usual laws. E.g.:-
+\begin{itemize}
+	\item $a(b+c) = ab+ac$
+	\item $a+b = b+a$
+	\item $ab = ba$ \dots etc \dots
+\end{itemize}
+as well as
+\begin{equation*}
+i^2=-1
+\end{equation*}
+and see what happens.
+\begin{example}
+\begin{align*}
+1+i+i^2+i^3+i^4+i^5 &= 1+i-1-i+1+i \\
+&= 1+i
+\end{align*}
+which cannot be simplified any further.\\
+(Because we only know $i^2=-1$.)
+\end{example}
+\end{frame}
+
+\begin{frame}{Addition}
+\begin{example}
+We would want addition to satisfy:-
+\begin{itemize}
+	\item $i+i = 2i$
+	\item $i-i = 0$
+	\item $(1+i)+2 = 3+i$
+\end{itemize}
+\end{example}
+\begin{definition}
+If $a$, $b$, $c$ and $d$ are real numbers then:
+	\begin{equation*}
+	(a+bi)+(c+di) = (a+c)+(b+d)i
+	\end{equation*}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Multiplication}
+\begin{example}
+We would want multiplication to satisfy:-
+	\begin{itemize}
+		\item $i\cdot i = -1$
+		\item $2\cdot i = 2i$
+		\item $(1+i)\cdot i = i+i\cdot i = -1+i$
+	\end{itemize}
+\end{example}
+\begin{definition}
+If $a$, $b$, $c$ and $d$ are real numbers then
+\begin{equation*}
+(a+bi)\cdot(c+di) = ac+adi+bci-db = (ac-bd)+(ad+bc)i
+\end{equation*}
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{Examples}
+\begin{example}
+Evaluate
+\begin{itemize}
+\item $(-3+6i) + (5-i)$.
+% Ans: 2+5i
+\item $(4-7i) + (6-2i)$.
+% 10-9i
+\item $(-3+6i) - (5-i)$.
+%-8+7i
+\item $(4-7i) - (6-2i)$.
+%-2-5i
+\end{itemize}
+\end{example}
+\begin{example}
+\begin{equation*} 
+(2-3i)(-3+4i) 
+\end{equation*}
+% ANS: 6+17i
+\end{example}
+\begin{example}
+Find all complex numbers $z$ such that $z^2 = -3+4i$.
+%% Ans: z = 1+2i or z = -1-2i
+\end{example}
+\end{frame}
+
+\begin{frame}{Equations}
+\begin{definition}
+If $a$, $b$, $c$ and $d$ are real numbers then
+\begin{equation*}
+a+bi = c+di
+\end{equation*}
+if and only if $a=c$ and $b=d.$
+\end{definition}
+\end{frame}
+
+\begin{frame}{Questions?}
+Questions?
+\end{frame}
 
 \section{Graphical interpretation}
 
@@ -262,10 +362,6 @@ $b$ is called the \emph{imaginary part} of $z$.
 \insertsection\par
 \end{beamercolorbox}
 \end{frame}
-
-
-
-
 
 \begin{frame}[fragile]{Graphical interpretation}
 Consider the function $\mathbb{R} \rightarrow \mathbb{R}$ that multiplies by $-1$:
@@ -306,27 +402,6 @@ and therefore has the same graphical interpretation as the addition of vectors i
 \end{columns}
 \end{frame}
 
-\begin{frame}{Examples}
-\begin{example}
-Evaluate
-\begin{itemize}
-\item $(-3+6i) + (5-i)$.
-% Ans: 2+5i
-\item $(4-7i) + (6-2i)$.
-% 10-9i
-\item $(-3+6i) - (5-i)$.
-%-8+7i
-\item $(4-7i) - (6-2i)$.
-%-2-5i
-\end{itemize}
-\end{example}
-\begin{example}
-\begin{equation*} 
-(2-3i)(-3+4i) 
-\end{equation*}
-% ANS: 6+17i
-\end{example}
-\end{frame}
 
 \begin{frame}{Historical curiosity}
 Apparently Bombelli describes complex arithmetic thus:
@@ -357,11 +432,7 @@ in modern notation.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Examples}
-\begin{example}
-Find all complex numbers $z$ such that $z^2 = -3+4i$.
-%% Ans: z = 1+2i or z = -1-2i
-\end{example}
+\begin{frame}{Clearing denominators}
 \begin{example}
 \begin{itemize}
 \item If $z=3+4i$, then $\overline{z}= 3-4i$,
@@ -371,9 +442,6 @@ i.e., $\overline{3+4i}=3-4i$.
 \item $\overline{7}= 7$.
 \end{itemize}
 \end{example}
-\end{frame}
-
-\begin{frame}{Clearing denominators}
 \begin{example}[Exemplar]
 Write 
 \begin{equation*}
