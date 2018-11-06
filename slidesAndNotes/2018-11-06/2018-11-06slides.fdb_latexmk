@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1541462240 "2018-11-06slides.xdv" "2018-11-06slides.pdf" "2018-11-06slides" 1541462245
-  "2018-11-06slides.xdv" 1541462240 803144 680a25a293ce5b7369a689ec99bad1ec "xelatex"
+["xdvipdfmx"] 1541520418 "2018-11-06slides.xdv" "2018-11-06slides.pdf" "2018-11-06slides" 1541520423
+  "2018-11-06slides.xdv" 1541520417 803552 126fc848586f8f7fbdefe731c011c0be "xelatex"
   (generated)
   "2018-11-06slides.pdf"
-["xelatex"] 1541462234 "2018-11-06slides.tex" "2018-11-06slides.xdv" "2018-11-06slides" 1541462245
+["xelatex"] 1541520411 "2018-11-06slides.tex" "2018-11-06slides.xdv" "2018-11-06slides" 1541520423
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -198,21 +198,21 @@
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1523934532 3731946 97a69080a287fbc922a3cd699c6fd124 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "2018-11-06slides.aux" 1541462240 7526 63251cd488e302195ca5bdc7b561bc7d ""
-  "2018-11-06slides.nav" 1541462240 4093 7dae1358951deefea27027bf9d66bf5c ""
-  "2018-11-06slides.out" 1541462240 302 2e353bcbc568dd73cb71c75313dc501a ""
-  "2018-11-06slides.tex" 1541462234 12050 f8d161d3b0543a7b1ed5c7c4975b8d2e ""
-  "2018-11-06slides.toc" 1541462240 251 e7efddc31bf6f5089139b3e35090004b ""
-  "2018-11-06slides.vrb" 1541462239 505 78986367c43952b92b24fde71e2889da ""
+  "2018-11-06slides.aux" 1541520417 7526 63251cd488e302195ca5bdc7b561bc7d ""
+  "2018-11-06slides.nav" 1541520417 4093 7dae1358951deefea27027bf9d66bf5c ""
+  "2018-11-06slides.out" 1541520417 302 2e353bcbc568dd73cb71c75313dc501a ""
+  "2018-11-06slides.tex" 1541520411 12070 b5ef350dee4d8f845cb32e19f60aa301 ""
+  "2018-11-06slides.toc" 1541520417 251 e7efddc31bf6f5089139b3e35090004b ""
+  "2018-11-06slides.vrb" 1541520417 505 78986367c43952b92b24fde71e2889da ""
   "complex-addition.png" 1541040074 323988 53eec275fccd08bf4c368f3388794062 ""
   "complex-plane.png" 1541460409 315989 d2bc82e81d7d482f56aeb737b421f3c5 ""
   "conjugate.png" 1541459570 317332 959fb8794f975c9aad4d75e668ca4b41 ""
   (generated)
-  "2018-11-06slides.log"
-  "2018-11-06slides.xdv"
+  "2018-11-06slides.out"
+  "2018-11-06slides.nav"
   "2018-11-06slides.aux"
+  "2018-11-06slides.snm"
   "2018-11-06slides.vrb"
   "2018-11-06slides.toc"
-  "2018-11-06slides.snm"
-  "2018-11-06slides.nav"
-  "2018-11-06slides.out"
+  "2018-11-06slides.xdv"
+  "2018-11-06slides.log"
