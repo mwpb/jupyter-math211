@@ -84,10 +84,7 @@ zw&=Re^{i\theta}Qe^{i\phi}\\
  &= (RQ)e^{i(\theta+\phi)}
 \end{align*}\vfill
 {\bf Slogan:} To multiply two complex numbers we multiply the moduli and add the angles.\vfill
-\end{frame}
-
-\begin{frame}{Powers using polar form}
-	\begin{theorem}[De Moivre Theorem]
+\begin{theorem}[De Moivre Theorem]
 	\begin{equation*}
 	(\cos\theta+i\sin\theta)^n = (e^{i\theta})^n = e^{in\theta} = \cos(n\theta)+i\sin(n\theta)
 	\end{equation*}
@@ -116,16 +113,51 @@ Express $(\frac{1}{2}-\frac{\sqrt{3}}{2}i)^{17}$ in the form $a+bi$. % ANS: 1/2 
 \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}{Principal roots}
-If $w = Re^{i\theta}$ then one solution to the equation
+\begin{frame}{Principal square roots}
+Now we know that:\vfill
+{\bf Slogan:} To multiply two complex numbers we multiply the moduli and add the angles.\vfill
+So we could try reversing this:\vfill
+{\bf Slogan:} To find the principal square root we take the square root of the modulus and halve the angle.\vfill
+\begin{itemize}
+	\item The answer will depend on the angle measuring convention.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Picture}
+If $z = e^{i\alpha}$ has unit modulus:\vfill
+\includegraphics[scale=5]{principal-square-root.png}
+\end{frame}
+
+\begin{frame}{Non-principal roots}
+Let $z = R\cdot e^{i\alpha}$ and take the principal square root:\vfill
 \begin{equation*}
-z^n = w
-\end{equation*}
-is 
+\sqrt{z} = \sqrt{R\cdot e^{i\alpha}} = \sqrt{R}\cdot e^{\frac{i\alpha}{2}}
+\end{equation*}\vfill
+Then all of\vfill
 \begin{equation*}
-z = \sqrt[n]{R}\cdot e^{\frac{i\theta}{n}}
+\sqrt{R}\cdot e^{(\frac{i\alpha}{2}+k\cdot\pi)}
+\end{equation*}\vfill
+are \emph{also} a square roots of $z$:\vfill
+\begin{equation*}
+\left(\sqrt{R}\cdot e^{(\frac{i\alpha}{2}+\pi)}\right)^2 = R\cdot e^{i\alpha + 2k\pi} = R\cdot e^{i\alpha} = z
 \end{equation*}
-although there will in fact be $n-1$ more solutions.
+\end{frame}
+
+\begin{frame}{Picture}
+  	The two roots of $z = e^{\frac{i\pi}{4}}$ are $e^{\frac{i\pi}{8}}$ and $e^{\frac{-7i\pi}{8}}$:\vfill
+	\includegraphics[scale=3]{roots-pi-4.png}
+\end{frame}
+
+\begin{frame}{Nth roots}
+Similarly there is a principal $n$-th root:\vfill
+\begin{equation*}
+\sqrt[n]{z} = \sqrt[n]{R\cdot e^{i\alpha}} = \sqrt[n]{R}\cdot e^{\frac{i\alpha}{n}}
+\end{equation*}\vfill
+and all numbers of the form\vfill
+\begin{equation*}
+	\sqrt[n]{R}e^{\frac{i\alpha+2k\pi}{n}}
+\end{equation*}\vfill
+are also $n$-th roots of $z$ for $k\in \mathbb{N}$.
 \end{frame}
 
 \begin{frame}{Square roots}
@@ -193,6 +225,71 @@ Find all solutions to the following equations:
 \end{example}
 \begin{example}
 Find all sixth roots of unity.
+\end{example}
+\end{frame}
+
+\section{Quadratic formula}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Quadratic formula}
+If $a$, $b$ and $c$ are \emph{complex numbers} then the equation
+\begin{equation*}
+az^2+bz+c = 0
+\end{equation*}
+has two solutions given by
+\begin{equation*}
+	z_1 = \frac{-b+\sqrt{b^2-4ac}}{2a} z_2 = \frac{-b-\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+\begin{itemize}
+	\item We assume $a\neq 0$.
+	\item The formula is unchanged $a$, $b$ and $c$ real numbers.
+	\item We always get a solution.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Galois theory for quadratics}
+If $u$ and $v$ are the roots of $f(x) = z^2 + bz+c$ then
+\begin{equation*}
+(z-u)(z-v) = z^2 - (u+v)z + uv
+\end{equation*}
+and so
+\begin{align*}
+b & = -u-v\\
+c & = uv
+\end{align*}
+\begin{itemize}
+	\item If $f$ is a \emph{real} quadratic we need both $u+v$ and $uv$ to be real.
+	\item This implies that $u = \overline{v}$ .
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Solve $z^2-14z+58 = 0$.
+\end{example}
+\begin{example}
+Find a real quadratic with $5-2i$ as a root. What is the other root?
+\end{example}
+\begin{example}
+Find a real quadratic with $-3+4i$ as a root. What is the other root?
+\end{example}
+\begin{example}
+Solve $z^2-(3-2i)z + (5-i) = 0$.
+\end{example}
+\begin{example}
+Find the roots of $z^2-3iz+(-3+i) = 0$.
+\end{example}
+\end{frame}
+
+\begin{frame}
+\begin{example}
+Verify that $4-i$ is a root of $z^2 - (2-3i)-(10+6i) = 0$. Find the other root.
 \end{example}
 \end{frame}
 

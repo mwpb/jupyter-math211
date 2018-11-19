@@ -377,6 +377,12 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/sansmathaccent/mathker
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT principal-square-root.png
+INPUT ./principal-square-root.png
+INPUT ./principal-square-root.png
+INPUT roots-pi-4.png
+INPUT ./roots-pi-4.png
+INPUT ./roots-pi-4.png
 OUTPUT 2018-11-21slides.nav
 OUTPUT 2018-11-21slides.toc
 OUTPUT 2018-11-21slides.snm
