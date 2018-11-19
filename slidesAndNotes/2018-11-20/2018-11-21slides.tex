@@ -119,7 +119,7 @@ Now we know that:\vfill
 So we could try reversing this:\vfill
 {\bf Slogan:} To find the principal square root we take the square root of the modulus and halve the angle.\vfill
 \begin{itemize}
-	\item The answer will depend on the angle measuring convention.
+	\item (The answer will depend on the angle measuring convention.)
 \end{itemize}
 \end{frame}
 
@@ -128,84 +128,66 @@ If $z = e^{i\alpha}$ has unit modulus:\vfill
 \includegraphics[scale=5]{principal-square-root.png}
 \end{frame}
 
-\begin{frame}{Non-principal roots}
+\begin{frame}{Non-principal square roots}
 Let $z = R\cdot e^{i\alpha}$ and take the principal square root:\vfill
+{\LARGE
 \begin{equation*}
 \sqrt{z} = \sqrt{R\cdot e^{i\alpha}} = \sqrt{R}\cdot e^{\frac{i\alpha}{2}}
-\end{equation*}\vfill
-Then all of\vfill
+\end{equation*}
+}\vfill
+Then all of number of the form\vfill
+{\LARGE
 \begin{equation*}
 \sqrt{R}\cdot e^{(\frac{i\alpha}{2}+k\cdot\pi)}
-\end{equation*}\vfill
-are \emph{also} a square roots of $z$:\vfill
+\end{equation*}
+}\vfill
+for $k\in \mathbb{Z}$ are \emph{also} a square roots of $z$:\vfill
+{\LARGE
 \begin{equation*}
 \left(\sqrt{R}\cdot e^{(\frac{i\alpha}{2}+\pi)}\right)^2 = R\cdot e^{i\alpha + 2k\pi} = R\cdot e^{i\alpha} = z
 \end{equation*}
+}
 \end{frame}
 
-\begin{frame}{Picture}
-  	The two roots of $z = e^{\frac{i\pi}{4}}$ are $e^{\frac{i\pi}{8}}$ and $e^{\frac{-7i\pi}{8}}$:\vfill
+\begin{frame}{Example}
+  	The two square roots of $z = e^{\frac{i\pi}{4}}$ are $e^{\frac{i\pi}{8}}$ and $e^{\frac{-7i\pi}{8}}$:\vfill
 	\includegraphics[scale=3]{roots-pi-4.png}
 \end{frame}
 
-\begin{frame}{Nth roots}
+\begin{frame}{N-th roots}
 Similarly there is a principal $n$-th root:\vfill
+{\LARGE
 \begin{equation*}
 \sqrt[n]{z} = \sqrt[n]{R\cdot e^{i\alpha}} = \sqrt[n]{R}\cdot e^{\frac{i\alpha}{n}}
-\end{equation*}\vfill
+\end{equation*}}\vfill
 and all numbers of the form\vfill
+{\LARGE
 \begin{equation*}
 	\sqrt[n]{R}e^{\frac{i\alpha+2k\pi}{n}}
-\end{equation*}\vfill
+\end{equation*}
+}\vfill
 are also $n$-th roots of $z$ for $k\in \mathbb{N}$.
 \end{frame}
 
-\begin{frame}{Square roots}
-\begin{columns}
-\column{0.5\textwidth}
-% \includegraphics[scale=0.4]{root-25.png}
-\column{0.4\textwidth}
-The solutions to
-\begin{equation*}
-	z^2 = 25
-\end{equation*}
-are
-\begin{equation*}
-z=+5\text{ and } z=-5
-\end{equation*}
-\end{columns}
+\begin{frame}{Cube roots}
+The cube roots of $8$ are $2$, $2e^{\frac{2i\pi}{3}}$ and $2e^{\frac{-2i\pi}{3}}$:\vfill
+\begin{center}
+\includegraphics[scale=0.7]{cube-roots-8.png}
+\end{center}
 \end{frame}
 
-\begin{frame}{Square roots}
-\begin{columns}
-\column{0.5\textwidth}
-% \includegraphics[scale=2.8]{root-i.png}
-\column{0.4\textwidth}
-The solutions to
-\begin{equation*}
-	z^2 = i
-\end{equation*}
-are
-\begin{equation*}
-z=e^{\frac{\pi}{4}}\text{ and } z=e^{\frac{-3\pi i}{4}}
-\end{equation*}
-\end{columns}
+\begin{frame}{Cube roots}
+The cube roots of $i$ are $e^{\frac{i\pi}{6}}$, $-i$ and $e^{\frac{5i\pi}{6}}$:
+\begin{center}
+\includegraphics[scale=2]{cube-pi-2.png}
+\end{center}
 \end{frame}
 
-\begin{frame}{Square roots}
-In general if $w = Re^{i\theta}$ then all of
-\begin{equation*}
-\sqrt{R}e^{i\left(\frac{\theta}{2}+k\pi\right)}
-\end{equation*}
-will be square roots of $w$ because
-\begin{equation*}
-\left(\sqrt{R}e^{i\left(\frac{\theta}{2}+k\pi\right)}\right)^2 = Re^{i\left(\theta+2k\pi\right)} = Re^{i\theta}
-\end{equation*}
-and then we need to find the values of 
-\begin{equation*}
-\frac{\theta}{2}+k\pi
-\end{equation*}
-that are between $-\pi$ and $+\pi$.
+\begin{frame}{4-th roots}
+The fourth roots of unity are: $1$, $i$, $-1$ and $-i$:
+\begin{center}
+\includegraphics[scale=2]{four-roots-unity.png}
+\end{center}
 \end{frame}
 
 \begin{frame}{Questions?}
@@ -279,15 +261,15 @@ Find a real quadratic with $5-2i$ as a root. What is the other root?
 \begin{example}
 Find a real quadratic with $-3+4i$ as a root. What is the other root?
 \end{example}
+\end{frame}
+
+\begin{frame}
 \begin{example}
 Solve $z^2-(3-2i)z + (5-i) = 0$.
 \end{example}
 \begin{example}
 Find the roots of $z^2-3iz+(-3+i) = 0$.
 \end{example}
-\end{frame}
-
-\begin{frame}
 \begin{example}
 Verify that $4-i$ is a root of $z^2 - (2-3i)-(10+6i) = 0$. Find the other root.
 \end{example}
