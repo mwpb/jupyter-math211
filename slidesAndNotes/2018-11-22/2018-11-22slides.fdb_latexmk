@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1542903178 "2018-11-22slides.tex" "2018-11-22slides.pdf" "2018-11-22slides" 1542903188
+["pdflatex"] 1542927059 "2018-11-22slides.tex" "2018-11-22slides.pdf" "2018-11-22slides" 1542927069
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -222,11 +222,11 @@
   "/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1523934492 2717033 f61a5287d9c22a39a74f1979fe3f905c ""
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "2018-11-22slides.aux" 1542903188 6216 d0371e3811cabf0883fbe93a72d0361d ""
-  "2018-11-22slides.nav" 1542903188 3738 a621fe2106387e4507b4253d167264e8 ""
-  "2018-11-22slides.out" 1542903188 234 317784c5c2323750ecd31117e6de52f1 ""
-  "2018-11-22slides.tex" 1542903176 9616 455cf6ca792117244787635a39038244 ""
-  "2018-11-22slides.toc" 1542903188 196 3b52115e357f5beeb89cca8b666743ed ""
+  "2018-11-22slides.aux" 1542927069 6216 d0371e3811cabf0883fbe93a72d0361d ""
+  "2018-11-22slides.nav" 1542927069 3738 a621fe2106387e4507b4253d167264e8 ""
+  "2018-11-22slides.out" 1542927069 234 317784c5c2323750ecd31117e6de52f1 ""
+  "2018-11-22slides.tex" 1542927058 9616 f85a53a6030c56ccf0b69ab38ddbb2e7 ""
+  "2018-11-22slides.toc" 1542927069 196 3b52115e357f5beeb89cca8b666743ed ""
   "2d-diag.png" 1542836618 415251 aafbdf2a3664523770ae5e9a7606a033 ""
   "3d-rotation.png" 1542837288 45221 6a87c758e2d74ffc20ecd653497b7db3 ""
   "cube-pi-2.png" 1542668601 202759 42aa66a4e29f3f9c8f91f0d48a1972ec ""
@@ -235,10 +235,10 @@
   "principal-square-root.png" 1542662686 198666 7d4a9ddf83fc252e8d4cc4dd11e4bb6a ""
   "roots-pi-4.png" 1542664591 171370 ad27ea9d5756d19dedce18b151b91bc8 ""
   (generated)
-  "2018-11-22slides.log"
   "2018-11-22slides.aux"
+  "2018-11-22slides.out"
   "2018-11-22slides.toc"
+  "2018-11-22slides.snm"
   "2018-11-22slides.pdf"
   "2018-11-22slides.nav"
-  "2018-11-22slides.out"
-  "2018-11-22slides.snm"
+  "2018-11-22slides.log"
