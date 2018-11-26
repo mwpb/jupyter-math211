@@ -316,7 +316,7 @@ is \emph{not} invertible.
 \end{example}
 \end{frame}
 
-\section{Eigenvectors}
+\section{Eigenspaces}
 
 \begin{frame}
 \begin{beamercolorbox}[sep=12pt,center]{part title}
@@ -326,14 +326,21 @@ is \emph{not} invertible.
 \end{frame}
 
 \begin{frame}{Finding eigenvectors}
-Suppose that we know $\lambda$ is an eigenvalue for $A$.\vfill
-Then we find the eigenvectors associated to $\lambda$ by solving:
+\begin{definition}
+The \emph{eigenspace $E_{\lambda}$ associated to $\lambda$} is the set of solutions to:
 \begin{equation*}
 (A-\lambda\cdot I)x = 0
-\end{equation*}\vfill
+\end{equation*}
+\end{definition}\vfill
 \begin{itemize}
 	\item After doing row reduction we will get infinitely many solutions.
 	\item The no. of parameters is called the \emph{geometric multiplicity} of $\lambda$.
+	\item A set of vectors spanning the solution space are called \emph{basic eigenvectors}.
+	\item E.g. if the solutions are of the form:
+	\begin{equation*}
+		s \vec{a} + t\vec{b}
+	\end{equation*}
+	then the geometric multiplicity is $2$ and the basic eigenvectors are $\vec{a}$ and $\vec{b}$.
 \end{itemize}
 \end{frame}
 
@@ -432,6 +439,29 @@ If the characteristic polynomial of $A$ has $n$ distinct eigenvalues then $A$ is
 \end{lemma}
 \end{frame}
 
+\begin{frame}{Summary}
+\begin{enumerate}
+	\item Find the eigenvalues by solving $\left|A-\lambda\cdot I\right|$.
+	\begin{itemize}
+		\item The no. of $(\lambda - \lambda_i)$ factors is the \emph{algebraic multiplicity $alg(\lambda_i)$}.
+	\end{itemize}
+	\vfill
+	\item Find the eigenspaces $E_{\lambda_i}$ by solving $(A-\lambda_i\cdot I) = 0$.
+	\begin{itemize}
+		\item Only need to do this for the eigenvalues $\lambda_i$ found in (1).
+		\item The no. of parameters is the \emph{geometric multiplicity $geom(\lambda_i)$}.
+	\end{itemize}\vfill
+	\item 
+	\begin{itemize}
+		\item If for all $\lambda_i$ found in (1) we have $geom(\lambda_i) = alg(\lambda_i)$
+		then the diagonalising matrix is $P= \left[v_{\lambda_1} v_{\lambda_2} \dots v_{\lambda_n}\right]$
+		where the $v_{\lambda_i}$ are the basic eigenvectors.
+		\item If for any of the $\lambda_i$ found in (1) has $geom(\lambda_i) < alg(\lambda_i)$
+		then the matrix is not diagonalisable.
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
 \begin{frame}{Examples}
 \begin{example}
 If possible diagonalise
@@ -455,6 +485,9 @@ If possible diagonalise
 \right]
 \end{equation*}
 \end{example}
+\end{frame}
+
+\begin{frame}{Examples}
 \begin{example}
 If possible diagonalise
 \[
