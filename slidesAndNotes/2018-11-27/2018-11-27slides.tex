@@ -384,8 +384,99 @@ So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combinati
 \end{definition}
 \end{frame}
 
-\begin{frame}{Motivation}
-Suppose we want to find 
+\begin{frame}[fragile]{Motivation}
+Suppose we want to find $Av$.
+{\LARGE
+\begin{equation*}
+\begin{tikzcd}[row sep = 2cm]
+v = \sum_{i=1}^n v_i e_i \dar[mapsto]{P^{-1}} & Av = \sum_{i=1}^n (Av)_i e_i\\
+\sum_{i=1}^n a_i v_{\lambda_i} \rar[mapsto]{\text{Apply }A} & \sum_{i=1}^n a_i\lambda_i v_{\lambda_i} \uar[mapsto][swap]{P}
+\end{tikzcd}
+\end{equation*}
+}
+\begin{itemize}
+	\item where $P$ writes a linear combination of eigenvectors as a linear combination of standard basis vectors
+	\item we say that the bottom horizontal action is \emph{diagonal}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Diagonalisation}
+\begin{definition}
+The matrix $P$ \emph{diagonalises $A$} iff 
+\begin{equation*}
+PAP^{-1}
+\end{equation*}
+is a diagonal matrix.
+\end{definition}\vfill
+{\bf Question:} How do we find the matrix $P$ for a matrix $A$?\vfill
+{\bf Answer:} If $v_{\lambda_1}$, $v_{\lambda_2}$ \dots $v_{\lambda_n}$ are eigenvectors such that every $x\in \mathbb{R}^n$ is a linear combination of the $v_{\lambda_i}$ then the matrix
+\begin{equation*}
+P = \left[ v_{\lambda_1} v_{\lambda_2} \dots v_{\lambda_n}\right]
+\end{equation*}
+with eigenvectors as the columns is a diagonalising matrix for $A$.
+\end{frame}
+
+\begin{frame}{When is a matrix diagonalisable?}
+\begin{theorem}
+The following are equivalent for a matrix $A$:
+\begin{enumerate}
+	\item there is a $P$ such that $PAP^{-1}$ is diagonal
+	\item there are $n$ eigenvectors such that any $x\in \mathbb{R}^n$ is a linear combination of these eigenvectors
+	\item there are eigenvectors $v_1\dots v_n$ such that $\left[v_1 v_2\dots v_n \right]$ is invertible
+	\item for every eigenvalue $\lambda$ the geometric multiplicity is equal to the algebraic multiplicity
+\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+If the characteristic polynomial of $A$ has $n$ distinct eigenvalues then $A$ is diagonalisable by $4$.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+If possible diagonalise
+\begin{equation*}
+\left[
+\begin{matrix}
+1&1\\
+-1&1
+\end{matrix}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+If possible diagonalise
+\begin{equation*}
+\left[
+\begin{matrix}
+1&1\\
+0&1
+\end{matrix}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+3&-4&2\\
+1&-2&2\\
+1&-5&5
+\end{matrix}
+\right]\]
+\end{example}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+1&0&1\\
+0&1&0\\
+0&0&-3
+\end{matrix}
+\right]\]
+\end{example}
 \end{frame}
 
 
