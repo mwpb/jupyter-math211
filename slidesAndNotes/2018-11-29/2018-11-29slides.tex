@@ -1,0 +1,429 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+\usepackage{tikz-cd}
+\newcommand{\lectureDate}{\formatdate{29}{11}{2018}}
+
+\setbeamertemplate{caption}
+{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+	\begin{itemize}
+		\item Spectral theory\vfill
+		\item Finding eigenvalues\vfill
+		\item Finding eigenspaces of eigenvectors
+	\end{itemize}
+\end{frame}
+
+\section{Diagonalisation}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Motivation}
+If $x\in \mathbb{R}^n$ is a linear combination of eigenvectors of $A$ then:
+\begin{equation*}
+	A(x) = A\left(\sum_{i=1}^n a_i v_{\lambda_i}\right) = \sum_{i=1}^n a_iA(v_{\lambda_i}) = \sum_{i=1}^n a_i\lambda_iv_{\lambda_i}
+\end{equation*}
+So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combination of eigenvectors of $A$ the the \emph{entire} matrix action simplifies.\vfill
+\begin{definition}
+	An $n\times n$ matrix $A$ is \emph{diagonalisable} iff every vector in $\mathbb{R}^n$ can be written as a linear combination of eigenvectors.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+	\begin{equation*}
+	\left[
+	\begin{matrix}
+	3&0\\
+	0&5
+	\end{matrix}
+	\right]
+	\text{ has eigenvectors }
+	\left[
+	\begin{matrix}
+	1\\
+	0
+	\end{matrix}
+	\right]\text{ and }
+	\left[
+	\begin{matrix}
+	0\\
+	1
+	\end{matrix}
+	\right]
+	\end{equation*}
+	and so is diagonalisable.
+\end{example}
+\begin{example}
+	\begin{equation*}
+		A = \left[\begin{matrix}
+			3 & -1\\
+			-1 & 3
+		\end{matrix}\right]
+	\text{ has eigenvectors }
+	v_2 = \left[
+	\begin{matrix}
+	1\\
+	1
+	\end{matrix}
+	\right]\text{ and }
+	v_4 = \left[
+	\begin{matrix}
+	1\\
+	-1
+	\end{matrix}
+	\right]
+	\end{equation*}
+	and so is diagonalisable because all vectors in $\mathbb{R}^2$ can be written as a linear combination of $v_1$ and $v_4$.
+\end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Motivation}
+Suppose we want to find $Av$.
+{\LARGE
+\begin{equation*}
+\begin{tikzcd}[row sep = 2cm]
+v = \sum_{i=1}^n v_i e_i \dar[mapsto]{P^{-1}} & Av = \sum_{i=1}^n (Av)_i e_i\\
+\sum_{i=1}^n a_i v_{\lambda_i} \rar[mapsto]{\text{Apply }A} & \sum_{i=1}^n a_i\lambda_i v_{\lambda_i} \uar[mapsto][swap]{P}
+\end{tikzcd}
+\end{equation*}
+}
+\begin{itemize}
+	\item where $P$ writes a linear combination of eigenvectors as a linear combination of standard basis vectors
+	\item we say that the bottom horizontal action is \emph{diagonal}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Diagonalisation}
+\begin{definition}
+The matrix $P$ \emph{diagonalises $A$} iff there is a diagonal matrix $D$ such that
+\begin{equation*}
+A = PDP^{-1}
+\end{equation*}
+\end{definition}\vfill
+{\bf Question:} How do we find the matrix $P$ for a matrix $A$?\vfill
+{\bf Answer:} If $v_{\lambda_1}$, $v_{\lambda_2}$ \dots $v_{\lambda_n}$ are eigenvectors such that every $x\in \mathbb{R}^n$ is a linear combination of the $v_{\lambda_i}$ then the matrix
+\begin{equation*}
+P = \left[ v_{\lambda_1} v_{\lambda_2} \dots v_{\lambda_n}\right]
+\end{equation*}
+with eigenvectors as the columns is a diagonalising matrix for $A$.
+\end{frame}
+
+\begin{frame}{When is a matrix diagonalisable?}
+\begin{theorem}
+The following are equivalent for a matrix $A$:
+\begin{enumerate}
+	\item there is a $P$ such that $P^{-1}AP$ is diagonal
+	\item there are $n$ eigenvectors such that any $x\in \mathbb{R}^n$ is a linear combination of these eigenvectors
+	\item there are eigenvectors $v_1\dots v_n$ such that $\left[v_1 v_2\dots v_n \right]$ is invertible
+	\item for every eigenvalue $\lambda$ the geometric multiplicity is equal to the algebraic multiplicity
+\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+If the characteristic polynomial of $A$ has $n$ distinct eigenvalues then $A$ is diagonalisable by $4$.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+If possible diagonalise
+\begin{equation*}
+\left[
+\begin{matrix}
+1&1\\
+-1&1
+\end{matrix}
+\right]
+\end{equation*}
+\end{example}
+\begin{example}
+If possible diagonalise
+\begin{equation*}
+\left[
+\begin{matrix}
+1&1\\
+0&1
+\end{matrix}
+\right]
+\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+3&-4&2\\
+1&-2&2\\
+1&-5&5
+\end{matrix}
+\right]\]
+\end{example}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+1&0&1\\
+0&1&0\\
+0&0&-3
+\end{matrix}
+\right]\]
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{enumerate}
+	\item Find the eigenvalues by solving $\left|A-\lambda\cdot I\right|$.
+	\begin{itemize}
+		\item The no. of $(\lambda - \lambda_i)$ factors is the \emph{algebraic multiplicity $alg(\lambda_i)$}.
+	\end{itemize}
+	\vfill
+	\item Find the eigenspaces $E_{\lambda_i}$ by solving $(A-\lambda_i\cdot I) = 0$.
+	\begin{itemize}
+		\item Only need to do this for the eigenvalues $\lambda_i$ found in (1).
+		\item The no. of parameters is the \emph{geometric multiplicity $geom(\lambda_i)$}.
+	\end{itemize}\vfill
+	\item 
+	\begin{itemize}
+		\item If for all $\lambda_i$ found in (1) we have $geom(\lambda_i) = alg(\lambda_i)$
+		then the diagonalising matrix is $P= \left[v_{\lambda_1} v_{\lambda_2} \dots v_{\lambda_n}\right]$
+		where the $v_{\lambda_i}$ are the basic eigenvectors.
+		\item If for any of the $\lambda_i$ found in (1) has $geom(\lambda_i) < alg(\lambda_i)$
+		then the matrix is not diagonalisable.
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{Powers}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+
+\begin{frame}{Taking powers of a diagonalisable matrix}
+Suppose that there exists a diagonal matrix $D$ such that
+\begin{equation*}
+A = P D P^{-1}
+\end{equation*}
+for some invertible matrix $P$.
+Then
+\begin{equation*}
+A^2 = PDP^{-1}PDP^{-1} = PD^2P^{-1}
+\end{equation*}
+and indeed
+\begin{equation*}
+A^n = PD^nP^{-1}
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find $A^9$ if
+	\begin{equation*}
+	A = \left[
+	\begin{matrix}
+	5&0\\
+	0&2
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\begin{example}
+	Find $A^{50}$ if 
+	\begin{equation*}
+	A = \left[
+	\begin{matrix}
+	2&1&0\\
+	0&1&0\\
+	-1&-1&1
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\section{Dynamical systems}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Markov chains}
+\begin{definition}
+	A \emph{dynamical system} consists of a function $\alpha(t)$ that prescribes how the state of the system changes over time. 
+\end{definition}
+\begin{definition}
+	A \emph{discrete linear dynamical system} consists of a sequence of vectors
+	\begin{equation*}
+	x_0, x_1, x_2, \dots, x_k, \dots
+	\end{equation*}
+	such that $x_{k+1} = Ax_{k}$ for some matrix $A$.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Long term behaviour using eigenvectors}
+If $x_0$ is a linear combination of the eigenvectors $v_{\lambda_i}$ of $A$ then 
+\begin{equation*}
+x_k = A^k x_0 = A^k\left(\sum_{i=1}^n b_i v_{\lambda_i}\right) = \sum_{i=1}^n b_i A^k\left(v_{\lambda_i}\right) = \sum_{i=1}^nb_i(\lambda_i)^kv_{\lambda_i}
+\end{equation*}
+and so the long-term behaviour is determined by the limits:
+\begin{equation*}
+\lim_{k\to \infty} (\lambda_i)^k
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Dominant eigenvalue}
+\begin{definition}
+	If a is a square matrix then a \emph{dominant eigenvalue $\lambda_{max}$} is one for which $|\lambda_{max}|>|\lambda_i|$ for all other eigenvalues $\lambda_i$.
+\end{definition}
+\begin{equation*}
+x_k = \sum_{i=1}^n b_i (\lambda_i)^k v_{\lambda_i} \approx b_i (\lambda_{max})^k v_{\lambda_{max}}
+\end{equation*}
+and we can read off the long term behaviour. E.g.
+\begin{itemize}
+	\item if $|\lambda_{max}|< 1$ then the system converges to $0$
+	\item if $|\lambda_{max}| = 1$ then the system converges to $b_iv_{\lambda_{max}}$
+	\item if $|\lambda_{max}| = -1$ then the system oscillates between $\pm b_iv_{\lambda_{max}}$
+	\item if $|\lambda_{max}>1|$ then the system diverges
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find a formula for $x_k$ if $x_{k+1} = Ax_k$,
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	1\\
+	-1
+	\end{matrix}
+	\right] \text{ and } A = \left[
+	\begin{matrix}
+	2&0\\
+	3&-1
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\begin{example}
+	Estimate the long term behaviour of the dynamical system with
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	100\\
+	40
+	\end{matrix}
+	\right] \text{ and }
+	A = \left[
+	\begin{matrix}
+	\frac{1}{2}&\frac{1}{4}\\
+	2&0
+	\end{matrix}
+	\right]
+	\end{equation*}
+
+\end{example}
+\end{frame}
+
+\section{Markov chains}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Markov chains}
+A \emph{Markov chain} consists of:-\vfill
+\begin{itemize}
+	\item a finite set of \emph{states} $x_1$, $x_2$, \dots, $x_n$\vfill
+	\item a repeated \emph{transition interval} at the end of which the system transitions between states\vfill
+	\item a \emph{non-deterministic rule} for predicting the probability that the system will transition into a certain state
+	\begin{itemize}
+		\item {\bf This probability only depends on the current state.}
+		\item (Not the entire history of the chain.)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Markov transition matrices}
+This means that a Markov chain is described by a matrix $A$ such that
+\begin{align*}
+A_{ij} &= \mathbb{P}(X_1 = j | X_0 = i)\\
+&= \text{ the probability that the next state will be $j$ }\\
+&\hspace{0.5cm} \text{ if the current state is $i$}
+\end{align*}
+Therefore:-
+\begin{itemize}
+	\item all of the entries are between $0$ and $1$
+	\begin{itemize}
+		\item (I.e. they are probabilities.)
+	\end{itemize}
+	\item in any column the sum of the entries is $1$
+	\begin{itemize}
+		\item (The system must transition into one of the states.)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+	Find the probability that $x_3$ is in state $1$ if
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	0\\
+	0\\
+	1
+	\end{matrix}
+	\right] \text{ and }
+	A = \left[
+	\begin{matrix}
+	0.4&0.25&0.2\\
+	0.4&0.35&0.5\\
+	0.2&0.4& 0.3
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\end{document}
