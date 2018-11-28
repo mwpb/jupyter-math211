@@ -99,7 +99,7 @@ So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combinati
 	\end{matrix}
 	\right]
 	\end{equation*}
-	and so is diagonalisable because all vectors in $\mathbb{R}^2$ can be written as a linear combination of $v_1$ and $v_4$.
+	and so is diagonalisable because all vectors in $\mathbb{R}^2$ can be written as a linear combination of $v_2$ and $v_4$.
 \end{example}
 \end{frame}
 
@@ -146,7 +146,7 @@ The following are equivalent for a matrix $A$:
 \end{theorem}
 
 \begin{lemma}
-If the characteristic polynomial of $A$ has $n$ distinct eigenvalues then $A$ is diagonalisable by $4$.
+If the characteristic polynomial of $A$ has $n$ distinct eigenvalues then $A$ is diagonalisable by (4).
 \end{lemma}
 \end{frame}
 
@@ -222,6 +222,37 @@ If possible diagonalise
 		then the matrix is not diagonalisable.
 	\end{itemize}
 \end{enumerate}
+\end{frame}
+
+\section{Similar matrices}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Similar matrices}
+\begin{definition}
+	Two matrices $A$ and $B$ are \emph{similar} iff there exists an invertible $P$ such that
+	\begin{equation*}
+	A = PBP^{-1}
+	\end{equation*}
+	and we write $A\sim B$.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Trace of a matrix}
+\begin{definition}
+	The trace of a matrix is the sum of its diagonal elements:
+	\begin{equation*}
+	tr(A) = \sum_{i=1}^n a_{ii}
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	If $A\sim B$ then $tr(A) = tr(B)$.
+\end{theorem}
 \end{frame}
 
 \section{Powers}
