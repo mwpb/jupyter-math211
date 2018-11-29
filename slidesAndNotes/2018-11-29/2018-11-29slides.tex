@@ -48,7 +48,7 @@ If $x\in \mathbb{R}^n$ is a linear combination of eigenvectors of $A$ then:
 \begin{equation*}
 	A(x) = A\left(\sum_{i=1}^n a_i v_{\lambda_i}\right) = \sum_{i=1}^n a_iA(v_{\lambda_i}) = \sum_{i=1}^n a_i\lambda_iv_{\lambda_i}
 \end{equation*}
-So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combination of eigenvectors of $A$ the the \emph{entire} matrix action simplifies.\vfill
+So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combination of eigenvectors of $A$ then the \emph{entire} matrix action simplifies.\vfill
 \begin{definition}
 	An $n\times n$ matrix $A$ is \emph{diagonalisable} iff every vector in $\mathbb{R}^n$ can be written as a linear combination of eigenvectors.
 \end{definition}
@@ -104,11 +104,11 @@ So if \emph{every} vector in $\mathbb{R}^n$ can be written as a linear combinati
 \end{frame}
 
 \begin{frame}[fragile]{Motivation}
-Suppose we want to find $Av$.
+Suppose we want to find $Ax$.
 {\LARGE
 \begin{equation*}
 \begin{tikzcd}[row sep = 2cm]
-v = \sum_{i=1}^n v_i e_i \dar[mapsto]{P^{-1}} & Av = \sum_{i=1}^n (Av)_i e_i\\
+x = \sum_{i=1}^n xv_i e_i \dar[mapsto]{P^{-1}} & Ax = \sum_{i=1}^n (Ax)_i e_i\\
 \sum_{i=1}^n a_i v_{\lambda_i} \rar[mapsto]{\text{Apply }A} & \sum_{i=1}^n a_i\lambda_i v_{\lambda_i} \uar[mapsto][swap]{P}
 \end{tikzcd}
 \end{equation*}

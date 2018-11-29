@@ -1,9 +1,9 @@
 \frametitle{Motivation}
-Suppose we want to find $Av$.
+Suppose we want to find $Ax$.
 {\LARGE
 \begin{equation*}
 \begin{tikzcd}[row sep = 2cm]
-v = \sum_{i=1}^n v_i e_i \dar[mapsto]{P^{-1}} & Av = \sum_{i=1}^n (Av)_i e_i\\
+x = \sum_{i=1}^n xv_i e_i \dar[mapsto]{P^{-1}} & Ax = \sum_{i=1}^n (Ax)_i e_i\\
 \sum_{i=1}^n a_i v_{\lambda_i} \rar[mapsto]{\text{Apply }A} & \sum_{i=1}^n a_i\lambda_i v_{\lambda_i} \uar[mapsto][swap]{P}
 \end{tikzcd}
 \end{equation*}
