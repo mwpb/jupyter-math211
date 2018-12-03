@@ -290,4 +290,65 @@ If the transition matrix of a Markov chain is regular then it has a steady state
 \end{example}
 \end{frame}
 
+\section{PageRank}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Simplified Google PageRank}
+The core part of Google PageRank (mainly due to Larry Page) is calculated recursively:-\vfill
+\begin{itemize}
+	\item Suppose we have $n$ pages: $P_1$, $P_2$ \dots $P_n$\vfill
+	\item denote the PageRank of $P_i$ by $PR(i)$\vfill
+	\item then (recursively) define
+	\begin{equation*}
+	PR(i) = \sum_{j=1}^n \frac{PR(j)\cdot L_{ji}}{Out(j)}
+	\end{equation*}
+	where $L_{ji}$ is the number of links from $P_j$ to $P_i$ and $Out(j)$ is the total number of links on page $j$.
+\end{itemize}\vfill
+At first glance it is not even clear that this is well-defined\dots
+\end{frame}
+
+\begin{frame}{Steady state vector}
+To work out the PageRank for each site:-
+\begin{itemize}
+	\item Form the matrix with entries $A_{ij} = \frac{L_{ji}}{Out(j)}$.
+	\item Find a steady state vector for this system.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{PageRank Example}
+\begin{example}[Simplified PageRank]
+	Suppose that the internet consists of three(!) pages $P_1$, $P_2$ and $P_3$.
+	Suppose further that:-
+	\begin{itemize}
+		\item there are two links from $P_1$ to $P_2$
+		\item there is one link from $P_1$ to $P_3$
+		\item there is one link from $P_2$ to $P_1$
+		\item there is one link from $P_2$ to $P_3$
+		\item there is one link from $P_3$ to $P_2$
+	\end{itemize}
+	Then calculate the (relative) PageRanks for $P_1$, $P_2$ and $P_3$.
+\end{example}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+3&-4&2\\
+1&-2&2\\
+1&-5&5
+\end{matrix}
+\right]\]
+\end{example}
+
+\end{frame}
+
 \end{document}
