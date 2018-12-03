@@ -1,0 +1,293 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+\usepackage{tikz-cd}
+\newcommand{\lectureDate}{\formatdate{04}{12}{2018}}
+
+\setbeamertemplate{caption}
+{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section*{Last time}
+\label{sec:Last-time}
+
+\begin{frame}{Last time}
+	\begin{itemize}
+		\item Diagonalisation\vfill
+		\item Matrix powers
+	\end{itemize}
+\end{frame}
+
+\section{Similar matrices}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Similar matrices}
+\begin{definition}
+	Two matrices $A$ and $B$ are \emph{similar} iff there exists an invertible $P$ such that
+	\begin{equation*}
+	A = PBP^{-1}
+	\end{equation*}
+	and we write $A\sim B$.
+\end{definition}\vfill
+\begin{example}
+	Every diagonalisable matrix is similar to a diagonal matrix.
+\end{example}
+\end{frame}
+
+\begin{frame}{Trace of a matrix}
+\begin{definition}
+	The trace of a matrix is the sum of its diagonal elements:
+	\begin{equation*}
+	tr(A) = \sum_{i=1}^n a_{ii}
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	If $A\sim B$ then $tr(A) = tr(B)$.
+\end{theorem}
+\end{frame}
+
+\section{Dynamical systems}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Dynamical systems}
+\begin{definition}
+	A \emph{dynamical system} consists of a function $\alpha(t)$ that prescribes how the state of the system changes over time. 
+\end{definition}
+\begin{definition}
+	A \emph{discrete linear dynamical system} consists of a sequence of vectors
+	\begin{equation*}
+	x_0, x_1, x_2, \dots, x_k, \dots
+	\end{equation*}
+	such that $x_{k+1} = Ax_{k}$ for some matrix $A$.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Long term behaviour using eigenvectors}
+If $x_0$ is a linear combination of the eigenvectors $v_{\lambda_i}$ of $A$ then 
+\begin{equation*}
+x_k = A^k x_0 = A^k\left(\sum_{i=1}^n b_i v_{\lambda_i}\right) = \sum_{i=1}^n b_i A^k\left(v_{\lambda_i}\right) = \sum_{i=1}^nb_i(\lambda_i)^kv_{\lambda_i}
+\end{equation*}
+and so the long-term behaviour is determined by the limits:
+\begin{equation*}
+\lim_{k\to \infty} (\lambda_i)^k
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Dominant eigenvalue}
+\begin{definition}
+	If a is a square matrix then a \emph{dominant eigenvalue $\lambda_{max}$} is one for which $|\lambda_{max}|>|\lambda_i|$ for all other eigenvalues $\lambda_i$.
+\end{definition}
+\begin{equation*}
+x_k = \sum_{i=1}^n b_i (\lambda_i)^k v_{\lambda_i} \approx b_i (\lambda_{max})^k v_{\lambda_{max}}
+\end{equation*}
+and we can read off the long term behaviour. E.g.
+\begin{itemize}
+	\item if $|\lambda_{max}|< 1$ then the system converges to $0$
+	\item if $|\lambda_{max}| = 1$ then the system converges to $b_iv_{\lambda_{max}}$
+	\item if $|\lambda_{max}| = -1$ then the system oscillates between $\pm b_iv_{\lambda_{max}}$
+	\item if $|\lambda_{max}>1|$ then the system diverges
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find a formula for $x_k$ if $x_{k+1} = Ax_k$,
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	1\\
+	-1
+	\end{matrix}
+	\right] \text{ and } A = \left[
+	\begin{matrix}
+	2&0\\
+	3&-1
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\begin{example}
+	Estimate the long term behaviour of the dynamical system with
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	100\\
+	40
+	\end{matrix}
+	\right] \text{ and }
+	A = \left[
+	\begin{matrix}
+	\frac{1}{2}&\frac{1}{4}\\
+	2&0
+	\end{matrix}
+	\right]
+	\end{equation*}
+
+\end{example}
+\end{frame}
+
+\section{Markov chains}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Markov chains}
+A \emph{Markov chain} consists of:-\vfill
+\begin{itemize}
+	\item a finite set of \emph{states} $x_1$, $x_2$, \dots, $x_n$\vfill
+	\item a repeated \emph{transition interval} at the end of which the system transitions between states\vfill
+	\item a \emph{not necessarily deterministic rule} for predicting the probability that the system will transition into a certain state
+	\begin{itemize}
+		\item {\bf This probability only depends on the current state.}
+		\item (Not the entire history of the chain.)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Markov transition matrices}
+This means that a Markov chain is described by a \emph{transition matrix} $A$ such that
+\begin{align*}
+A_{ij} &= \mathbb{P}(X_1 = j | X_0 = i)\\
+&= \text{ the probability that the next state will be $j$ }\\
+&\hspace{0.5cm} \text{ given that the current state is $i$}
+\end{align*}
+Therefore:-
+\begin{itemize}
+	\item all of the entries are between $0$ and $1$
+	\begin{itemize}
+		\item (I.e. they are probabilities.)
+	\end{itemize}
+	\item in any column the sum of the entries is $1$
+	\begin{itemize}
+		\item (The system must be in one of the states at all times.)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Steady state}
+	\begin{definition}
+	A \emph{steady state vector for a matrix $A$} is an eigenvector with eigenvalue $1$.
+	\end{definition}\vfill
+ 	(In other words it is a \emph{non-zero} vector $v$ such that $Av = v$.)\vfill
+ 	\begin{definition}
+ 	A \emph{steady state vector for a Markov chain} is a steady state vector for the transition matrix of the Markov chain such that the entries sum to $1$.
+ 	\end{definition}
+\end{frame}
+
+\begin{frame}{Regular Markov chains}
+\begin{definition}
+A matrix $A$ is \emph{regular} iff there exists a positive integer $k$ such that all of the entries of $A^k$ are \emph{strictly positive}.
+\end{definition}
+\begin{theorem}
+If the transition matrix of a Markov chain is regular then it has a steady state vector.
+\end{theorem}
+\begin{example}
+	The converse is false! E.g. the following matrix has two steady state vectors: 
+	\begin{equation*}
+	A = \left[
+	\begin{matrix}
+	1 & 0\\
+	0 & 1
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+	Calculate and interpret $x_3$ given that
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	\frac{1}{2}\\
+	\frac{1}{2}
+	\end{matrix}
+	\right] \text{ and }
+	A = \left[
+	\begin{matrix}
+	0 & \frac{1}{4}\\
+	1 & \frac{3}{4}
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\begin{example}
+	What is the probability that we are in state $1$ after two iterations if
+	\begin{equation*}
+	x_0 = \left[
+	\begin{matrix}
+	1\\
+	0\\
+	0
+	\end{matrix}
+	\right] \text{ and }
+	A = \left[
+	\begin{matrix}
+	\frac{1}{2} & \frac{1}{4} & \frac{1}{4}\\
+	0 & \frac{1}{2} & \frac{1}{4}\\
+	\frac{1}{2} & \frac{1}{4} & \frac{1}{2}
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find a steady state vector for 
+	\begin{equation*}
+	\left[
+	\begin{matrix}
+	0 & \frac{1}{4}\\
+	1 & \frac{3}{4}
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\begin{example}
+	Find a steady state vector for 
+	\begin{equation*}
+	\left[
+	\begin{matrix}
+	\frac{1}{2} & \frac{1}{4} & \frac{1}{4}\\
+	0 & \frac{1}{2} & \frac{1}{4}\\
+	\frac{1}{2} & \frac{1}{4} & \frac{1}{2}
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\end{document}
