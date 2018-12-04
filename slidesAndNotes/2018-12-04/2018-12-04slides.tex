@@ -111,9 +111,9 @@ x_k = \sum_{i=1}^n b_i (\lambda_i)^k v_{\lambda_i} \approx b_i (\lambda_{max})^k
 and we can read off the long term behaviour. E.g.
 \begin{itemize}
 	\item if $|\lambda_{max}|< 1$ then the system converges to $0$
-	\item if $|\lambda_{max}| = 1$ then the system converges to $b_iv_{\lambda_{max}}$
-	\item if $|\lambda_{max}| = -1$ then the system oscillates between $\pm b_iv_{\lambda_{max}}$
-	\item if $|\lambda_{max}>1|$ then the system diverges
+	\item if $\lambda_{max} = 1$ then the system converges to $b_iv_{\lambda_{max}}$
+	\item if $\lambda_{max} = -1$ then the system oscillates between $\pm b_iv_{\lambda_{max}}$
+	\item if $|\lambda_{max}|>1$ then the system diverges
 \end{itemize}
 \end{frame}
 
@@ -179,9 +179,9 @@ A \emph{Markov chain} consists of:-\vfill
 \begin{frame}{Markov transition matrices}
 This means that a Markov chain is described by a \emph{transition matrix} $A$ such that
 \begin{align*}
-A_{ij} &= \mathbb{P}(X_1 = j | X_0 = i)\\
-&= \text{ the probability that the next state will be $j$ }\\
-&\hspace{0.5cm} \text{ given that the current state is $i$}
+A_{ij} &= \mathbb{P}(X_1 = i | X_0 = j)\\
+&= \text{ the probability that the next state will be $i$ }\\
+&\hspace{0.5cm} \text{ given that the current state is $j$}
 \end{align*}
 Therefore:-
 \begin{itemize}
