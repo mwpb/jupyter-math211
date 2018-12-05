@@ -1,0 +1,201 @@
+\documentclass{beamer}
+
+\useoutertheme[subsection=false]{miniframes}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{datetime}
+\usepackage{tikz-cd}
+\newcommand{\lectureDate}{\formatdate{06}{12}{2018}}
+
+\setbeamertemplate{caption}
+{\raggedright\insertcaption\par}
+\title{MATH211: Linear Methods I}
+\author{Matthew Burke}
+\date{\lectureDate}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Lecture on \lectureDate}
+  \tableofcontents
+\end{frame}
+
+\section{Small examples}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Construct an example of a $2\times 2$ matrix with one eigenvalue equal to $3$ that is not diagonal, is not invertible but is diagonalisable.
+\end{example}
+\begin{example}
+	Find a matrix that is not the identity or the zero matrix such that
+	\begin{equation*}
+	A^2 = A
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\section{Long examples}
+
+\begin{frame}
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+\usebeamerfont{section title}
+\insertsection\par
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Google PageRank theory}
+Imagine modelling the internet following way:-
+\begin{itemize}
+	\item Each page consists of links to other pages.
+	\item We travel from one page to another by clicking a link at random.
+	\item Therefore the probability of going from page $j$ to page $i$ is 
+	\begin{equation*}
+	\frac{L_{ji}}{Out(j)}
+	\end{equation*}
+	where $L_{ji}$ is the number of links from page $j$ to page $i$ and $Out(j)$ is the total number of links from page $j$.
+	\item A steady state vector for this Markov chain (if it exists) gives the PageRank of the pages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Google PageRank Example}
+\begin{example}[Simplified PageRank]
+	Suppose that the internet consists of three(!) pages $P_1$, $P_2$ and $P_3$.
+	Suppose further that:-
+	\begin{itemize}
+		\item there are two links from $P_1$ to $P_2$
+		\item there is one link from $P_1$ to $P_3$
+		\item there is one link from $P_2$ to $P_1$
+		\item there is one link from $P_2$ to $P_3$
+		\item there is one link from $P_3$ to $P_2$
+	\end{itemize}
+	Then calculate the (relative) PageRanks for $P_1$, $P_2$ and $P_3$.
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+Find the distance $d$ between the lines
+\begin{equation*}
+L_1: \vec{x} = \left[
+\begin{matrix}
+-6\\
+-7\\
+7
+\end{matrix}
+\right]+s
+\left[
+\begin{matrix}
+2\\
+1\\
+-1
+\end{matrix}
+\right]\text{ and } L_2: \vec{x} =
+\left[
+\begin{matrix}
+-7\\
+-14\\
+0
+\end{matrix}
+\right]+ t \left[
+\begin{matrix}
+2\\
+3\\
+-1
+\end{matrix}
+\right]
+\end{equation*}
+and find a points $A$ on $L_1$ and $B$ on $L_2$ such that $d(A, B) = d$.
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Suppose that the sequence $x_0$, $x_1$, $x_2$ \dots is defined by $x_0 = 2$, $x_1 = 1+i$ and $x_{k+2} = (1+i)x_{k+1}-ix_k$. Find a formula for $x_k$.
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	A draconian country organises its education system as follows:-
+	\begin{itemize}
+		\item At age $11$ all children take an exam.
+		\item The children who pass attend a school of type $A$ and those who fail attend a school of type $B$.
+		\item Both schools administer weekly tests.
+		\item Consider the fate of a certain individual Adam:-
+		\begin{itemize}
+			\item Adam has probability $\frac{2}{3}$ of passing the first exam at age $11$.
+			\item At school type $A$ Adam has a $\frac{2}{5}$ chance of passing every weekly exam.
+			\item At school type $B$ Adam has a $\frac{4}{5}$ chance of passing every weekly exam.
+		\end{itemize}
+	\end{itemize}
+	Model Adam's progress as a Markov chain and find all steady state vectors.
+\end{example}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{example}
+	Find equations for the lines through
+	\begin{equation*}
+	\left[
+	\begin{matrix}
+	1\\
+	0\\
+	1
+	\end{matrix}
+	\right]
+	\end{equation*}
+	that meet the line
+	\begin{equation*}
+	\vec{x} = \left[
+	\begin{matrix}
+	1\\
+	2\\
+	0
+	\end{matrix}
+	\right]+s \left[
+	\begin{matrix}
+	2\\
+	-1\\
+	2
+	\end{matrix}
+	\right]
+	\end{equation*}
+	at the two points at distance $3$ from 
+	\begin{equation*}
+	\left[
+	\begin{matrix}
+	1\\
+	2\\
+	0
+	\end{matrix}
+	\right]
+	\end{equation*}
+\end{example}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+If possible diagonalise
+\[
+\left[
+\begin{matrix}
+3&-4&2\\
+1&-2&2\\
+1&-5&5
+\end{matrix}
+\right]\]
+\end{example}
+
+\end{frame}
+
+\end{document}
