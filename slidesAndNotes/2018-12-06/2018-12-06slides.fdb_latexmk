@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1544047297 "2018-12-06slides.tex" "2018-12-06slides.pdf" "2018-12-06slides" 1544047299
+["pdflatex"] 1544062830 "2018-12-06slides.tex" "2018-12-06slides.pdf" "2018-12-06slides" 1544062833
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -208,16 +208,16 @@
   "/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1523934492 2717033 f61a5287d9c22a39a74f1979fe3f905c ""
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "2018-12-06slides.aux" 1544047299 3037 b396c7e3f520201223cd0f392d9daa45 ""
-  "2018-12-06slides.nav" 1544047299 1610 f2efc4c608fa39bbca52aeb87ffd63ec ""
-  "2018-12-06slides.out" 1544047299 97 72555542a7e8a1bc74386a96b8f6094e ""
-  "2018-12-06slides.tex" 1544047297 4585 f510a9f44f1ce84c1e1ea60ec0409a30 ""
-  "2018-12-06slides.toc" 1544047299 99 5ced074d24b9a663e6f11cafc083f898 ""
+  "2018-12-06slides.aux" 1544062833 3724 771aa55608314196549011b88492cecd ""
+  "2018-12-06slides.nav" 1544062833 2061 172871ed86d75404a78f5b443c11cdff ""
+  "2018-12-06slides.out" 1544062833 151 f7f7fc88e2daaf2423736b7a2f50c0c8 ""
+  "2018-12-06slides.tex" 1544062830 5495 f625af3c2a68b5611c324eedca938caa ""
+  "2018-12-06slides.toc" 1544062833 155 f4582500f870bf7cae40509dd69e87db ""
   (generated)
-  "2018-12-06slides.snm"
-  "2018-12-06slides.toc"
-  "2018-12-06slides.out"
   "2018-12-06slides.nav"
+  "2018-12-06slides.aux"
+  "2018-12-06slides.snm"
+  "2018-12-06slides.out"
   "2018-12-06slides.pdf"
   "2018-12-06slides.log"
-  "2018-12-06slides.aux"
+  "2018-12-06slides.toc"
