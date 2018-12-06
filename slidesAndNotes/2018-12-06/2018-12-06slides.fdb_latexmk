@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1544062830 "2018-12-06slides.tex" "2018-12-06slides.pdf" "2018-12-06slides" 1544062833
+["pdflatex"] 1544062830 "2018-12-06slides.tex" "2018-12-06slides.pdf" "2018-12-06slides" 1544062944
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -211,13 +211,13 @@
   "2018-12-06slides.aux" 1544062833 3724 771aa55608314196549011b88492cecd ""
   "2018-12-06slides.nav" 1544062833 2061 172871ed86d75404a78f5b443c11cdff ""
   "2018-12-06slides.out" 1544062833 151 f7f7fc88e2daaf2423736b7a2f50c0c8 ""
-  "2018-12-06slides.tex" 1544062830 5495 f625af3c2a68b5611c324eedca938caa ""
+  "2018-12-06slides.tex" 1544062843 5495 f625af3c2a68b5611c324eedca938caa ""
   "2018-12-06slides.toc" 1544062833 155 f4582500f870bf7cae40509dd69e87db ""
   (generated)
+  "2018-12-06slides.snm"
+  "2018-12-06slides.toc"
+  "2018-12-06slides.pdf"
+  "2018-12-06slides.out"
   "2018-12-06slides.nav"
   "2018-12-06slides.aux"
-  "2018-12-06slides.snm"
-  "2018-12-06slides.out"
-  "2018-12-06slides.pdf"
   "2018-12-06slides.log"
-  "2018-12-06slides.toc"
