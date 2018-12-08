@@ -543,7 +543,7 @@ dist(A, B) = \sqrt{3^2+0^2 + 6^2} = \sqrt{45} = 3\sqrt{5}
   \end{array}
   \right]
   \end{equation*}
-  (Notice how the Markov chain splits into two parts after the first iteration.)
+  (Notice how the Markov chain splits into two $2\times 2$ blocks after the first iteration.)
   To find the steady state vector we solve:
   \begin{equation*}
   \left[
@@ -957,6 +957,232 @@ We need to solve:
   \right]
   \end{equation*}
   (i.e. choose $\bar{s}$ such that the entries sum to $1$.)
+\end{Answer}
+
+\begin{Exercise}
+  If possible diagonalise
+  \begin{equation*}
+  \left[
+  \begin{array}{ccc}
+  3&-4&2\\
+  1&-2&2\\
+  1&-5&5
+  \end{array}
+  \right]
+  \end{equation*}
+\end{Exercise}
+
+\begin{Answer}
+  First find the eigenvalues:
+  \begin{align*}
+    det \left[
+    \begin{array}{ccc}
+    3\-\lambda & -4 & 2\\
+    1& -2-\lambda & 2\\
+    1 & -5 & 5-\lambda
+    \end{array}
+    \right] &= -det \left[
+    \begin{array}{ccc}
+    1 & -5 & 5-\lambda\\
+    1& -2-\lambda & 2\\
+    3\-\lambda & -4 & 2
+    \end{array}
+    \right] \\
+    &= -det \left[
+    \begin{array}{ccc}
+    1 & -5 & 5-\lambda\\
+    0& 3-\lambda & \lambda-3\\
+    0 & 11-5\lambda & 2-(3-\lambda)(5-\lambda)
+    \end{array}
+    \right]\\
+    &= (\lambda-3)det \left[
+    \begin{array}{ccc}
+    1 & -5 & 5-\lambda\\
+    0& 1 & -1\\
+    0 & 11-5\lambda & 2-(3-\lambda)(5-\lambda)
+    \end{array}
+    \right]\\
+    &= (\lambda-3)det \left[
+    \begin{array}{ccc}
+    1 & -5 & 5-\lambda\\
+    0& 1 & -1\\
+    0 & 0 & 2-(3-\lambda)(5-\lambda)+11-5\lambda
+    \end{array}
+    \right] \\
+    &= (\lambda -3)\left(2-(15-8\lambda +\lambda^2)+11-5\lambda\right)\\
+    &= -(\lambda -3)(\lambda^2-3\lambda +2)\\
+    &= (\lambda-3)(\lambda -1)(\lambda -2)
+  \end{align*}
+  The eigenspace associated to $1$:
+  \begin{equation*}
+  \left[
+  \begin{array}{ccc|c}
+  2&-4&2&0\\
+  1&-3&2&0\\
+  1&-5&4&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-2&1&0\\
+  1&-3&2&0\\
+  1&-5&4&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-2&1&0\\
+  0&-1&1&0\\
+  0&-3&3&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-2&1&0\\
+  0&1&-1&0\\
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&0&-1&0\\
+  0&1&-1&0\\
+  \end{array}
+  \right]
+  \end{equation*}
+  and so the eigenspace is
+  \begin{equation*}
+  E_1 = s \left[
+  \begin{array}{c}
+  1\\
+  1\\
+  1
+  \end{array}
+  \right]
+  \end{equation*}
+  The eigenspace associated to $2$:
+  \begin{equation*}
+  \left[
+  \begin{array}{ccc|c}
+  1&-4&2&0\\
+  1&-4&2&0\\
+  1&-5&3&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-4&2&0\\
+  1&-5&3&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-4&2&0\\
+  0&-1&1&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-4&2&0\\
+  0&1&-1&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&0&-2&0\\
+  0&1&-1&0
+  \end{array}
+  \right]
+  \end{equation*}
+  and so the eigenspace is:
+  \begin{equation*}
+  E_2 = s \left[
+  \begin{array}{c}
+  2\\
+  1\\
+  1
+  \end{array}
+  \right]
+  \end{equation*}
+  The eigenspace associated to $3$:
+  \begin{equation*}
+  \left[
+  \begin{array}{ccc|c}
+  0&-4&2&0\\
+  1&-5&2&0\\
+  1&-5&2&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-5&2&0\\
+  0&-4&2&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&-5&2&0\\
+  0&1&\frac{-1}{2}&0
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{ccc|c}
+  1&0&\frac{-1}{2}&0\\
+  0&1&\frac{-1}{2}&0
+  \end{array}
+  \right]
+  \end{equation*}
+  so the eigenspace is
+  \begin{equation*}
+  E_3 = s \left[
+  \begin{array}{c}
+  1\\
+  1\\
+  2
+  \end{array}
+  \right]
+  \end{equation*}
+  Now for all of the eigenvalues ($1$, $2$ and $3$) the algebraic multiplicities are equal to the geometric multiplicities the matrix is diagonalisable. The diagonalising matrix is 
+  \begin{equation*}
+  P = \left[
+  \begin{array}{ccc}
+  1& 2 & 1\\
+  1& 1& 1\\
+  1& 1 &2
+  \end{array}
+  \right]
+  \end{equation*}
+  with corresponding diagonal matrix
+  \begin{equation*}
+  D = \left[
+  \begin{array}{ccc}
+  1 & 0 & 0\\
+  0&2&0\\
+  0&0&3
+  \end{array}
+  \right]
+  \end{equation*}
 \end{Answer}
 
 \shipoutAnswer

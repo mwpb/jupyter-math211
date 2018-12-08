@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex worked-examples"] 1544226250 "worked-examples.aux" "worked-examples.bbl" "worked-examples" 1544226257
+["bibtex worked-examples"] 1544228073 "worked-examples.aux" "worked-examples.bbl" "worked-examples" 1544228081
   "hplain.bst" 0 -1 0 ""
   "references.bib" 0 -1 0 ""
-  "worked-examples.aux" 1544226256 1600 74c3ae9f7a8ea448d049fc80885ac71d ""
+  "worked-examples.aux" 1544228080 1702 7474ad12d9c45b4599ee53b7c05210c8 ""
   (generated)
-  "worked-examples.bbl"
   "worked-examples.blg"
-["pdflatex"] 1544226250 "worked-examples.tex" "worked-examples.pdf" "worked-examples" 1544226257
+  "worked-examples.bbl"
+["pdflatex"] 1544228073 "worked-examples.tex" "worked-examples.pdf" "worked-examples" 1544228081
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -186,14 +186,14 @@
   "lines-pt-at-dist-3.png" 1544222004 171432 1e7a34cbe8bca3475350c1735c5eddf2 ""
   "plane-from-line-and-point.png" 1544223000 125601 28073c657d408aebe81d3701d3d7a0c6 ""
   "skew-lines.png" 1542644542 249995 502433a8fa462e2199d2a38543038c8d ""
-  "worked-examples.aux" 1544226256 1600 74c3ae9f7a8ea448d049fc80885ac71d ""
+  "worked-examples.aux" 1544228080 1702 7474ad12d9c45b4599ee53b7c05210c8 ""
   "worked-examples.bbl" 0 -1 0 "bibtex worked-examples"
-  "worked-examples.out" 1544226252 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "worked-examples.tex" 1544226249 17906 46800690014cb9e3300983af677792db ""
-  "worked-examples.toc" 1544226252 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "worked-examples.out" 1544228075 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "worked-examples.tex" 1544228073 22031 539a745f3c7b0fa62298d5edb66d1011 ""
+  "worked-examples.toc" 1544228075 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "worked-examples.aux"
-  "worked-examples.pdf"
-  "worked-examples.log"
   "worked-examples.toc"
+  "worked-examples.log"
+  "worked-examples.pdf"
   "worked-examples.out"
