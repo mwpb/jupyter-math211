@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[lastexercise]{exercise} %answerdelayed
+\usepackage[answerdelayed, lastexercise]{exercise} %
 \usepackage{calc}
 \setcounter{tocdepth}{2}
 \providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
@@ -40,7 +40,7 @@
 \author{Work in progress}
 \begin{document}
 \maketitle
-\tableofcontents
+Solutions are collected at the end.
 
 \begin{Exercise}
   Suppose that the internet consists of three pages $P_1$, $P_2$ and $P_3$.
@@ -834,7 +834,7 @@ dist(A, B) = \sqrt{3^2+0^2 + 6^2} = \sqrt{45} = 3\sqrt{5}
   n = d\times (Q-P) = \left[
   \begin{array}{c}
   -2\\
-  -2\\
+  -4\\
   5
   \end{array}
   \right] \times \left[
@@ -845,15 +845,15 @@ dist(A, B) = \sqrt{3^2+0^2 + 6^2} = \sqrt{45} = 3\sqrt{5}
   \end{array}
   \right] = \left[
   \begin{array}{c}
-  -4-5\\
+  -8-5\\
   -20+4\\
-  -2-8
+  -2-16
   \end{array}
   \right] = \left[
   \begin{array}{c}
-  -9\\
+  -13\\
   -16\\
-  -10
+  -18
   \end{array}
   \right]
   \end{equation*}
@@ -861,9 +861,9 @@ dist(A, B) = \sqrt{3^2+0^2 + 6^2} = \sqrt{45} = 3\sqrt{5}
   \begin{align*}
     0 = n\cdot (x-P) &= \left[
     \begin{array}{c}
-    -9\\
+    -13\\
     -16\\
-    -10
+    -18
     \end{array}
     \right]\cdot \left[
     \begin{array}{c}
@@ -872,12 +872,11 @@ dist(A, B) = \sqrt{3^2+0^2 + 6^2} = \sqrt{45} = 3\sqrt{5}
     z+1
     \end{array}
     \right] \\
-    &= -9x +81 -16y-96 -10z -10\\
-    & = -9x -16y -10z -25
+    &= -13x+117-16y-96-18z-18
   \end{align*}
   i.e. 
   \begin{equation*}
-  9x+16y+10z = -25
+  13x+16y+18z = 3
   \end{equation*}
 \end{Answer}
 

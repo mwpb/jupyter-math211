@@ -4,12 +4,344 @@
 		"selected_items":
 		[
 			[
-				"bo",
-				"boardlist"
+				"po",
+				"position"
+			],
+			[
+				"las",
+				"last_move_coords"
+			],
+			[
+				"last",
+				"last_move"
+			],
+			[
+				"pl",
+				"player_is_white"
+			],
+			[
+				"play",
+				"player_is_white"
+			],
+			[
+				"player_",
+				"player_black"
+			],
+			[
+				"mo",
+				"movestr"
+			],
+			[
+				"mov",
+				"move_list"
+			],
+			[
+				"pla",
+				"player_white"
+			],
+			[
+				"inpu",
+				"input_edit"
+			],
+			[
+				"seek",
+				"seek_dock"
+			],
+			[
+				"QH",
+				"QShortcut"
 			],
 			[
 				"res",
-				"responses"
+				"resource_path"
+			],
+			[
+				"P",
+				"PySide2"
+			],
+			[
+				"QS",
+				"QSizePolicy"
+			],
+			[
+				"log",
+				"login_screen"
+			],
+			[
+				"QTab",
+				"QTabBar"
+			],
+			[
+				"setS",
+				"setStyleSheet"
+			],
+			[
+				"setSt",
+				"setStyleSheet"
+			],
+			[
+				"QT",
+				"QTabBar"
+			],
+			[
+				"q",
+				"qApp"
+			],
+			[
+				"QL",
+				"QLabel"
+			],
+			[
+				"set",
+				"setContentsMargins"
+			],
+			[
+				"wi",
+				"widget_list"
+			],
+			[
+				"Term",
+				"TerminalWidget"
+			],
+			[
+				"add",
+				"addWidget"
+			],
+			[
+				"QLA",
+				"QLabel"
+			],
+			[
+				"status",
+				"status_value"
+			],
+			[
+				"lo",
+				"login_screen"
+			],
+			[
+				"move",
+				"move_number"
+			],
+			[
+				"pass",
+				"password_input"
+			],
+			[
+				"CHess",
+				"ChessPiece"
+			],
+			[
+				"player_timer",
+				"player_timer_start"
+			],
+			[
+				"player",
+				"player_timeleft"
+			],
+			[
+				"is",
+				"is_player_ticking"
+			],
+			[
+				"str",
+				"start"
+			],
+			[
+				"opp",
+				"oppo_timer"
+			],
+			[
+				"ply",
+				"player_is_ticking"
+			],
+			[
+				"op",
+				"oppo_timer"
+			],
+			[
+				"get",
+				"get_player_timeleft"
+			],
+			[
+				"r",
+				"raise_dock_on_status"
+			],
+			[
+				"stat",
+				"status_value"
+			],
+			[
+				"TE",
+				"TEST_POS2"
+			],
+			[
+				"user",
+				"username_value"
+			],
+			[
+				"oppo",
+				"oppo_label"
+			],
+			[
+				"set_op",
+				"set_oppo_timeleft_value"
+			],
+			[
+				"pos",
+				"pos_button"
+			],
+			[
+				"sel",
+				"selected_square_value"
+			],
+			[
+				"Si",
+				"Signal"
+			],
+			[
+				"sea",
+				"seasonal_decompose"
+			],
+			[
+				"conn",
+				"conn_thread"
+			],
+			[
+				"see",
+				"seek_input"
+			],
+			[
+				"pas",
+				"password_layout"
+			],
+			[
+				"Sig",
+				"Signals"
+			],
+			[
+				"appe",
+				"append_output"
+			],
+			[
+				"login_",
+				"login_label"
+			],
+			[
+				"login",
+				"login_label"
+			],
+			[
+				"Obser",
+				"Observable"
+			],
+			[
+				"white",
+				"white_time"
+			],
+			[
+				"whi",
+				"white_time"
+			],
+			[
+				"bl",
+				"black_time"
+			],
+			[
+				"gam",
+				"game_status"
+			],
+			[
+				"detail",
+				"details"
+			],
+			[
+				"raise",
+				"raise_term_dock"
+			],
+			[
+				"term",
+				"term_dock"
+			],
+			[
+				"te",
+				"term_dock"
+			],
+			[
+				"game",
+				"game_start_signal"
+			],
+			[
+				"end",
+				"end_game_signal"
+			],
+			[
+				"star",
+				"start_game_signal"
+			],
+			[
+				"st",
+				"start_game_signal"
+			],
+			[
+				"det",
+				"details_dock"
+			],
+			[
+				"black",
+				"black_square_color"
+			],
+			[
+				"re",
+				"resize_count"
+			],
+			[
+				"resize",
+				"resize_count"
+			],
+			[
+				"bor",
+				"border_color"
+			],
+			[
+				"black_",
+				"black_player"
+			],
+			[
+				"si",
+				"sidebar"
+			],
+			[
+				"info",
+				"infolist"
+			],
+			[
+				"en",
+				"end_j"
+			],
+			[
+				"start",
+				"start_i"
+			],
+			[
+				"mou",
+				"mousePressEvent"
+			],
+			[
+				"up",
+				"update_end"
+			],
+			[
+				"update",
+				"update_start"
+			],
+			[
+				"start_",
+				"start_signal"
+			],
+			[
+				"bo",
+				"boardlist"
 			],
 			[
 				"app",
@@ -34,18 +366,6 @@
 			[
 				"win",
 				"windowHandle"
-			],
-			[
-				"add",
-				"addWidget"
-			],
-			[
-				"start",
-				"start_telnet"
-			],
-			[
-				"info",
-				"infostring"
 			],
 			[
 				"Q",
@@ -159,11 +479,59 @@
 	],
 	"file_history":
 	[
-		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-20/2018-11-21slides.tex",
-		"/Users/mat/MatthewBurke/two-dimensional-lie-theory/references.bib",
-		"/Users/mat/freechessx/main.py",
-		"/Users/mat/Library/Application Support/Sublime Text 3/Packages/User/bsec.sublime-snippet",
+		"/Users/mat/qml-chess/main.py",
+		"/Users/mat/qml-chess/main.qml",
+		"/Users/mat/freechessx/subjects.py",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-12-06/2018-12-06slides.tex",
+		"/Users/mat/jupyter-math211/worked-examples/worked-examples.tex",
+		"/Users/mat/freechessx/chess_piece.py",
+		"/Users/mat/freechessx/chess_board.py",
+		"/Users/mat/freechessx/main_window.py",
+		"/Users/mat/freechessx/seek_dock.py",
+		"/Users/mat/freechessx/login_screen.py",
+		"/Users/mat/freechessx/terminal.py",
 		"/Users/mat/freechessx/telnet_utils.py",
+		"/Users/mat/freechessx/plan.md",
+		"/Users/mat/freechessx/chess_utils.py",
+		"/Users/mat/freechessx/shortcuts.py",
+		"/Users/mat/freechessx/pgn_game.py",
+		"/Users/mat/freechessx/game_details.py",
+		"/Users/mat/freechessx/main_window.spec",
+		"/Users/mat/freechessx/.gitignore",
+		"/Users/mat/freechessx/setup.py",
+		"/Users/mat/freechessx/constants.py",
+		"/Users/mat/freechessx/main.py",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-12-04/2018-12-04slides.tex",
+		"/Users/mat/freechessx/chess_clock.py",
+		"/Users/mat/wx-chess/main.py",
+		"/Users/mat/two-dimensional-lie-theory/matthew-talk-2018-11-03.tex",
+		"/Users/mat/two-dimensional-lie-theory/matthew-notes.tex",
+		"/Users/mat/freechessx/game_detail.py",
+		"/Users/mat/tsforecast-master/test.py",
+		"/Users/mat/freechessx/telnet_test.py",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-29/2018-11-29slides.tex",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-27/2018-11-27slides.tex",
+		"/Users/mat/Library/Application Support/Sublime Text 3/Packages/User/eqn.sublime-snippet",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-28/2018-11-29slides.tex",
+		"/Users/mat/freechessx/rx_test.py",
+		"/Users/mat/freechessx/init.py",
+		"/Users/mat/MatthewBurke/two-dimensional-lie-theory/matthew-notes.tex",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/job-opportunities-2018/linkedin/linkedin-messages.md",
+		"/Users/mat/swift-fics/dist/main.app/Contents/Resources/main.py",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/Meta/WeeklyReview/review-2018-11-25.md",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/Meta/WeeklyReview/review-template.md",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/reading-watching/reading-watching.md",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/TeachingNotes/Math 211 Fall 2018/final/draft-of-final.md",
+		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/TeachingNotes/Math 211 Fall 2018/final/draft-of-final.ms",
+		"/Users/mat/MatthewBurke/two-dimensional-lie-theory/ben-notes.tex",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-22/2018-11-22slides.tex",
+		"/Users/mat/Library/Application Support/Sublime Text 3/Packages/User/fr.sublime-snippet",
+		"/Users/mat/Library/Application Support/Sublime Text 3/Packages/User/matrix.sublime-snippet",
+		"/Users/mat/jupyter-math211/slidesAndNotes/2018-11-20/2018-11-21slides.tex",
+		"/Users/mat/freechessx/test.py",
+		"/Users/mat/freechessx/icons/blank.svg",
+		"/Users/mat/MatthewBurke/two-dimensional-lie-theory/references.bib",
+		"/Users/mat/Library/Application Support/Sublime Text 3/Packages/User/bsec.sublime-snippet",
 		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/Meta/WeeklyReview/review-template-2018-11-18.md",
 		"/Users/mat/swift-fics/main.py",
 		"/Users/mat/swift-fics/setup.py",
@@ -173,7 +541,6 @@
 		"/Users/mat/miniMathJax/jax/input/TeX/jax.js",
 		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/job-opportunities-2018/cracking-the-coding-interview/before-the-interview.md",
 		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/job-opportunities-2018/cracking-the-coding-interview/summary-ctci.md",
-		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/job-opportunities-2018/linkedin/linkedin-messages.md",
 		"/Users/mat/Library/Mobile Documents/com~apple~CloudDocs/Documents/job-opportunities-2018/cracking-the-coding-interview/behind-the-scenes.md"
 	],
 	"find":
@@ -182,9 +549,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 101.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -192,6 +560,65 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"failed",
+			"move",
+			"response",
+			"reverse",
+			"last",
+			"icons",
+			"layout",
+			"status",
+			"print",
+			"enter",
+			"password_input",
+			"signals.opponent",
+			"signals.username",
+			"signals.player_is_white",
+			"signals.last_",
+			"signals.selec",
+			"signals.position",
+			"position",
+			"oppo_timeleft",
+			"document",
+			"oppo",
+			"seek_button",
+			"itematpo",
+			"item",
+			"print",
+			"signals.",
+			"BLANKPO",
+			"conn",
+			"QTime",
+			"term",
+			"setup_ui()",
+			"setup_",
+			"position_changed",
+			"run_telnet",
+			"response",
+			"section",
+			"response",
+			"lower()",
+			"resize",
+			"resizeE",
+			"resize",
+			"resiz",
+			"aspectra",
+			"resize",
+			"refre",
+			"repaint",
+			"stretch",
+			"run_teln",
+			"subsub",
+			"x",
+			"also",
+			"for ",
+			"for",
+			"for all",
+			"print",
+			"dropp",
+			"connect",
+			"playing",
+			"print"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -199,6 +626,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"self.password_input",
+			"self.term"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -220,7 +649,7 @@
 	},
 	"input":
 	{
-		"height": 36.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -291,11 +720,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 231.0,
+	"side_bar_width": 325.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
