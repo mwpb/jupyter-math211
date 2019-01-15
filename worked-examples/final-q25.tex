@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage[answerdelayed, lastexercise]{exercise} %
+\usepackage{calc}
+\setcounter{tocdepth}{2}
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+\usepackage{tikz-cd}
+\usepackage{tensor}
+% \usepackage{hyperref}
+% \usepackage{csquotes}
+\usepackage{fancyvrb}
+\usepackage{todonotes}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{nameref,hyperref}
+\usepackage{cleveref}
+\usepackage[utf8]{inputenc}
+
+\setcounter{tocdepth}{5}
+
+\newcommand{\ts}[2]{{_{#1}}\!\!\times_{#2}\!}
+\newcommand{\tens}[2]{{_{#1}}\times_{#2}}
+
+\declaretheorem[numberwithin=section]{theorem}
+\declaretheorem[sibling=theorem]{exercise}
+\declaretheorem[sibling=theorem]{example}
+\declaretheorem[sibling=theorem]{non-example}
+\declaretheorem[sibling=theorem]{lemma}
+\declaretheorem[sibling=theorem]{corollary}
+\declaretheorem[sibling=theorem]{proposition}
+\declaretheorem[style=definition,sibling=theorem]{definition}
+\declaretheorem[style=definition,sibling=theorem]{axiom}
+\declaretheorem[style=definition,sibling=theorem]{notation}
+\declaretheorem[sibling=theorem]{question}
+\declaretheorem[style=remark,sibling=theorem]{remark}
+\title{Final examination question 25}
+\author{Work in progress}
+\begin{document}
+\maketitle
+
+\begin{Exercise}
+  Consider the dynamical system $v_{k+1} = A v_k$ where
+  \begin{equation*}
+  A = \left[
+  \begin{array}{cc}
+  0&1\\
+  \frac{1}{3} & \frac{2}{3}
+  \end{array}
+  \right], \left[
+  \begin{array}{c}
+  x_k\\
+  y_k
+  \end{array}
+  \right]\text{ and } v_0 = \left[
+  \begin{array}{c}
+  -1\\
+  1
+  \end{array}
+  \right]
+  \end{equation*}
+  It turns out that $A$ is diagonalisable, that is $P^{-1}AP = D$ is diagonal, where
+  \begin{equation*}
+  P= \left[
+  \begin{array}{cc}
+  1&-3\\
+  1&1
+  \end{array}
+  \right]\text{ and }
+  D = \left[
+  \begin{array}{cc}
+  1&0\\
+  0&\frac{-1}{3}
+  \end{array}
+  \right]
+  \end{equation*}
+  What is the value of $x_k$?
+\end{Exercise}
+
+\begin{Answer}
+  We are given that $A = PDP^{-1}$ so 
+  \begin{equation*}
+  \left[
+  \begin{array}{c}
+  1\\
+  1
+  \end{array}
+  \right]
+  \end{equation*} is an eigenvector with eigenvalue $1$ and 
+  \begin{equation*}
+  \left[
+  \begin{array}{c}
+  -3\\
+  1
+  \end{array}
+  \right]
+  \end{equation*} is an eigenvector with eigenvalue $\frac{-1}{3}$.
+  First write the initial vector as a linear combination of the eigenvectors:
+  \begin{equation*}
+  \left[
+  \begin{array}{c}
+  -1\\
+  1
+  \end{array}
+  \right] = a \left[
+  \begin{array}{c}
+  1\\
+  1
+  \end{array}
+  \right]+b \left[
+  \begin{array}{c}
+  -3\\
+  1
+  \end{array}
+  \right]
+  \end{equation*}
+  I.e. solve 
+  \begin{equation*}
+  \left[
+  \begin{array}{cc|c}
+  1&-3&-1\\
+  1&1&1
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{cc|c}
+  1&-3&-1\\
+  0&4&2
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{cc|c}
+  1&-3&-1\\
+  0&1&\frac{1}{2}
+  \end{array}
+  \right]
+  \end{equation*}
+  \begin{equation*}
+  \rightarrow\left[
+  \begin{array}{cc|c}
+  1&0& \frac{1}{2}\\
+  0&1&\frac{1}{2}
+  \end{array}
+  \right]
+  \end{equation*}
+  So $a = \frac{1}{2}$ and $b = \frac{1}{2}$.
+  Therefore
+  \begin{align*}
+    v_k &= A^kv_0\\
+    &=A^k\left[ \frac{1}{2} \left[
+    \begin{array}{c}
+    1\\
+    1
+    \end{array}
+    \right]+\frac{1}{2} \left[
+    \begin{array}{c}
+    -3\\
+    1
+    \end{array}
+    \right]\right] \\
+    & = \frac{1}{2}A^k \left[
+    \begin{array}{c}
+    1\\
+    1
+    \end{array}
+    \right]+\frac{1}{2} A^k \left[
+    \begin{array}{c}
+    -3\\
+    1
+    \end{array}
+    \right]\\
+    &= \frac{1}{2} \left[
+    \begin{array}{c}
+    1\\
+    1
+    \end{array}
+    \right]+\frac{1}{2}\left(\frac{-1}{3}\right)^k \left[
+    \begin{array}{c}
+    -3\\
+    1
+    \end{array}
+    \right] \\
+    &= \left[
+    \begin{array}{c}
+    x_k\\
+    y_k
+    \end{array}
+    \right]
+  \end{align*}
+   and so 
+   \begin{equation*}
+   x_k = \frac{1}{2}\left(1-3\left(\frac{-1}{3}\right)^k\right)
+   \end{equation*}
+\end{Answer}
+
+\shipoutAnswer
+
+\bibliography{references}
+\bibliographystyle{hplain}
+
+\end{document}
